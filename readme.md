@@ -1,5 +1,3 @@
-# Angular: login/logout, proteger as rotas, storage e enviar o token de usuário nas requisições.
-
 # Introdução 
 
 Fazer login/logout, muitas vezes, parece ser algo muito simples, porém, ao nos depararmos com a necessidade do mesmo, vemos que não é tão simples assim, ainda mais para quem não tem tanta intimidade com storage, route guards e token interceptors. Neste artigo, irei explicar de forma simples e prática, como realizar um login/logout completo e funcional utilizando Angular.
