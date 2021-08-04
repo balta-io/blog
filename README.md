@@ -2,7 +2,7 @@
 Este repositório é destinado a artigos de alunos do balta.io, veja como você pode contribuir abaixo.
 
 ## Quero escrever
-Semanalmente trabalhamos para levar o trabalho dos nossos alunos para toda nossa rede e ajudar na visibilidade da sua carreira. Siga o processo abaixo para entrar na nossa lista de publicação.
+[Clique aqui e preencha o template de submissão de artigos!](https://github.com/balta-io/blog/issues/new?assignees=BrewertonSantos&labels=proposta&template=submiss-o-de-artigo.md&title=Proposta+de+artigo%3A++TITULO+DO+ARTIGO+AQUI)
 
 ### Tema
 Antes de escrever é importante alinharmos um tema. Os temas que mais fazem sentido para as tecnologias que trabalhamos serão mais aceitos, então antes de começar **abra uma issue** aqui neste repositório mesmo, com título e uma breve descrição do que pretende escrever.
@@ -18,7 +18,7 @@ Utilize a sintaxe correta do **Markdown** para seu código, em caso de dúvidas,
 
 ### Publicação
 Para publicar seu artigo, basta fazer um **Pull request** para este repositório, criando uma pasta (Não usar espaços ou caracteres especiais no nome da pasta) com os seguintes arquivos:
-* readme.md -> Seu artigo
-* assets/ -> Imagens do seu artigo
+* meu-artigo-lindo/index.md -> Seu artigo
+* meu-artigo-lindo/images/ -> Imagens do seu artigo
 
 Nós vamos priorizar artigos escritos **exclusivamente** para nossa plataforma.
