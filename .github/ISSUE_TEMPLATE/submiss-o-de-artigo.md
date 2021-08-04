@@ -2,7 +2,7 @@
 name: Submissão de artigo
 about: Preencha todas as informações corretamente para que possamos dar andamento
   ao seu artigo da forma mais rápida possível
-title: ''
+title: 'Proposta de artigo:  TITULO DO ARTIGO AQUI'
 labels: proposta
 assignees: BrewertonSantos
 
