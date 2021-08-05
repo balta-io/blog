@@ -24,7 +24,7 @@ Apenas abrindo um parênteses, o WSL coloca o Windows um passo acima na melhor e
 
 ## Requisitos
 
-Para instalar o WSL 2 você precisa da versão 2004 do Windows 10, incluindo o build 19041 ou superior. Em suma, você precisa ter o Windows atualizado.
+Para instalar o WSL 2 você precisa da versão 2004 ou superior do Windows 10, incluindo o build 19041 ou superior. Em suma, você precisa ter o Windows atualizado.
 
 ```
 Windows 10, updated to version 2004, Build 19041
@@ -37,6 +37,11 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
 
 O passo acima varia de acordo com cada conta, mas se quiser já ficar preparado, recomendo que execute o mesmo antes de prosseguir.
+
+## ATUALIZAÇÃO IMPORTANTE
+Se você está rodando uma build igual ou superior a **20262** do Windows 10 (Ou superior), você pode instalar o **WSL** com apenas uma linha de comando, abrindo seu **Power Shell** como administrador e executando `wsl --install`.
+
+Após este processo, reinicie a máquina e você será indagado para criar o usuário e senha do Ubuntu ou outro sabor Linux que escolheu durante a instalação. Se este processo se realizar com sucesso, você pode pular para sessão **Instalando o .NET** deste artigo!
 
 ## Habilitando o WSL
 
