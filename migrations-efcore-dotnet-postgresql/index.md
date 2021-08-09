@@ -30,18 +30,22 @@ No geral, os pacotes acima permitem que você tenha os recursos necessários par
 
 Com usuário e senha do banco de dados em mãos, crie a *string* de conexão no arquivo **_appsettings.json_** do seu projeto, conforme modelo abaixo:
 
-    >“DbContextSettings”: {  
-    “ConnectionString”: “User ID=**seu_nome_de_usuario**;Password=**sua_senha**;Host=localhost;Port=5432;Database=**nome_do_banco_do_projeto**;Pooling=true;”  
-    }
+```
+"DbContextSettings": {  
+    "ConnectionString": "User ID=**seu_nome_de_usuario**;Password=**sua_senha**;Host=localhost;Port=5432;Database=**nome_do_banco_do_projeto**;Pooling=true;"  
+}
+```
 
 **Importante!**  O texto `"User ID="` deve ser escrito com um espaço entre as palavras **User** e **ID**. Os nomes de usuário do banco de dados, senha e database não podem conter espaço. Você não precisa ter criado um banco de dados manualmente pelo  _pgAdmin4_  do  _PostgreSQL_, basta você colocar o nome que deseja nesta configuração e ao gerar a  _Migrations_, a *Database* e as tabelas serão criadas automaticamente.
 
 Após isso, dentro do método "_ConfigureService"_  do arquivo  **_Startup.cs_**  do seu projeto, declare a variável de conexão para que sempre seja executado durante a inicialização.
 
-    > var connectionString = Configuration[“dbContextSettings:ConnectionString”];  
+```csharp
+var connectionString = Configuration["dbContextSettings:ConnectionString"];  
     services.AddDbContext<VideoContext>(options =>  
     options.UseNpgsql(connectionString)  
-    );
+);
+```
 
 **Importante!** Lembre-se de utilizar o `ALT + ENTER` para incluir as bibliotecas necessárias.
 
@@ -51,9 +55,10 @@ Após isso, dentro do método "_ConfigureService"_  do arquivo  **_Startup.cs_**
 
 Caso esteja no **macOS**, terá que executar os comandos abaixo no Terminal (dentro do Visual Studio ou fora, pelo SO) antes de criar as *Migrations*. Lembre-se que o Visual Studio para macOS possui o Console de Pacotes, mas não é possível executar comandos nele, por isso é necessário fazer este procedimento.
 
-    > dotnet tool install — global dotnet-ef
-    
-    > dotnet ef
+```
+dotnet tool install — global dotnet-ef
+dotnet ef
+```
 
 A instalação dessas ferramentas **CLI** (interface de linha de comando) são necessárias para executarmos as *Migrations* pela linha de comando do Terminal.
 
@@ -72,28 +77,30 @@ Com sua API-REST criada, isto é, *Models*, *Controllers*, *conexão aos dados c
 **Importante!** Se estiver usando um **macOS**, certifique-se que está localizado dentro da pasta do projeto (onde está o arquivo .csproj), antes de executar os comandos no Terminal (_veja outros detalhes no tópico anterior_).
 
 **1. Criando as migrations:**
-
-	> dotnet ef database update
-	> dotnet ef migrations add InitialCreate
-
+```
+dotnet ef database update
+dotnet ef migrations add InitialCreate
+```
 Com este comando, criamos o modelo instantâneo com base em nossa API-REST.
 
 **2. Criando o banco de dados e as tabelas**
-
-	> dotnet ef database update
-
+```
+dotnet ef database update
+```
 **Pronto!**  Se tudo estiver configurado conforme os tópicos anteriores, suas  _Migrations_  foram criadas. Agora coloque sua aplicação para rodar, abra o  _pgAdmin4_  e o  _Postman_  e execute os testes necessários.
 
 Abaixo listo outros comandos úteis para manutenção das *Migrations*.
 
 
 **Removendo migrations:**
-
-    > dotnet ef migrations remove
+```
+dotnet ef migrations remove
+```
 
 **Obtendo mais informações sobre falhas:**
-
-    > dotnet ef migrations remove -v
+```
+dotnet ef migrations remove -v
+```
 
 Saiba mais:
 
