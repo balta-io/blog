@@ -1,12 +1,10 @@
-# Migrations com .NET 5 e PostgreSQL
-
 Se você não pode, ou mesmo não quer, utilizar **MySQL** em sua **API-REST no .NET 5**, leia esse artigo até o final e certamente conseguirá usar com **PostgreSQL**.
 
 **Então vamos lá!** Descobri que meu computador (**macOS** Catalina 10.15.7) não possui recurso de hardware suficiente para instalação do *MySQL*. Sim, caros amigos, o *MySQL* só pode ser instalado em versões 11+ do macOS. Logo, como não posso comprar um outro computador neste momento, resolvi buscar em fóruns e sites a solução de como criar *Migrations* no *PostgreSQL* com .NET 5. Como não encontrei a resposta facilmente, busquei consolidar neste artigo todas as pesquisas que fiz para solucionar meu problema, espero que ajude de alguma forma.
 
 *A importância do aprendizado contínuo:* incluí esse tópico porque apenas duas semanas depois de escrever este artigo, descobri através de um curso do [**Balta.io**](https://balta.io/) (*que por sinal, super indico!*) que poderia ter usado o **Docker** com **SQL Server**. Para saber mais, consulte este [**artigo**](https://balta.io/blog/sql-server-docker) do próprio Balta.io e conseguirá usar o *SQL Server* como alternativa, sem a necessidade de instalação em sua máquina.
 
-## **1 — O que você vai precisar instalar?**
+## O que você vai precisar instalar?
 
 Primeiro, você precisará instalar o **.NET 5**, **Postman** (*para testar sua API!*) e o **PostgreSQL** em sua máquina. 
 
@@ -14,7 +12,7 @@ Primeiro, você precisará instalar o **.NET 5**, **Postman** (*para testar sua 
 
 E vai por mim, se você é iniciante nessas coisas, pode dar bastante trabalho.
 
-## **2 — Instalações de pacotes NuGet no .NET 5**
+## Instalações de pacotes NuGet no .NET 5
 
 Com seu projeto aberto no .NET 5, adicione os seguintes pacotes pelo *NuGet*:
 
@@ -28,7 +26,7 @@ No geral, os pacotes acima permitem que você tenha os recursos necessários par
 
 *Aqui mais uma dica!* Caso você esteja usando a versão do .NET em um **macOS**, você não terá o recurso "**Console de pacotes**" no Visual Studio (pois é, ele é exclusivo para *Windows* e *Linux*) e terá que usar o terminal do seu sistema operacional.
 
-## **3 — Conectando com o banco de dados PostgreSQL**
+## Conectando com o banco de dados PostgreSQL
 
 Com usuário e senha do banco de dados em mãos, crie a *string* de conexão no arquivo **_appsettings.json_** do seu projeto, conforme modelo abaixo:
 
@@ -47,7 +45,7 @@ Após isso, dentro do método "_ConfigureService"_  do arquivo  **_Startup.cs_**
 
 **Importante!** Lembre-se de utilizar o `ALT + ENTER` para incluir as bibliotecas necessárias.
 
-## **4 — MacOS, um passo antes das Migrations com .NET 5**
+## MacOS, um passo antes das Migrations com .NET 5
 
 **Importante!**  Se o seu Visual Studio estiver instalado no *Windows*, seja feliz e vá direto ao próximo tópico do artigo!
 
@@ -65,7 +63,7 @@ Saiba mais:
 
 [# Referência de ferramentas de Entity Framework Core – console do Gerenciador de pacotes no Visual Studio](https://docs.microsoft.com/pt-br/ef/core/cli/powershell)
 
-## **5 — Gerando Migrations no .NET 5 e PostgreSQL**
+## Gerando Migrations no .NET 5 e PostgreSQL
 
 Finalmente! Chegamos a etapa final e objetivo deste artigo existir.
 
@@ -103,7 +101,7 @@ Saiba mais:
 
 [# Migrações em ambientes de equipe](https://docs.microsoft.com/pt-br/ef/core/managing-schemas/migrations/teams)
 
-## **Concluindo, sem mais delongas!**
+## Concluindo, sem mais delongas!
 
 *Aprender algo novo é sempre um desafio*. Requer investimento de tempo e muita resiliência para frustrações. Eu me considero uma iniciante em .NET e demorei um dia inteiro para conseguir encontrar a solução que descrevi acima.
 
@@ -114,10 +112,3 @@ Fique a vontade em compartilhar este artigo, mas principalmente, contribuir com 
 Um forte abraço! E como diria uma amigo *"dúvidas, traumas ou angústias"* sobre este conteúdo, estou a disposição para ajudar.
 
 **Cuide-se. Use máscara.**
-
-## Autora
-
-| [<img src="/images/avatar.jpeg" width=115><br><sub>Mari Rizzo</sub>](https://github.com/mar1zzo) 
-| :---: | 
-
-<br/>
