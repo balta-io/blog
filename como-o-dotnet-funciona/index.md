@@ -125,4 +125,6 @@ Podemos afirmar isto pois depois de atribuído um valor a variável com `var`, n
 ### Objects
 
 ## Managed e Unmanaged Code
+
 ### CLR
+CLR é a sigla para **Common Language Runtime** ou traduzindo, Tempo de execução comum de linguagem.
