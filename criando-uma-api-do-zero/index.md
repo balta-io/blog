@@ -89,7 +89,7 @@ Antes de criar a classe acima, crie uma pasta dentro de Domain com o nome "Entit
 
 Dentro de Entities, crie um novo arquivo chamado CartaoVirtual.cs e adicione o código acima.
 
-As propriedades estão privadas para evitar que sejam alteradas externamente, corrompendo assim, o princípio aberto-fechado do SOLID. ([Leia mais sobre o SOLID aqui](https://medium.com/desenvolvendo-com-paixao/o-que-%C3%A9-solid-o-guia-completo-para-voc%C3%AA-entender-os-5-princ%C3%ADpios-da-poo-2b937b3fc530))
+As propriedades estão privadas para evitar que sejam alteradas externamente, corrompendo assim, o princípio aberto-fechado do SOLID.
 
 Como precisamos obrigatoriamente ter o email, número do cartão e a data de criação, criei um construtor com as 3 propriedades como parâmetro para que não seja possível criar um cartão virtual sem essas 3 informações.
 
@@ -99,7 +99,7 @@ Para trazer os dados na requisição e retornar o resultado, não é recomendado
 
 Logo, criei dois commands, um como input de dados e outro como resultado após a geração. Use o conhecimento que você já adquiriu até aqui e crie as pastas e arquivos dos commands exemplificados abaixo. Você consegue, vamos lá!!
 
-![Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled.png](Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled.png)
+![https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled.png](https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled.png?raw=true)
 
 Após criar as pastas e arquivos, vamos adicionar um pacote do Nuget chamado Flunt para nos auxiliar na verificação do email e nas futuras validações que o projeto necessitar.
 
@@ -146,7 +146,7 @@ Os handlers nada mais são que a execução das nossas regras de negócio. No no
 
 Assim como nos passos anteriores, crie uma pasta em Domain chamada de Handlers e crie um novo arquivo dentro desta pasta o chamando de  GerarCartaoVirtualHandler.cs
 
-![Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%201.png](Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%201.png)
+![https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%201.png](https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%201.png?raw=true)
 
 Neste arquivo iremos realizar os seguintes passos:
 
@@ -157,7 +157,7 @@ Neste arquivo iremos realizar os seguintes passos:
 
 DICA: Após criar a classe, comente os passos que irá seguir antes de implementar, isto fará com que a implementação seja mais direcionada em sua mente.
 
-![Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%202.png](Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%202.png)
+![https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%202.png](https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%202.png?raw=true)
 
 ## Passo 5 - Criando os testes
 
@@ -286,11 +286,11 @@ Instale o pacote Microsoft.EntityFramework.Core.InMemory dentro do projeto INFRA
 
 - Clique com o botão direito em cima do nome do projeto e depois em Manage Nuget Packages
 
-    ![Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%203.png](Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%203.png)
+    ![https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%203.png](https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%203.png?raw=true)
 
 - Depois pesquise pelo nome do pacote e faça a instalação
 
-![Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%204.png](Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%204.png)
+![https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%204.png](https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%204.png?raw=true)
 
  
 
@@ -651,19 +651,19 @@ app.UseSwagger();
 
 Acesse [https://localhost:5001/swagger/index.html](https://localhost:5001/swagger/index.html)
 
-![Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%205.png](Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%205.png)
+![https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%205.png](https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%205.png?raw=true)
 
 Testando Post com email inválido
 
-![Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%206.png](Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%206.png)
+![https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%206.png](https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%206.png?raw=true)
 
 Testando POST com email correto
 
-![Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%207.png](Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%207.png)
+![https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%207.png](https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%207.png?raw=true)
 
 Testando GET
 
-![Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%208.png](Criando%20uma%20API%20do%20zero%20com%20NET%20Core%203%201%20e%20EF%20Core%2075a530f957854f03aa66fcf86cc1b3ae/Untitled%208.png)
+![https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%208.png](https://github.com/balta-io/blog/blob/92bff0d4b3690c54a2c5e8394bc99364bbddadd7/criando-uma-api-do-zero/images/Untitled%208.png?raw=true)
 
 ## Conclusão
 
