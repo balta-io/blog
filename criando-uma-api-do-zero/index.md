@@ -1,4 +1,10 @@
-# Criando uma API do zero com .NET Core 3.1 e EF Core
+---
+title: Criando uma API do zero com .NET Core 3.1 e EF Core
+published: false
+description: 
+tags: 
+cover_image: TBD
+---
 
 Olá, tudo bem? Vamos criar uma API do zero com .NET e EF de um modo fácil e passando por todos os detalhes do mundo .NET? 
 
