@@ -120,9 +120,18 @@ Não! O **var** é apenas um **syntax sugar**, por baixo dos panos, o que está 
 
 Podemos afirmar isto pois depois de atribuído um valor a variável com `var`, não podemos mudar seu tipo, como mostrado no código anterior.
 
+### Objects
+Algo que pode confundir um pouco sua cabeça no C# é que ele possui um tipo chamado `object`, que literalmente pode ser qualquer tipo de objeto.
+
+Estes tipos podem receber tipos primitivos e complexos, porém qualquer possível erro só será capturado em tempo de execução.
+
+Particularmente recomendo utilizar objects apenas em casos específicos.
+
 ### Tipos dinâmicos
 
-### Objects
+Enquanto os `object`
+
+### Tuplas
 
 ## Managed e Unmanaged Code
 
