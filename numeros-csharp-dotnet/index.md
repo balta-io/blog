@@ -1,5 +1,3 @@
-# Números no C# e .NET
-
 Sumário
  1. [Introdução](#introducao)
  2. [Números inteiros](#numint)
