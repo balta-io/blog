@@ -19,7 +19,7 @@ Abordaremos a definição e uso dos tipos de números no C# e .NET com o intuito
 <div id='numint'></div>
 
 ## Números inteiros
-No .NET os números inteiros são definidos por 3 tipos que são: int, long e short. O int é comumnente usado no geral para números considerados razoavéis. O long é utilizado para números longos e o short para números menores como seus nomes sugerem.
+No .NET os números inteiros são definidos por 3 tipos que são: int, long e short. O int é comumente usado no geral para números considerados razoavéis. O long é utilizado para números longos e o short para números menores como seus nomes sugerem.
 
 Todos os 3 tipos acima descritos contam com os tipos ***unsigned*** que significa um tipo sem sinal. Então enquanto o int aceita valores negativos, o uint aceita apenas valores positivos. O mesmo acontece com o long, ulong, short e ushort. Em um exemplo mais prático, poderiamos atribuir um valor negativo a um destes tipos mas não para um unsigned, desta forma:
 
