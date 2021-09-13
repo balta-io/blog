@@ -194,8 +194,8 @@ a == 0; // False
 a != 0; // True
 a > 0; // True
 a < 0; // False
-x <= 0; // False
-x >= 0; // True
+a <= 0; // False
+a >= 0; // True
 ```
 
 <div id='referencias'></div>
