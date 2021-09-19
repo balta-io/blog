@@ -157,3 +157,4 @@ Assim como os [Minimal APIs](https://balta.io/blog/aspnet-minimal-apis), outras 
 
 ### Fontes
 * [David Fowler](https://twitter.com/davidfowl)
+* [Código Fonte](https://github.com/andrebaltieri/minimal-signalr-example)
