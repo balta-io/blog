@@ -64,7 +64,7 @@ Utilizaremos os seguintes comandos para criar nossos components diretamente na n
 
 Com esses três componentes criados, iremos adicionar suas respectivas rotas no arquivo **app-routing-module.ts**, que ficará assim, por enquanto:
 
-<img src="https://github.com/balta-io/blog/blob/main/login-logout-protecao-de-rotas-envio-de-tokens-com-angular/images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-route-modules.jpg" width="500">
+<img src="https://raw.githubusercontent.com/balta-io/blog/main/login-logout-protecao-de-rotas-envio-de-tokens-com-angular/images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-route-modules.jpg" width="500">
 
 Perceba que utilizamos uma jogadinha nas rotas, onde a Home e as demais que forem surgir e que também necessitem do layout padrão (header, menu) e login do usuário, serão rotas filhas do component principal.
 
