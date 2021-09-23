@@ -58,6 +58,7 @@ Utilizaremos os seguintes comandos para criar nossos components diretamente na n
 
 `ng g c pages/compartilhado/principal`
 
+
 <img src="https://raw.githubusercontent.com/balta-io/blog/main/login-logout-protecao-de-rotas-envio-de-tokens-com-angular/images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-nossos-componentes.jpg" width="500">
 
 ##### Os arquivos .spec.ts  poderão ser apagados, pois servem para testar a aplicação, e não iremos usá-los no momento.</h5>
