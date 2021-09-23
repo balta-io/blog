@@ -58,7 +58,7 @@ Utilizaremos os seguintes comandos para criar nossos components diretamente na n
 
 `ng g c pages/compartilhado/principal`
 
-<img src="https://github.com/balta-io/blog/blob/main/login-logout-protecao-de-rotas-envio-de-tokens-com-angular/images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-nossos-componentes.jpg?raw=true" width="500">
+<img src="https://raw.githubusercontent.com/balta-io/blog/blob/main/login-logout-protecao-de-rotas-envio-de-tokens-com-angular/images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-nossos-componentes.jpg?raw=true" width="500">
 
 ##### Os arquivos .spec.ts  poderão ser apagados, pois servem para testar a aplicação, e não iremos usá-los no momento.</h5>
 
@@ -102,7 +102,7 @@ Agora precisamos inserir nosso HTML e CSS que será utilizado como layout padrã
 
 Observe que existe outro <strong>router-outlet</strong> no componente principal, e será justamente nesse ponto que as rotas filhas do componente principal serão carregadas. Para visualizarmos melhor, agora já podemos testar como está ficando nossa aplicação, utilize o comando `ng serve --o`
 
-<img src="https://github.com/balta-io/blog/blob/main/login-logout-protecao-de-rotas-envio-de-tokens-com-angular/images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-exemplo-login-teste.jpg" width="600">
+<img src="https://raw.githubusercontent.com/balta-io/blog/blob/main/login-logout-protecao-de-rotas-envio-de-tokens-com-angular/images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-exemplo-login-teste.jpg" width="600">
 
 E olha só que bacana o que já temos na nossa rota raíz, o componente <strong>principal</strong> e seu filho <strong>home</strong>...
 
@@ -324,7 +324,7 @@ export class LoginComponent implements OnInit {
 
 E olha só que legal o que temos até agora:
 
-<img src="https://github.com/balta-io/blog/blob/main/login-logout-protecao-de-rotas-envio-de-tokens-com-angular/images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-exemplo-login.gif">
+<img src="https://raw.githubusercontent.com/balta-io/blog/blob/main/login-logout-protecao-de-rotas-envio-de-tokens-com-angular/images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-exemplo-login.gif">
 
 <div id='protegendonossasrotas'></div> 
 
