@@ -42,7 +42,7 @@ Irei partir do princípio que você já saiba criar um projeto em Angular e tenh
 
 Com o projeto já criado, irei utilizar a seguinte estrutura:
 
-<img src="images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-estrutura.png" width="500">
+<img src="login-logout-protecao-de-rotas-envio-de-tokens-com-angular-estrutura.png" width="500">
 
 ><h4>Estilizando o projeto</h4>
 Para estilizar minhas páginas, formulários, botões, etc, irei utilizar o <strong>Angular Material</strong>, porém, você pode utilizar o framework de sua preferência.
@@ -52,7 +52,7 @@ Em seguida escolher um tema e dar y (YES) para sempre rsrs.
 
 Iremos importar os módulos que vamos utilizar do Material em nosso módulo principal app.module.ts, e aproveitando a viagem, iremos importar os módulos necessários para nossos formulários reativos e nossas chamadas HTTPs, que ficará assim:
 
-<img src="images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-importando-modulos.jpg" width="500">
+<img src="login-logout-protecao-de-rotas-envio-de-tokens-com-angular-importando-modulos.jpg" width="500">
 
 <div id='criandocomponentes'></div> 
 
@@ -68,13 +68,13 @@ Utilizaremos os seguintes comandos para criar nossos components diretamente na n
 
 `ng g c pages/compartilhado/principal`
 
-<img src="images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-nossos-componentes.jpg" width="500">
+<img src="login-logout-protecao-de-rotas-envio-de-tokens-com-angular-nossos-componentes.jpg" width="500">
 
 ##### Os arquivos .spec.ts  poderão ser apagados, pois servem para testar a aplicação, e não iremos usá-los no momento.</h5>
 
 Com esses três componentes criados, iremos adicionar suas respectivas rotas no arquivo **app-routing-module.ts**, que ficará assim, por enquanto:
 
-<img src="images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-route-modules.jpg" width="500">
+<img src="login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-route-modules.jpg" width="500">
 
 Perceba que utilizamos uma jogadinha nas rotas, onde a Home e as demais que forem surgir e que também necessitem do layout padrão (header, menu) e login do usuário, serão rotas filhas do component principal.
 
@@ -82,7 +82,7 @@ Porém, para que tudo funcione como desejamos, será necessário realizar as seg
 
 Primeiramente, apague tudo no arquivo **app.component.html** e deixe apenas o router-outlet, que como bem sabemos, é o responsável por acessar nossas rotas:
 
-<img src="images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-route-outlet.jpg" width="300">
+<img src="login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-route-outlet.jpg" width="300">
 
 Agora precisamos inserir nosso HTML e CSS que será utilizado como layout padrão. Abaixo irei mostrar como ficou o meu, porém, você pode brincar à vontade com o seu, caso não queira fazer igual:
 
@@ -112,7 +112,7 @@ Agora precisamos inserir nosso HTML e CSS que será utilizado como layout padrã
 
 Observe que existe outro <strong>router-outlet</strong> no componente principal, e será justamente nesse ponto que as rotas filhas do componente principal serão carregadas. Para visualizarmos melhor, agora já podemos testar como está ficando nossa aplicação, utilize o comando `ng serve --o`
 
-<img src="images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-exemplo-login-teste.jpg" width="600">
+<img src="login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-exemplo-login-teste.jpg" width="600">
 
 E olha só que bacana o que já temos na nossa rota raíz, o componente <strong>principal</strong> e seu filho <strong>home</strong>...
 
@@ -334,7 +334,7 @@ export class LoginComponent implements OnInit {
 
 E olha só que legal o que temos até agora:
 
-<img src="images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-exemplo-login.gif">
+<img src="login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-exemplo-login.gif">
 
 <div id='protegendonossasrotas'></div> 
 
