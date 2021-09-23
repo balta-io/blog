@@ -72,7 +72,7 @@ Porém, para que tudo funcione como desejamos, será necessário realizar as seg
 
 Primeiramente, apague tudo no arquivo **app.component.html** e deixe apenas o router-outlet, que como bem sabemos, é o responsável por acessar nossas rotas:
 
-<img src="https://github.com/balta-io/blog/blob/main/login-logout-protecao-de-rotas-envio-de-tokens-com-angular/images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-route-outlet.jpg" width="300">
+<img src="https://raw.githubusercontent.com/balta-io/blog/main/login-logout-protecao-de-rotas-envio-de-tokens-com-angular/images/login-logout-protecao-de-rotas-envio-de-tokens-com-angular-app-route-outlet.jpg" width="300">
 
 Agora precisamos inserir nosso HTML e CSS que será utilizado como layout padrão. Abaixo irei mostrar como ficou o meu, porém, você pode brincar à vontade com o seu, caso não queira fazer igual:
 
