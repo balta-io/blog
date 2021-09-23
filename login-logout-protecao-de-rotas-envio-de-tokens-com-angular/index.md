@@ -6,8 +6,6 @@ seo_description: login/logout em algular atravez de tokens e rotas protegidas.
 title: Login/Logout, Proteção de rotas e envio de tokens com Angular
 ---
 
-# Login/Logout, Proteção de rotas e envio de tokens com Angular
-
 Sumário
  1. [Introdução](#introducao)
  2. [Primeiros passos](#primeirospassos)
