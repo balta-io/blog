@@ -285,7 +285,7 @@ Vamos corrigir a requisição conforme as mensagens que recebemos:
 }
 ```
 Enviando a requisição corrigida temos o seguinte resultado:
-![Requisição](https://raw.githubusercontent.com/diegostan/aspnet-refit/master/images/swagger2post.png)
+![Requisição](https://raw.githubusercontent.com/diegostan/aspnet-refit/master/images/swagger3post.png)
 
 Agora recebemos o ``statusCode 201 created`` e a mensagem de *Carro cadastrado com sucesso*. 
 
