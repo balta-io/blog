@@ -249,13 +249,13 @@ dotnet run
 ```
 Vamos acessar a interface do ``Swagger`` no caminho padrão de uma aplicação ASP NET 5 (``https://localhost:5001/swagger/index.html``) e veremos a interface gráfica:
 
-![Requisição](https://raw.githubusercontent.com/diegostan/aspnet-refit/master/images/swagger1.png)
+![Requisição](https://github.com/diegostan/blog/blob/master/aspnet-refit2/images/swagger1.png?raw=true)
 
 ### Solicitando o método Get
 
 Vamos executar o método ``Get``  para obtermos a resposta da API externa:
 
-![Requisição](https://raw.githubusercontent.com/diegostan/aspnet-refit/master/images/swagger3get.png)
+![Requisição](https://github.com/diegostan/blog/blob/master/aspnet-refit2/images/swagger3get.png?raw=true)
 > Tivemos o retorno exatamente como o DTO que modelamos anteriormente
 
 ### Solicitando o método Post
@@ -270,7 +270,7 @@ Para executarmos o método ``Post`` precisamos passar no corpo da requisição d
 }
 ```
 Agora vamos executar o método para vermos a resposta:
-![Requisição](https://raw.githubusercontent.com/diegostan/aspnet-refit/master/images/swagger1post.png)
+![Requisição](https://github.com/diegostan/blog/blob/master/aspnet-refit2/images/swagger1post.png?raw=true)
 
 Por mais que a requisição tenha sido realizada com sucesso, dentro da nossa API externa temos um tratamento de erro, recebemos no nosso retorno personalizado um  ``statusCode 400 bad request`` e algumas informações sobre o preenchimento dos campos.
 
@@ -281,11 +281,11 @@ Vamos corrigir a requisição conforme as mensagens que recebemos:
   "description": "Chevrolet Opala 4.1S 2p",
   "price": 50000,
   "year": 1988,
-  "category": "Coupe de luxo"
+  "category": "Cupe de luxo"
 }
 ```
 Enviando a requisição corrigida temos o seguinte resultado:
-![Requisição](https://raw.githubusercontent.com/diegostan/aspnet-refit/master/images/swagger3post.png)
+![Requisição](https://github.com/diegostan/blog/blob/master/aspnet-refit2/images/swagger3post.png?raw=true)
 
 Agora recebemos o ``statusCode 201 created`` e a mensagem de *Carro cadastrado com sucesso*. 
 
