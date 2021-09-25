@@ -281,7 +281,7 @@ Vamos corrigir a requisição conforme as mensagens que recebemos:
   "description": "Chevrolet Opala 4.1S 2p",
   "price": 50000,
   "year": 1988,
-  "category": "Cupe de luxo"
+  "category": "Coupe de luxo"
 }
 ```
 Enviando a requisição corrigida temos o seguinte resultado:
