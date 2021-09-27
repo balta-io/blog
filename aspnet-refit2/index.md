@@ -1,5 +1,3 @@
-## Consumindo API's de forma simplificada com Refit e ASP NET 5
-
 Quando estamos trabalhando com uma aplicação que consome e consolida dados, sempre pensamos no conceito de repositórios, seja ele um banco de dados relacional como o SQL Server ou alguma base não relacional como o MongoDB.
 Porém existem cenários na qual o repositório provedor desses dados pode ser uma API externa. Nesse caso precisamos realizar os procedimentos de conexão HTTP, criarmos diversos objetos para depois realizarmos o consumo desse provedor. 
 O Refit chega justamente para facilitar a nossa vida na hora da criação desses procedimentos, nesse artigo vamos ver que com poucas linhas de código iremos consumir uma API externa por meio de uma API ASP NET 5.
