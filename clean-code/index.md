@@ -608,7 +608,7 @@ public void RealizarPedido()
 // Utilize
 public void SaveCustomer() { ... }
 public void ApplyDiscount() { ... }
-public void UpdateInventoy() { ... }
+public void UpdateInventory() { ... }
 public void PlaceOrder() { ... }
 ```
 
