@@ -6,6 +6,8 @@ Este artigo atualmente utiliza a versão **5.0.0-rc.1** do ASP.NET/.NET, o que s
 * [ASP.NET Core 3 – Autenticação e Autorização com Bearer e JWT](https://balta.io/artigos/aspnetcore-3-autenticacao-autorizacao-bearer-jwt)
   * Versão anterior deste artigo com **ASP.NET Core 3**
 
+[![ASP.NET 5 e 6 - Autenticação e Autorização com Bearer e Token JWT!](http://img.youtube.com/vi/vAUXU0YIWlU/0.jpg)](http://www.youtube.com/watch?v=vAUXU0YIWlU "ASP.NET 5 e 6 - Autenticação e Autorização com Bearer e Token JWT")
+
 Preparando o terreno
 --------------------
 
