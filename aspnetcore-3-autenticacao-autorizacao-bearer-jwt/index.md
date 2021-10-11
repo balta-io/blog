@@ -6,6 +6,8 @@ Entretanto, no ASP.NET Core 3 houve algumas mudanças, e o artigo anterior ficou
   
 Então, neste artigo vou mostrar como podemos criar, da forma mais simples e funcional possível, um esquema de autenticação e autorização baseada em perfis (Roles) no ASP.NET Core 3.0.
 
+[![ASP.NET 5 e 6 - Autenticação e Autorização com Bearer e Token JWT!](http://img.youtube.com/vi/vAUXU0YIWlU/0.jpg)](http://www.youtube.com/watch?v=vAUXU0YIWlU "ASP.NET 5 e 6 - Autenticação e Autorização com Bearer e Token JWT")
+
 Preparando o terreno
 --------------------
 
