@@ -60,6 +60,22 @@ Se você utilizou as mesmas configurações deste artigo, sua **Connection Strin
 Server=localhost,1433;Database=balta;User ID=sa;Password=1q2w3e4r@#$
 ```
 
+## Erros comuns
+
+#### A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider
+
+Nas novas versões da imagem do SQL Server, no Windows, tem ocorrido um problema de SSL. Para resolver este problema, primeiro execute os seguintes comandos:
+```
+dotnet dev-certs https --clean
+dotnet dev-certs https --trust
+```
+
+Feito isto, os certificados HTTPS do .NET estarão atualizados e funcionais. Desta forma, adicione os parâmetros `Trusted_Connection` e `TrustServerCertificate` na sua **Connection String** como mostrado abaixo:
+
+```
+Server=localhost,1433;Database=balta;User ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False; TrustServerCertificate=True;
+```
+
 ### GUI Client
 
 Caso queira gerenciar seu banco de uma forma visual, você pode utilizar uma das ferramentas gratuitas abaixo:
