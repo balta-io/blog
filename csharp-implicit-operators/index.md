@@ -1,4 +1,4 @@
-Uma das funcionalidades
+Implicit Operators permitem adicionar comportamentos de conversão a objetos Built In ou complexos, de maneira que o compilador possa entende-las de forma implícita.
 
 ## O que são conversões explícitas e implícitas
 Conversões implícitas são aquelas feitas pelo runtime de forma automática, que ele entende naturalmente, como por exemplo.
