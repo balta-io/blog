@@ -46,4 +46,4 @@ file.Close();
 ```
 
 ## Conclusão
-C# não é difícil, muitas vezes nós complicamos muito as coisas que podem (E devem) ser simples! Escrever arquivos é uma tarefa comum em todas as linguagens e o C# torna isto simples e direto ao ponto!
+C# não é difícil, muitas vezes nós complicamos muito as coisas que podem (E devem) ser simples! Ler arquivos é uma tarefa comum em todas as linguagens e o C# torna isto simples e direto ao ponto!
