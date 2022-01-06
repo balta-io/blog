@@ -80,7 +80,7 @@ File.Delete(filePath);
 File.Move(filePath, @"C:\dev\temp\novo.txt", overwrite: true);
 ```
 
-### Subscrituir um arquivo
+### Substituir um arquivo
 ```csharp
 File.Replace(@"C:\dev\outro.txt", filePath, @"C:\dev\backup.txt");
 ```
