@@ -65,55 +65,59 @@ file.Close();
 > **IMPORTANTE:** Em caso de arquivos grandes, é recomendado utilizar o **StreamWriter** para escrita e **StreamReader** para leitura.
 
 ### Copiar um arquivo
+Para copiar um arquivo podemos usar o `File.Copy`, informando o caminho **completo** do arquivo atual e seu destino.
 
 ```csharp
 File.Copy(filePath, @"C:\dev\outro.txt");
 ``` 
+É importante notar que neste caso, se houver outro arquivo com mesmo nome, você receberá uma execeção. Para sobrescrever o arquivo de origem caso haja, utilize o parâmetro adicional para `overwrite` no método `Copy`.
 
-### Excluir um arquivo
 ```csharp
-File.Delete(filePath);
-```
-
+File.Copy(filePath, @"C:\dev\outro.txt", true); // Vai sobrescrever se precisar
+``` 
 ### Mover um arquivo
+Da mesma forma, podemos utilizar o `File.Move` para mover um arquivo de um diretório para outro, considerando os mesmos pontos do método anterior.
+
 ```csharp
 File.Move(filePath, @"C:\dev\temp\novo.txt", overwrite: true);
 ```
 
 ### Substituir um arquivo
+Para finalizar, podemos utilizar o `File.Replace` para substituir um arquivo, também considerando os mesmos pontos dos métodos anteriores.
+
 ```csharp
 File.Replace(@"C:\dev\outro.txt", filePath, @"C:\dev\backup.txt");
 ```
 
+### Excluir um arquivo
+Caso queira excluir um arquivo, podemos utilizar o método `File.Delete` informando o caminho completo do mesmo. Caso o arquivo não seja encontrado ou não possa ser excluído, receberemos uma exceção.
+
+```csharp
+File.Delete(filePath);
+```
+
 ### Verificar se um arquivo existe
+Para verificar se um arquivo existe, podemos utilizar o `File.Exists` informando o caminho completo do arquivo. Este método nos retorna `true` ou `false` para dizer se o arquivo existe ou não.
+
 ```csharp
-File.Exists(filePath);
-```
-### Mover um arquivo
-```csharp
-File.Move(filePath, @"C:\dev\temp\novo.txt", overwrite: true);
+File.Exists(filePath); // Retorna um booleano
 ```
 
-### Abrir um arquivo
-```csharp
-var file = File.Open(filePath, FileMode.Open);
-var file = File.OpenRead(filePath); // FileStream
-```
+### Abertura e leitura de arquivos
 
-### Ler um arquivo
-REFERENCIAR ARTIGO ANTERIOR
-```csharp
-var file = File.OpenText(filePath); // StreamReader
-Console.WriteLine(file.ReadToEnd());
-```
+Para saber mais sobre a abertura e leitura de arquivos, consulte nosso post anterior sobre [Como ler arquivos em C#](https://balta.io/blog/lendo-arquivos-em-csharp).
 
 ### Obter data de última modificação do arquivo
+Outro método que já precisei utilizar e foi bem útil chama-se `File.GetLastAccessTime` que retorna a data/hora do último acesso a um arquivo.
+
 ```csharp
 var time = File.GetLastAccessTime(filePath); // DateTime
 Console.WriteLine(time);
 ```
 
 ### Obter atributos do arquivo
+Para demais atributos do arquivo, podemos utilizar o `File.GetAttributes` que retorna um **enumerador**.
+
 ```csharp
 var attrs =  File.GetAttributes(filePath);
 if ((attrs & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
@@ -122,3 +126,6 @@ if ((attrs & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
 if ((attrs & FileAttributes.Compressed) == FileAttributes.Compressed)
     Console.WriteLine("compressed");
 ```
+
+## Conclusão
+O `System.File` tem um enorme leque de opções para manipulação de arquivos, e seu uso é simples e direto. Devemos nos atentar apenas ao tratamento de erros pela sensibilidade na leitura/escrita de arquivos.
