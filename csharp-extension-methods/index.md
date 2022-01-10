@@ -70,7 +70,7 @@ public class Course : Entity
 
 Isto faz todo sentido para o modelo, para o reflexo que temos do objeto em relação ao banco de dados, mas não faz sentido algum para as telas, as Views, o que o usuário vê. Na verdade o usuário enxerga uma porcentagem bem menor de informações.
 
-Para isto funcionar, nós temos as **ViewModels** ou **DTOs** que são modelos especiais que servem como transporte de dados de um lugar para outro. Neste caso da camada mais abaixo para a camada de aprentação, o ASP.NET.
+Para isto funcionar, nós temos as **ViewModels** ou **DTOs** que são modelos especiais que servem como transporte de dados de um lugar para outro. Neste caso da camada mais abaixo para a camada de apresentação, o ASP.NET.
 
 ```csharp
 public class CourseCardViewModel
