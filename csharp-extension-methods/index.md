@@ -1,4 +1,4 @@
-Extensiom Methods ou métodos de extensão são a forma que temos de adicionar funcionalidades extras a qualquer tipo no C#.
+Extension Methods ou métodos de extensão são a forma que temos de adicionar funcionalidades extras a qualquer tipo no C#.
 
 ## Extension Methods
 No [artigo anterior onde falei sobre como gerar arquivos CSV no C#](https://balta.io/blog/csharp-gerar-csv) nós passamos por uma situação que precisou de um **Extension Method** para converter uma `string` para um `DateTime`.
