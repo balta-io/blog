@@ -99,8 +99,6 @@ Write-Host "balta.io"
 $DefaultUser = 'balta'
 ```
 
-Pronto, você agora tem um lindo terminal a nível Mac e Linux para ostentar.
-
 ## Power Level 10K
 
 ![image](https://baltaio.blob.core.windows.net/static/images/articles/windows-terminal-p10k.jpg)
@@ -139,6 +137,39 @@ Pronto, agora só precisamos alterar o tema para o PW10, executando `code $PROFI
 Import-Module posh-git
 Import-Module oh-my-posh
 Set-PoshPrompt -Theme  ~/pwsh10k.omp.json
+```
+
+## Módulos adicionais (2022)
+
+![image](https://baltaio.blob.core.windows.net/static/images/articles/windows-terminal-2022.png)
+
+**ATUALIZADO EM 12/01/2022**
+
+### Adicionando ícones as pastas
+O módulo `PSGallery` adiciona ícones as pastas quando usamos o comando `ls`. Fica bem legal e ele muda a cor inclusive.
+
+```
+Install-Module -Name Terminal-Icons -Repository PSGallery
+```
+
+Com o módulo instalado, basta importar ele no arquivo do profile.
+
+```
+Import-Module -Name Terminal-Icons
+```
+
+### Adicionando módulos
+
+Um dos recursos incríveis do **Oh My Posh** é o uso módulos ou como eles chamam, **Segments**. Tem diversos segments, até para **Spotify**. Neste exemplo vamos usar o do `Git`, `.NET` e `Azure`, mas recomendo ver [este link na sessão Segments](https://ohmyposh.dev/docs/) para mais detalhes.
+
+Para adicionar segmentos eu criei um arquivo chamado `ohmyposh.json` no `$HOME` do Windows (Vale para Mac ou Linux também) e depois referenciei ele no arquivo de perfil (`code $PROFILE`). Como o arquivo ficou grande, [segue o GIST dele](https://gist.github.com/andrebaltieri/2772c8c4622f860f456f5bee75d57b2f).
+
+```
+Import-Module oh-my-posh
+Import-Module -Name Terminal-Icons
+Clear-Host
+
+oh-my-posh --init --shell pwsh --config ~/ohmyposh.json | Invoke-Expression
 ```
 
 Reinicie os terminais abertos e pronto 💜
