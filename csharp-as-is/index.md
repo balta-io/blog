@@ -36,24 +36,40 @@ if (p is Documento)
 
 Da mesma forma, podemos aplicar uma comparação aos objetos utilizando o comparador `is` como exemplificado na linha `p is Documento`. O código fica bem mais legível.
 
+### Utilizando IS na comparação de nulos
+Talvez um dos cenários que vejo mais uso para o `is` seja na comparação de objetos com `null`, tanto para verificar se é nulo ou não é nulo. Vamos conferir a mudança olhando um código sem uso do `is`.
+
+```csharp
+if(student == null)
+    Console.WriteLine("Nulo");
+
+if(student != null)
+    Console.WriteLine("Não Nulo");
 ```
-// obj is null
-// obj is not null
+Este mesmo código funcionaria apenas aplicando o `is` ou `is not` na comparação, algo sutil a nível de código mas que traz uma legibilidade infinitamente maior.
+
+```csharp
+if(student is null)
+    Console.WriteLine("Nulo");
+
+if(student is not null)
+    Console.WriteLine("Não Nulo");
 ```
 
+## Operador AS
+Outro operador útil que pode melhorar bastante a legibilidade do código é o `as`, para fazer conversões explícitas de objetos. É comum vermos o uso do tipo em frente a variável, utilizando parênteses para fazer a conversão, como mostrado abaixo.
 
-______________________________________________
-
-
+```csharp
+var documento = new Documento();
+var cpf = (CPF)documento;
 ```
-var bessie2 = new Cow();
-var bessieAnimal = bessie2 as Animal;
-Console.WriteLine(bessieAnimal is not null);
 
-var imNotACow = new object();
-var notBessie = imNotACow as Cow;
-Console.WriteLine(notBessie is null ? "The object is null" : "The object is not null");
+Porém, podemos fazer esta conversão de uma forma bem mais elegante utilizando `as` ao invés de `(CPF)` como mostrado no exemplo anterior.
 
-// obj is null
-// obj is not null
+```csharp
+var documento = new Documento();
+var cpf = documento as CPF;
 ```
+
+## Conclusão
+Com dois operadores novos e simples, o `is` e `as` podemos melhorar muito o nosso código, entregando uma melhor legibilidade e facilitando o entendimento.
