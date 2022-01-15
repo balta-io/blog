@@ -81,6 +81,10 @@ Então realize a alteração da configuração <code>fontFace</code> conforme mo
 "fontFace":  "Cascadia Code PL"
 ```
 
+### Fontes adicionais do OhMyPosh
+**ATUALIZADO EM 15/01/2022**
+Para utilizar o OhMyPost você precisa instalar a fonte [Caskadya Cove Nerd Font](https://www.nerdfonts.com/font-downloads).
+
 ## Configurações adicionais
 
 Em adicional, eu gosto de sempre limpar a tela do terminal em seu início, e isto pode ser feito utilizando a linha <code>Clear-Host</code> como mostrado abaixo. Também podemos adicionar uma mensagem de boas vindas utilizando o <code>Write-Host</code>.
