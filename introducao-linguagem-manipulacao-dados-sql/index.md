@@ -2,6 +2,8 @@
 
 Provavelmente você já ouviu falar em linguagens de marcação, de estilização e de programação, não é mesmo? Mas, você sabia que existem as **linguagens de manipulação de dados**? É exatamente sobre esse tipo de linguagem que vou te explicar agora. Continue lendo e entenda um pouco mais sobre o **SQL**!
 
+![SQL - Linguagem de manipulação de dados](./images/banco-dados.png)
+
 ## O que é SQL?
 
 O SQL (Structured Query Language) é uma “Linguagem de Consulta Estruturada”, utilizada para acessar e manipular registros em um banco de dados. Dito isso, vale ressaltar que essa linguagem é executada de forma declarativa. Mas afinal de contas, o que é uma linguagem declarativa? Existem outros tipos de linguagens? 
@@ -23,6 +25,7 @@ A “Teoria dos conjuntos” é uma teoria matemática capaz de agrupar elemento
 
 No SQL, cada tabela representa um conjunto e por isso os conceitos da teoria dos conjuntos passam a ser tão importantes nos bancos de dados relacionais.
 
+![Exemplos de joins no SQL](./images/SQL-Joins.jpg)
 
 *Exemplo de união entre conjuntos utilizando o comando JOIN do SQL.*
 
@@ -37,9 +40,13 @@ Elas se relacionam por meio de chaves identificadoras, que devem estar presentes
 * **Chave Primária:** IDs dos registros de uma entidade “X”, localizados na própria tabela da entidade “X”.
 * **Chave Estrangeira:** IDs dos registros de uma entidade “X”, localizado em uma outra tabela “Y” e que faz referência a chave primária da tabela “X”.
 
+![Exemplos de chaves primárias e chaves extrangeiras no SQL](./images/relational-database.png)
+
 *Esquema que representa a utilização de chaves primárias e estrangeiras em diferentes tabelas.*
 
 Dessa forma, por meio de elementos em comum em diferentes tabelas, é possível aplicar a teoria dos conjuntos e utilizar a linguagem SQL para realizar consultas e acessar dados de múltiplas tabelas ao mesmo tempo.
+
+---
 
 ### Referências:
 https://docs.microsoft.com/pt-br/learn/modules/introduction-to-transact-sql/
