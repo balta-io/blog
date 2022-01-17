@@ -24,7 +24,7 @@ A “Teoria dos conjuntos” é uma teoria matemática capaz de agrupar elemento
 No SQL, cada tabela representa um conjunto e por isso os conceitos da teoria dos conjuntos passam a ser tão importantes nos bancos de dados relacionais.
 
 
-Exemplo de união entre conjuntos utilizando o comando JOIN do SQL.
+*Exemplo de união entre conjuntos utilizando o comando JOIN do SQL.*
 
 ## Banco de Dados Relacionais
 
@@ -37,7 +37,7 @@ Elas se relacionam por meio de chaves identificadoras, que devem estar presentes
 * **Chave Primária:** IDs dos registros de uma entidade “X”, localizados na própria tabela da entidade “X”.
 * **Chave Estrangeira:** IDs dos registros de uma entidade “X”, localizado em uma outra tabela “Y” e que faz referência a chave primária da tabela “X”.
 
-Esquema que representa a utilização de chaves primárias e estrangeiras em diferentes tabelas.
+*Esquema que representa a utilização de chaves primárias e estrangeiras em diferentes tabelas.*
 
 Dessa forma, por meio de elementos em comum em diferentes tabelas, é possível aplicar a teoria dos conjuntos e utilizar a linguagem SQL para realizar consultas e acessar dados de múltiplas tabelas ao mesmo tempo.
 
