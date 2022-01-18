@@ -67,4 +67,5 @@ Dessa forma, por meio de elementos em comum em diferentes tabelas, é possível 
 [Teoria dos Conjuntos](https://www.todamateria.com.br/teoria-dos-conjuntos/)
 
 Figura 1 - [Documentação Microsoft Learn](https://docs.microsoft.com/pt-br/learn/wwl-data-ai/introduction-to-transact-sql/media/relational-database.png)
+
 Figura 2 - [C.L. Moffatt, 2008](https://www.codeproject.com/KB/database/Visual_SQL_Joins/Visual_SQL_JOINS_V2.png)
