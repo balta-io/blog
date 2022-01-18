@@ -52,7 +52,7 @@ Elas se relacionam por meio de chaves identificadoras, que devem estar presentes
 
 ![Exemplos de chaves primárias e chaves extrangeiras no SQL](./images/relational-database.png)
 
-*Figura 2 Esquema que representa a utilização de chaves primárias e estrangeiras em diferentes tabelas.*
+*Figura 2 - Esquema que representa a utilização de chaves primárias e estrangeiras em diferentes tabelas.*
 
 Dessa forma, por meio de elementos em comum em diferentes tabelas, é possível aplicar a teoria dos conjuntos e utilizar a linguagem SQL para realizar consultas e acessar dados de múltiplas tabelas ao mesmo tempo.
 
