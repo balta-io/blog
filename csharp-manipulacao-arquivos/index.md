@@ -129,3 +129,8 @@ if ((attrs & FileAttributes.Compressed) == FileAttributes.Compressed)
 
 ## Conclusão
 O `System.File` tem um enorme leque de opções para manipulação de arquivos, e seu uso é simples e direto. Devemos nos atentar apenas ao tratamento de erros pela sensibilidade na leitura/escrita de arquivos.
+
+
+<div role="main" id="blog-s1-dotnet-134e3db1eea6c9829db1"></div>
+<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+<script type="text/javascript"> new RDStationForms('blog-s1-dotnet-134e3db1eea6c9829db1', 'UA-48664517-12').createForm();</script>

@@ -122,3 +122,8 @@ Aluno: Spiderman. Prioridade: student
 
 ## Conclusão
 O C# possui um enorme leque de formas para se trabalhar com listas e filas. É muito comum trabalharmos com `List`, `Enumerable` e esquecermos de outros tipos como o `PriorityQueue`, porém conhecer bem estes tipos pode aumentar ainda mais seu leque de soluções!
+
+
+<div role="main" id="blog-s1-dotnet-134e3db1eea6c9829db1"></div>
+<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+<script type="text/javascript"> new RDStationForms('blog-s1-dotnet-134e3db1eea6c9829db1', 'UA-48664517-12').createForm();</script>

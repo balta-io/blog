@@ -143,3 +143,8 @@ foreach (var item in data)
 
 ## Conclusão
 O LINQ é uma ferramenta poderosa (Mas não significa que você deve fazer tudo nele) que nos permite realizar consultas simples e complexas em listas de objetos que podem ser traduzidas para linguagem SQL.
+
+
+<div role="main" id="blog-s1-dotnet-134e3db1eea6c9829db1"></div>
+<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+<script type="text/javascript"> new RDStationForms('blog-s1-dotnet-134e3db1eea6c9829db1', 'UA-48664517-12').createForm();</script>

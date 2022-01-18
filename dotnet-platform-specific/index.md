@@ -77,3 +77,8 @@ public class CustomFileWriter
 
 ## Conclusão
 O .NET suporta múltiplas plataformas e embora possamos escrever a maior parte do código de forma bem genérica, alguns pontos ainda precisam ser específicos, então podemos fazer uso do `OperatingSystem` e `SupportedOSPlatform` para resolver este problema.
+
+
+<div role="main" id="blog-s1-dotnet-134e3db1eea6c9829db1"></div>
+<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+<script type="text/javascript"> new RDStationForms('blog-s1-dotnet-134e3db1eea6c9829db1', 'UA-48664517-12').createForm();</script>
