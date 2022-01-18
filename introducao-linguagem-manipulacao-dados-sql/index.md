@@ -1,8 +1,14 @@
-# Linguagens de Manipulação de Dados: Conheça o SQL!
+Sumário
+ 1. [Introdução](#introducao)
+ 2. [Teoria dos conjuntos vs SQL](#teoria-conjuntos-vs-sql)
+ 3. [Bancos de dados relacionais](#bancos-de-dados-relacionais)
+ 4. [Referências](#referencias)
 
 Provavelmente você já ouviu falar em linguagens de marcação, de estilização e de programação, não é mesmo? Mas, você sabia que existem as **linguagens de manipulação de dados**? É exatamente sobre esse tipo de linguagem que vou te explicar agora. Continue lendo e entenda um pouco mais sobre o **SQL**!
 
 ![SQL - Linguagem de manipulação de dados](./images/banco-dados.png)
+
+<div id='introducao'></div>
 
 ## O que é SQL?
 
@@ -17,7 +23,9 @@ Vale lembrar que, embora dê suporte a ambas, na maior parte do tempo o SQL segu
 
 Além disso, é importante destacar que o SQL é utilizado para se comunicar com **banco de dados relacionais**, e é exatamente por isso que é necessário aplicar a “Teoria dos conjuntos” na construção das consultas.
 
-## Teoria dos conjuntos x SQL
+<div id='teoria-conjuntos-vs-sql'></div>
+
+## Teoria dos conjuntos vs SQL
 
 Sabe aquela teoria matemática que você estudou no ensino fundamental/médio e não sabia quando iria utilizar isso na sua vida? É, o momento chegou!
 
@@ -29,7 +37,9 @@ No SQL, cada tabela representa um conjunto e por isso os conceitos da teoria dos
 
 *Exemplo de união entre conjuntos utilizando o comando JOIN do SQL.*
 
-## Banco de Dados Relacionais
+<div id='bancos-de-dados-relacionais'></div> 
+
+## Bancos de Dados Relacionais
 
 Os banco de dados relacionais são formados por tabelas compostas por linhas e colunas, que podem se relacionar entre si.
 
@@ -47,6 +57,8 @@ Elas se relacionam por meio de chaves identificadoras, que devem estar presentes
 Dessa forma, por meio de elementos em comum em diferentes tabelas, é possível aplicar a teoria dos conjuntos e utilizar a linguagem SQL para realizar consultas e acessar dados de múltiplas tabelas ao mesmo tempo.
 
 ---
+
+<div id='referencias'></div> 
 
 ### Referências:
 https://docs.microsoft.com/pt-br/learn/modules/introduction-to-transact-sql/
