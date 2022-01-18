@@ -100,3 +100,8 @@ Quer aprender mais sobre C#? Então confere nosso curso **Fundamentos do C#**, q
 
 ## Conclusão
 Embora seja algo fundamental, a criação e consumo de **strings** no C# pode ter suas pegadinhas e saber estes macetes pode salvar muito consumo de processamento e memória da sua aplicação, o que resulta em uma redução de custo de infraestrutura! Em suma, mais economia para o bolso da empresa!
+
+
+<div role="main" id="blog-s1-dotnet-134e3db1eea6c9829db1"></div>
+<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+<script type="text/javascript"> new RDStationForms('blog-s1-dotnet-134e3db1eea6c9829db1', 'UA-48664517-12').createForm();</script>

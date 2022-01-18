@@ -158,3 +158,8 @@ UserViewModel viewModel = user;
 ```
 ## Conclusão
 O C# é rico em conteúdo, mas muitas vezes deixamos alguns pontos passarem que pode nos ajudar muito na redução de código e uso de pacotes externos.
+
+
+<div role="main" id="blog-s1-dotnet-134e3db1eea6c9829db1"></div>
+<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+<script type="text/javascript"> new RDStationForms('blog-s1-dotnet-134e3db1eea6c9829db1', 'UA-48664517-12').createForm();</script>

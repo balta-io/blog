@@ -187,3 +187,8 @@ Tony Stark
 Os arquivos CSV são uma mão na roda! Eles podem ser abertos e manipulados por dentro do Excel e são fáceis de trabalhar por serem somente texto.
 
 Precisamos apenas tomar cuidado com seu leiaute, o que é fácil de se fazer quando temos uma tipagem igual no C#.
+
+
+<div role="main" id="blog-s1-dotnet-134e3db1eea6c9829db1"></div>
+<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+<script type="text/javascript"> new RDStationForms('blog-s1-dotnet-134e3db1eea6c9829db1', 'UA-48664517-12').createForm();</script>
