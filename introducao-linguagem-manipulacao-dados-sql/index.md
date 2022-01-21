@@ -35,7 +35,7 @@ No SQL, cada tabela representa um conjunto e por isso os conceitos da teoria dos
 
 ![Exemplos de joins no SQL](./images/SQL-Joins.jpg)
 
-*Exemplo de união entre conjuntos utilizando o comando JOIN do SQL.*
+*Figura 1 - Exemplo de união entre conjuntos utilizando o comando JOIN do SQL.*
 
 <div id='bancos-de-dados-relacionais'></div> 
 
@@ -52,7 +52,7 @@ Elas se relacionam por meio de chaves identificadoras, que devem estar presentes
 
 ![Exemplos de chaves primárias e chaves extrangeiras no SQL](./images/relational-database.png)
 
-*Esquema que representa a utilização de chaves primárias e estrangeiras em diferentes tabelas.*
+*Figura 2 - Esquema que representa a utilização de chaves primárias e estrangeiras em diferentes tabelas.*
 
 Dessa forma, por meio de elementos em comum em diferentes tabelas, é possível aplicar a teoria dos conjuntos e utilizar a linguagem SQL para realizar consultas e acessar dados de múltiplas tabelas ao mesmo tempo.
 
@@ -61,6 +61,11 @@ Dessa forma, por meio de elementos em comum em diferentes tabelas, é possível 
 <div id='referencias'></div> 
 
 ### Referências:
-https://docs.microsoft.com/pt-br/learn/modules/introduction-to-transact-sql/
 
-https://www.todamateria.com.br/teoria-dos-conjuntos/
+[Introdução ao Transact-SQL](https://docs.microsoft.com/pt-br/learn/modules/introduction-to-transact-sql/)
+
+[Teoria dos Conjuntos](https://www.todamateria.com.br/teoria-dos-conjuntos/)
+
+Figura 1 - [Documentação Microsoft Learn](https://docs.microsoft.com/pt-br/learn/wwl-data-ai/introduction-to-transact-sql/media/relational-database.png)
+
+Figura 2 - [C.L. Moffatt, 2008](https://www.codeproject.com/KB/database/Visual_SQL_Joins/Visual_SQL_JOINS_V2.png)
