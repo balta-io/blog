@@ -31,11 +31,11 @@ Caso não tenha os recursos acima descritos instalados você pode fazê-los atra
 
 Tendo nosso SGBD e editor instalados precisamos nos conectar ao banco de dados, para isto iremos abrir o Azure Data Studio e clicar no botão de `nova conexão` que fica no canto superior esquerdo da janela logo abaixo do menu principal.
 
-<!-- new-connection.png -->
+![new-connection.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/new-connection.png)
 
 Precisamos então nos conectar ao banco com o nome `Master` que é um banco criado por padrão durante a instalação. Para isto precisamos preencher os campos do formulário que aparece logo em seguida.
 
-<!-- connecting-master.png -->
+![connecting-master.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/connecting-master.png)
 
 Os campos são:
 
@@ -81,13 +81,13 @@ Por fim temos o nome. Aqui daremos um nome para o conjunto de configurações qu
 
 ## Criando o banco de dados
 
-<!-- database-with-fks.png -->
+![database-with-fks.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/database-with-fks.png)
 
 Criaremos um banco banco simples com a estrutura exemplificada acima. Temos uma tabela de eventos que faz referência para a categoria do evento e ao organizador. O organizador por sua vez pertence à um grupo que define seu acesso.
 
 Para começarmos a escrever nossos scripts, vamos clicar com o botão direito sobre o nosso servidor que acabamos de configurar e selecionar `New Query` para criar nossa primeira query.
 
-<!-- new-query.png -->
+![new-query.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/new-query.png)
 
 Então digitaremos o seguinte comando:
 
@@ -104,11 +104,11 @@ PS: Note que ao darmos o nome do banco, usamos `[]` Colchetes.
 
 Para executar o comando acima podemos apertar `F5` ou clicar no botão `RUN` acima do nosso script.
 
-<!-- run.png -->
+![run.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/run.png)
 
 E abaixo teremos a confirmação da execução:
 
-<!-- run-confirmation.png -->
+![run-confirmation.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/run-confirmation.png)
 
  <div id='criando-as-tabelas'></div>
 
@@ -193,7 +193,7 @@ Nossos parametros nestes scripts SQL são definidos assim: `[nome] TIPO(TAMANHO)
 
 E como resultado o banco gerado fica assim:
 
-<!-- database-without-fks.png -->
+![database-without-fks.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/database-without-fks.png)
 
 ## Foreign Keys
 
@@ -238,7 +238,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects o WHERE o.object_id = object_id(N'[dbo]
 
 E assim teremos atribuido os relacionamentos entre as tabelas que precisamos. Como demonstra a imagem abaixo:
 
-<!-- database-with-fks.png -->
+![database-with-fks.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/database-with-fks.png)
 
 <div id='registrando-informacao-no-banco-de-dados'></div>
 
@@ -288,7 +288,7 @@ SELECT
 FROM [eventos].[dbo].[categoria]
 ```
 
-<!-- select-categoria.png -->
+![select-categoria.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/select-categoria.png)
 
 `Nota`: O asterisco indica que queremos consultar todos os dados da nossa tabela. Neste contexto não é um problema já que sabemos que temos apenas um registro. Mas como por exemplo, em um cenário de muitos registros é necessário especificar informação para reduzir o número de linhas retornadas.
 
@@ -300,7 +300,7 @@ SELECT TOP (1)
 FROM [eventos].[dbo].[grupo]
 ```
 
-<!-- select-grupo.png -->
+![select-grupo.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/select-grupo.png)
 
 Para consultar nosso usuário vamos especificar que queremos trazer um usuário com sobrenome `Santos`. Como sabemos que só há um registro e ele tem este sobrenome. Ele trará nosso usuário cadastrado anteriormente.
 
@@ -319,7 +319,7 @@ FROM [eventos].[dbo].[usuario]
 
 `Nota`: O operador `LIKE` seguido da palavra chave entre aspa simples e porcentagem pesquisa na tabela a palavra chave.
 
-<!-- select-usuario.png -->
+![select-usuario.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/select-usuario.png)
 
 Veja que limitamos apenas ao primeiro registro que for encontrado através do parametro `TOP (1)` e também específicamos que queremos que seja exibido apenas o Id do grupo já que como temos apenas um registro, sabemos que o retorno será o id do grupo de palestrantes.
 
