@@ -379,3 +379,4 @@ Passamos pela conexão e criação do banco. Estruturação, inserção e consul
 
 ## Referências
 [Documentação do Microsoft SQL](https://docs.microsoft.com/pt-br/sql/?view=sql-server-ver15)
+
