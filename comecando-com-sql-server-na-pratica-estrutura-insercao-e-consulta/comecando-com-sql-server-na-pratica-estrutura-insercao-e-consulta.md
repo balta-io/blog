@@ -13,7 +13,9 @@ Sumário
 
 ## Introdução
 
-Neste artigo iremos criar e manipular dados de tabelas de uma instância local do Microsoft SQL SERVER utilizando boas práticas no desenvolvimento de nossas queries. Nosso banco de dados é Microsoft SQL Server 17 e está rodando em um container docker através do WSL. Usaremos o editor Azure Data Studio para desenvolver e executar as queries.
+Neste artigo iremos criar e manipular dados de tabelas de uma instância local do Microsoft SQL SERVER utilizando boas práticas no desenvolvimento de nossas queries. Nosso SGBD(Sistema gerenciador de banco de dados) será o Microsoft SQL Server 17 e está rodando em um container docker através do WSL. Usaremos o editor Azure Data Studio para desenvolver e executar as queries. Usarei o JetBrains DataGrip para exibição do diagrama de banco de dados para melhor exemplificar nossos passos.
+
+O objetivo deste artigo é introduzir o leitor a um cenário prático de comandos SQL. O foco do desenvolvimento das instruções é desenvolver experiência com a execução dos comandos e analisando os resultados.
 
 Este artigo está dividido em duas partes. Nesta primeira parte aprenderemos a criar o banco, inserir e consultar registros. Na segunda parte iremos aprender a editar e deletar informações e estrutura do nosso banco.
 
@@ -83,9 +85,9 @@ Por fim temos o nome. Aqui daremos um nome para o conjunto de configurações qu
 
 ![database-with-fks.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/database-with-fks.png)
 
-Criaremos um banco banco simples com a estrutura exemplificada acima. Temos uma tabela de eventos que faz referência para a categoria do evento e ao organizador. O organizador por sua vez pertence à um grupo que define seu acesso.
+Criaremos um banco simples com a estrutura exemplificada acima. Temos uma tabela de eventos que faz referência para a categoria do evento e ao organizador. O organizador por sua vez pertence à um grupo que define seu acesso.
 
-Para começarmos a escrever nossos scripts, vamos clicar com o botão direito sobre o nosso servidor que acabamos de configurar e selecionar `New Query` para criar nossa primeira query.
+Para começarmos a escrever nossos scripts vamos clicar com o botão direito sobre o nosso servidor que acabamos de configurar e selecionar `New Query` para criar nossa primeira query.
 
 ![new-query.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/new-query.png)
 
@@ -98,9 +100,9 @@ IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = N'eventos')
     END;
 ```
 
-Na primeira linha estamos fazendo antes de tudo uma verificação. Ela inicia com o `IF NOT EXISTS` para verificar se o banco já existe. A condição é passada dentro dos parenteses é um `SELECT` que veremos mais a frente. Este select tenta encontrar no SGBD se existe um banco de dados com o nome citado. Caso Não existe ele executará o comando `CREATE DATABASE []` que cria um banco de dados com o nome passado.
+Na primeira linha estamos fazendo antes de tudo uma verificação. Ela inicia com o `IF NOT EXISTS` para verificar se o banco já existe. A condição que estamos passando dentro dos parenteses é um `SELECT` que veremos mais a frente. Este select tenta encontrar um banco de dados com o nome citado. Caso não exista ele executará o comando `CREATE DATABASE []` que cria um banco de dados com o nome passado.
 
-PS: Note que ao darmos o nome do banco, usamos `[]` Colchetes.
+`Nota`: Note que ao darmos o nome do banco, usamos `[]` Colchetes.
 
 Para executar o comando acima podemos apertar `F5` ou clicar no botão `RUN` acima do nosso script.
 
@@ -185,11 +187,11 @@ Note algumas características que procuramos sempre seguir:
 
 3 - Nomes de bancos, tabelas e atributos declaramos sempre entre chaves [].
 
-Observe que usamos o `USE [nomedobanco]`. Com este comando podemos trocar de um banco de dados para outro sem precisar criar uma outra conexão. Mas claro, só funciona se o usuário que está executando a query tiver permissão equivalente nos dois bancos.
+Observe que usamos o `USE [nomedobanco]`. Com este comando podemos trocar de um banco de dados para outro sem precisar criar uma outra conexão. Mas claro, só funciona se o usuário que está executando a query tiver permissão equivalente nos dois bancos. Do contrário será necessário seguir os passos indicados no início do artigo e criar uma nova conexão com o banco criado passando as credenciais de um usuário válido.
 
 Usamos também o comando `CREATE TABLE [nomedatabela]()` e dentro dos parenteses passamos os atributos um por linha.
 
-Nossos parametros nestes scripts SQL são definidos assim: `[nome] TIPO(TAMANHO) VALOR/DEFINIÇÂO`. O Nome do atributo entre os colchetes, o tipo logo depois com o tamanho ao lado dentro de parenteses e por último definimos `NOT NULL` se quisermos que seja exigido um valor do campo Deixamos em branco se quisermos permitir que o campo seja vazio/nullo.
+Nossos parametros nestes scripts SQL são definidos assim: `[nome] TIPO(TAMANHO) VALOR/DEFINIÇÂO`. O Nome do atributo entre os colchetes, o tipo logo depois com o tamanho ao lado dentro de parenteses e por último definimos `NOT NULL` se quisermos que seja exigido um valor do campo. Deixamos em branco se quisermos permitir que o campo seja vazio/nullo.
 
 E como resultado o banco gerado fica assim:
 
@@ -197,7 +199,7 @@ E como resultado o banco gerado fica assim:
 
 ## Foreign Keys
 
-As *foreign keys* ou *chaves estrangeiras* são conceitos que funcionam para interligar tabelas através de atributos e representando um relacionamento. Podemos pegar como exemplo a tabela `usuarioGrupo`. Este tipo de tabela (tabela de quebra de relacionamento) faz referência a um Id de usuário e um grupo específico. Com isto podemos saber quais usuários pertencem a certo grupo e vice versa.
+As *foreign keys* ou *chaves estrangeiras* são conceitos que funcionam para interligar tabelas através de atributos representando um relacionamento. Podemos pegar como exemplo a tabela `usuarioGrupo`. Este tipo de tabela (tabela de quebra de relacionamento) faz referência a um Id de usuário e um grupo específico. Com isto podemos saber quais usuários pertencem a certo grupo e vice versa.
 
 As *foreign keys* também podem ser usadas para especificar que um usuário só pode ser atribuído à um grupo existente. E um evento precisa de uma categoria existente e um usuário existente para ser criado.
 
@@ -270,7 +272,7 @@ BEGIN TRANSACTION
 ROLLBACK
 ```
 
-`NOTA`: O Comando ***INSERT INTO [nomedatabela] VALUES()*** funciona também sem o uso de ***TRANSACTION*** mas fechamos a transação com ***ROLLBACK*** para que possamos executar o comando sem salvar as modificações. Assim sabemos se o comando foi executado sem nenhum problema e quando tivermos certeza do resultado podemos substituir o ***ROLLBACK*** por ***COMMIT*** e assim as modificações serão salvas no banco.
+`NOTA I`: O Comando ***INSERT INTO [nomedatabela] VALUES()*** funciona também sem o uso de ***TRANSACTION*** mas fechamos a transação com ***ROLLBACK*** para que possamos executar o comando sem salvar as modificações. Assim sabemos se o comando foi executado sem nenhum problema e quando tivermos certeza do resultado podemos substituir o ***ROLLBACK*** por ***COMMIT*** e assim as modificações serão salvas no banco.
 
 Para continuarmos com o registro das nossas informações vamos precisar saber o identificador que foi gerado nos registros anteriores. Então antes de começarmos precisamos passar pelo `SELECT` primeiro.
 
@@ -278,7 +280,7 @@ Para continuarmos com o registro das nossas informações vamos precisar saber o
 
 ## Lendo registros do banco de dados
 
-O comando `SELECT` permite que possamos consultar informações registradas no nosso banco de dados. É desta forma que iremos consultar o Id da nossa categoria de palestras, grupo de palestrantes e posteriormente o o nosso usuário.
+O comando `SELECT` permite que possamos consultar informações registradas no nosso banco de dados. É desta forma que iremos consultar o Id da nossa categoria de palestras, grupo de palestrantes e posteriormente o nosso usuário.
 
 O trecho de código para consulta ficará assim:
 
@@ -290,7 +292,7 @@ FROM [eventos].[dbo].[categoria]
 
 ![select-categoria.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/select-categoria.png)
 
-`Nota`: O asterisco indica que queremos consultar todos os dados da nossa tabela. Neste contexto não é um problema já que sabemos que temos apenas um registro. Mas como por exemplo, em um cenário de muitos registros é necessário especificar informação para reduzir o número de linhas retornadas.
+`NOTA II`: O asterisco indica que queremos consultar todos os dados da nossa tabela. Neste contexto não é um problema já que sabemos que temos apenas um registro. Mas como por exemplo, em um cenário de muitos registros é necessário especificar informação para reduzir o número de linhas retornadas.
 
 Vamos consultar apenas a primeira linha da nossa tabela de grupos para termos um exemplo de como fazer uma busca específica:
 
@@ -302,7 +304,9 @@ FROM [eventos].[dbo].[grupo]
 
 ![select-grupo.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/select-grupo.png)
 
-Para consultar nosso usuário vamos especificar que queremos trazer um usuário com sobrenome `Santos`. Como sabemos que só há um registro e ele tem este sobrenome. Ele trará nosso usuário cadastrado anteriormente.
+Veja que limitamos apenas ao primeiro registro que for encontrado através do parametro `TOP (1)` e também específicamos que queremos que seja exibido apenas o Id do grupo já que temos apenas um registro, sabemos que o retorno será o Id do grupo de palestrantes.
+
+Para consultar nosso usuário vamos especificar que queremos trazer um usuário com sobrenome `Santos`. Como sabemos que só há um registro e ele tem este sobrenome. Ele trará nosso usuário cadastrado anteriormente. Veja como fica o trecho de código no exemplo abaixo:
 
 ```sql
 SELECT
@@ -317,11 +321,9 @@ FROM [eventos].[dbo].[usuario]
 
 ```
 
-`Nota`: O operador `LIKE` seguido da palavra chave entre aspa simples e porcentagem pesquisa na tabela a palavra chave.
+`Nota`: O operador `LIKE` seguido da palavra-chave entre aspa simples e porcentagem pesquisa na tabela a palavra-chave.
 
 ![select-usuario.png](https://raw.githubusercontent.com/balta-io/blog/main/comecando-com-sql-server-na-pratica-estrutura-insercao-e-consulta/images/select-usuario.png)
-
-Veja que limitamos apenas ao primeiro registro que for encontrado através do parametro `TOP (1)` e também específicamos que queremos que seja exibido apenas o Id do grupo já que como temos apenas um registro, sabemos que o retorno será o id do grupo de palestrantes.
 
 <div id='concluindo-os-registros'></div>
 
@@ -357,4 +359,23 @@ INNER JOIN [grupo] ON [grupo].[Id] = [usuarioGrupo].[IdGrupo]
     WHERE [NomeCompleto] LIKE '%Santos%'
 ```
 
-`Nota`: Note que indicamos os campos que queremos que sejam retornados e usamos o operador `AS` para renomear a coluna que irá exibir os dados. Adicionamos mais duas tabelas aos resultados utilizando o `INNER JOIN` e utilizando o relacionamento entre as tabelas. Também especificamos que queriamos trazer apenas os registros que tenham `Santos` no nome.
+`NOTA III`: Indicamos os campos que queremos que sejam retornados e usamos o operador `AS` para renomear a coluna que irá exibir os dados. Adicionamos mais duas tabelas aos resultados utilizando o `INNER JOIN` e utilizando o relacionamento entre as tabelas. Também especificamos que queriamos trazer apenas os registros que tenham `Santos` no nome.
+
+## Considerações finais
+Passamos pela conexão e criação do banco. Estruturação, inserção e consulta dos dados. Na proxíma parte iremos aprender a fazer consultas avançadas, desenvolver stored procedures, editar informações dos registros e tabelas e excluir registros, tabelas e até mesmo bancos de dados inteiros.
+
+
+`NOTA IV`: Os contextos exibidos neste artigo podem ser desenvolvidos facilmente. Caso o leitor sinta vontade e/ou necessidade de entender mais detalhadamente os comandos, instruções e ferramentas utilizadas é recomendado acompanhar o curso [Fundamentos do SQL Server](https://balta.io/player/assistir/cae580e7-d215-4d08-9414-fe988713cc97).
+
+## Continue lendo:
+[Começando com SQL Server na prática (Consulta avançada, edição e remoção de dados)](https://balta.io/blog/comecando-com-sql-server-na-pratica-consulta-avancada-edicao-e-remocao-de-dados)
+
+
+## Cursos relacionados
+
+[Fundamentos do SQL Server](https://balta.io/player/assistir/cae580e7-d215-4d08-9414-fe988713cc97)
+
+<div id='ref'></div> 
+
+## Referências
+[Documentação do Microsoft SQL](https://docs.microsoft.com/pt-br/sql/?view=sql-server-ver15)
