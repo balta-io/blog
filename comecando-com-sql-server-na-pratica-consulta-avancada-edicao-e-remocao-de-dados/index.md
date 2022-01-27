@@ -149,13 +149,19 @@ E trariamos de volta a existência do campo "Link".
 
 Assim acabamos de reduzir o número máximo de caracteres na descriçao do evento de 200 para 150 e implementamos a obrigatoriedade do campo com o `NOT NULL`.
 
+<div id='editando-tabelas'></div>
+
 ## Editando Tabelas
+
+<div id='consideracoes-finais'></div>
 
 ## Considerações finais
 Passamos pela conexão e criação do banco. Estruturação, inserção e consulta dos dados. Na proxíma parte iremos aprender a fazer consultas avançadas, desenvolver stored procedures, editar informações dos registros e tabelas e excluir registros, tabelas e até mesmo bancos de dados inteiros.
 
 
 `NOTA IV`: Os contextos exibidos neste artigo podem ser desenvolvidos facilmente. Caso o leitor sinta vontade e/ou necessidade de entender mais detalhadamente os comandos, instruções e ferramentas utilizadas é recomendado acompanhar o curso [Fundamentos do SQL Server](https://balta.io/player/assistir/cae580e7-d215-4d08-9414-fe988713cc97).
+
+<div id='cursos-relacionados'></div>
 
 ## Cursos relacionados
 
