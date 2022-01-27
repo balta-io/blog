@@ -94,15 +94,114 @@ cd /bin/Release/net6.0/publish
 Neste momento, rodando a aplicação em modo **Development** você deve ter visto um valor diferente do exibido ao executar a aplicação em modo **Release**, cada um lido do seu respectivo arquivo de configuração.
 
 ## Lendo blocos de configurações
+Na sessão anterior, vimos como ler o valor de uma chave no arquivo de configuração, mas existe uma forma mais simples de ler diversos valores de uma única vez, utilizando o `GetSection`.
 
+O `GetSection` permite ler um bloco inteiro do arquivo de configuração para dentro de um objeto. Ele faz isto comparando as chaves com os nomes das propriedades existentes na sessão do arquivo.
+
+Então, vamos tomar como base a classe `Configuration` que usamos no [**Curso de Fundamentos do ASP.NET 6**](https://balta.io/cursos/fundamentos-aspnet?utm_source=Site&utm_campaign=blog-to-course&utm_content=curso+fundamentos+aspnet&utm_medium=internal). Nesta classe, temos um trecho de código pertinente as configurações do SMTP, para envio de E-mails.
+
+```csharp
+public class SmtpConfiguration
+{
+    public string Host { get; set; }
+    public int Port { get; set; } = 25;
+    public string UserName { get; set; }
+    public string Password { get; set; }
+}
+```
+
+Como o nome sugere, o `GetSection` obtém uma sessão, um conjunto de informações, do arquivo de configuração, então precisamos estruturar nosso `appsettings.Development.json` para passar estas informações corretamente.
+
+```json
+{
+  "SmtpConfiguration": {
+    "Host": "smtp.sendgrid.net",
+    "Port": "587",
+    "UserName": "apikey",
+    "Password": "suasenha"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+```
+
+Note que utilizamos os mesmos nomes nas chaves e nas propriedades da classe `SmtpConfiguration`. Desta forma o `Configuration` já consegue inferir os valores e popular nosso objeto. Abaixo uma demonstração de como podemos fazer isto.
 
 ```csharp
 var smtp = new Configuration.SmtpConfiguration();
 app.Configuration.GetSection("SmtpConfiguration").Bind(smtp);
 ```
 
-## App e Builder
-
 ## Connection Strings
+O arquivo de configuração possui uma sessão especial dedicada as **Connection Strings**, podendo ser definidas várias delas com uma leitura facilitada posteriormente. Abaixo um exemplo de como podemos armazenar uma **Connection String** no arquivo de configuração.
 
-## Variáveis de ambiente
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost,1433;Database=balta;User ID=sa;Password=1q2w3e4r@#$"
+  },
+  "Env": "development",
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}
+
+```
+
+Com a **Connection String** devidamente armazenada, podemos utilizar o método `Configuration.GetConnectionString` para procurá-la diretamente na sessão `ConnectionStrings` do arquivo de configuração, como mostrado abaixo.
+
+```csharp
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+```
+
+> **IMPORTANTE:** Há maneiras melhores de armazenar dados sensíveis como cadeias de conexão sem ser no arquivo de configuração, como o `dotnet user secrets`. Tenha em mente que este arquivo será versionado junto ao projeto e ficará disponível no versionador de código da sua empresa.
+
+## Configurações no Azure
+Embora haja um arquivo de configuração para **Release**, é comum armazenarmos as configurações da aplicação diretamente no servidor. Isto previne vários problemas com segurança e não corremos o risco de enviar arquivos erroneamente para lá.
+
+O Azure possui uma sessão chamada `Configuration` que serve exatamente para isto. Esta sessão armazena valores do tipo chave/valor e qualquer configuração contida ali substituirá a do seu arquivo.
+
+Então se o seu arquivo tem uma chave chamada `Env` com o valor `XPTO` e você registrar uma chave com o mesmo nome (`Env`) nas configurações do Azure com o valor `Azure`, o valor que prevalescerá é o do Azure.
+
+### Criando um item
+Podemos criar uma chave em um webapp no Azure utilizando o comando `az webapp config appsettings set`, seguido pelos parâmetros necessários para criação da mesma.
+
+```
+az webapp config appsettings set --name NOME_DO_SEU_APP --resource-group SEU_RG --settings CHAVE=VALOR
+```
+
+> **IMPORTANTE:** Para executar estes comandos você precisa do Azure CLI instalado e autenticado no seu terminal.
+
+### Listando os itens
+Para listar todas as configurações armazenadas do webapp, podemos utilizando o comando `az webapp config appsettings list`, como mostrado abaixo.
+
+```
+az webapp config appsettings list --name NOME_DO_SEU_APP --resource-group SEU_RG --output table
+```
+
+### Excluindo um item
+Para remover um item da configuração podemos utilizar o comando `az webapp config appsettings delete` conforme demonstrado abaixo.
+
+```
+az webapp config appsettings delete --setting-names CHAVE --name NOME_DO_SEU_APP --resource-group SEU_RG --output table
+```
+
+## Connection Strings no Azure
+Assim como nos arquivos de configuração, o Azure possui uma sessão dedicada as **Connection Strings** que podemos acessar utilizando o comando `az webapp config connection-string`.
+
+O esquema é o mesmo das configurações, utilizando `list`, `set` e `delete` para manipular as **Connection Strings** armazenadas. Abaixo um exemplo.
+
+```
+az webapp config connection-string list
+```
+
+## Conclusão
+Manipular configurações das aplicações no ASP.NET/.NET é simples e fácil, e com a ótima integração que temos com o Azure, ainda podemos configurar ambientes de produção de forma rápida e segura.
