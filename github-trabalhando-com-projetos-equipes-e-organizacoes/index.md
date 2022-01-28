@@ -30,7 +30,7 @@ Dentro do contexto de projetos o GitHub nos oferece dois recursos:
  
  1 - **Projetos do usuário**, que podem ser encontrados no seu perfil ou no menu de contexto superior direito ao clicar na sua foto:
 
- <!-- profile-projetcs.png -->
+![perfil-acessar-projetos](https://raw.githubusercontent.com/balta-io/blog/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/profile-projetcs.png)
 
  Os projetos do usuário podem conter tarefas, ações e problemas de qualquer repositório do usuário.
 
@@ -38,13 +38,13 @@ Dentro do contexto de projetos o GitHub nos oferece dois recursos:
 
  2 - **Projetos da organização**, estes podem ser encontrados no perfil da organização:
 
- <!-- organization-projects.png -->
+![projetos-da-organizacao](https://raw.githubusercontent.com/balta-io/blog/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/organization-projects.png)
 
 Assim como os projetos do usuário, os projetos da organização podem conter tarefas, ações e problemas de qualquer repositório e/ou equipe da organização.
 
 3 - **Projetos do repositório**, estes podem ser encontrados dentro do próprio repositório:
 
-<!-- repository-projects.png -->
+![projetos-do-repositorio](https://raw.githubusercontent.com/balta-io/blog/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/repository-projects.png)
 
 Já os projetos de repositório tem como objetivo conter e organizar as tarefas, ações e problemas apenas do repositório ao qual pertencem.
 
@@ -60,29 +60,27 @@ Organizações dentro do GitHub são perfis compartilhados que representam por e
 
 Para criar uma organização entre na página de organizações como mostrado na imagem abaixo:
 
-<!-- profile-organizations.png -->
+![perfil-acessar-organizacoes](https://raw.githubusercontent.com/balta-io/blog/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/profile-organizations.png)
 
 Então clique no botão `Nova organização`.
 
-<!-- new-organization.png -->
+![nova-organizacao](https://raw.githubusercontent.com/balta-io/blog/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/new-organization.png)
 
 Será exibida uma tela de planos. Nesta etapa você poderá comparar os planos e recursos que cada um oferece antes de decidir. Neste caso usaremos o plano gratuito. Logo em seguida será exibido um formulário solicitando nome da organização e e-mail para contato e do que se trata a organização.
 
-<!-- new-organization-form.png -->
+![formulario-nova-organizacao](https://raw.githubusercontent.com/balta-io/blog/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/new-organization-form.png)
 
 Logo após será exibida uma janela para que você envie convites para usuários do github entrarem em sua organização e na próxima janela algumas informações sobre quantidade de pessoas que você espera que façam parte desta organização assim como o objetivo da organização. Não teremos imagens de exemplo nesta parte.
 
 Agora temos nossa organização:
 
-<!-- organization.png -->
+![organizacao](https://raw.githubusercontent.com/balta-io/blog/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/organization.png)
 
 Como podemos ver na imagem acima, temos opções para gerenciar repositórios, pacotes, pessoas, equipes, projetos e por último as configurações da própria organização. Vamos ao próximo passo, criar uma equipe dentro da nossa organização.
 
 ## Equipes
 
 No Github podemos gerenciar equipes. Isto envolve criar, adicionar e remover pessoas, gerenciar níveis de acesso por equipe e acompanhar o desempenho e atividade dos membros.
-
-
 
 ```
 Vamos praticar então!
