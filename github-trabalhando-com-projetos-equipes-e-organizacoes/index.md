@@ -99,7 +99,7 @@ Na próxima parte vamos entender melhor as ferramentas e suas propriedades simul
 ## Continue lendo:
 `Publicação em breve` - [GitHub - Trabalhando com projetos, equipes e ornagizações - Parte 2 (Entendendo melhor as ferramentas)](https://balta.io/blog/github-trabalhando-com-projetos-equipes-e-organizacoes-pt2-entendendo-melhor-as-ferramentas)
 
-[Git e GitHub - Instalaçõ, Configuração e primeiros passos](https://balta.io/blog/git-github-primeiros-passos)
+[Git e GitHub - Instalação, Configuração e primeiros passos](https://balta.io/blog/git-github-primeiros-passos)
 
 [ASP.NET Deploy com GitHub Actions e Microsoft Azurel](https://balta.io/blog/aspnet-deploy-github-actions-azure)
 
