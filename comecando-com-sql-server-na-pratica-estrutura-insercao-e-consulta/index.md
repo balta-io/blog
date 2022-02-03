@@ -368,7 +368,7 @@ Passamos pela conexão e criação do banco. Estruturação, inserção e consul
 `NOTA IV`: Os contextos exibidos neste artigo podem ser desenvolvidos facilmente. Caso o leitor sinta vontade e/ou necessidade de entender mais detalhadamente os comandos, instruções e ferramentas utilizadas é recomendado acompanhar o curso [Fundamentos do SQL Server](https://balta.io/player/assistir/cae580e7-d215-4d08-9414-fe988713cc97).
 
 ## Continue lendo:
-`Publicação agendada para 27/01/2022` - [Começando com SQL Server na prática - Parte 2 (Consulta avançada, edição e remoção de dados)](https://balta.io/blog/comecando-com-sql-server-na-pratica-consulta-avancada-edicao-e-remocao-de-dados)
+[Começando com SQL Server na prática - Parte 2 (Consulta avançada, edição e remoção de dados)](https://balta.io/blog/comecando-com-sql-server-na-pratica-consulta-avancada-edicao-e-remocao-de-dados)
 
 
 ## Cursos relacionados
