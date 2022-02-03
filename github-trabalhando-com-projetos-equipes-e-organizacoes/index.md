@@ -86,11 +86,11 @@ No Github podemos gerenciar equipes. Isto envolve criar, adicionar e remover pes
 
 Para criar uma equipe vamos acessar clicar na opção `Teams` (ou Pessoas) e em `New Team` (ou Nova Equipe) e teremos a seguinte visualização:
 
-![nova-equipe-form](https://github.com/balta-io/blog/blob/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/new-team.png)
+![nova-equipe-form](https://raw.githubusercontent.com/balta-io/blog/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/new-team.png)
 
 Ao inserir os dados necessários teremos a nossa equipe criada e seremos enviados para uma página onde podemos adicionar pessoas ou editar permissões. Se voltarmos ao perfil da nossa organização poderemos ter uma visão rápida das equipes existentes e seus membros;
 
-![visualizacao-da-equipe](https://github.com/balta-io/blog/blob/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/new-team-view.png)
+![visualizacao-da-equipe](https://raw.githubusercontent.com/balta-io/blog/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/new-team-view.png)
 
 ## Conclusão: 
 
