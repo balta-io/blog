@@ -3,7 +3,6 @@ Entenda como funciona o gerenciamento de projetos através do github, gerencia d
 Sumário
  1. [Introdução](#introducao)
  2. [Projetos](#projetos)
-    - [Projetos - KanBan](#projetos-kanban)
  3. [Organizações](#organizacoes)
     - [Criando uma organização](#criando-uma-organizacao)
 
@@ -14,7 +13,7 @@ Sumário
 
 O Github disponibiliza diversas ferramentas além do versionamento de código. Neste artigo iremos entender um pouco dos recursos oferecidos para organizações, equipes e recursos de projeto.
 
-O artigo apresenta os conceitos e breve explicação das suas funcionalidades fundamentais sem aprofundamento. O objetivo primário é evidenciar a existência desses recursos.
+O artigo é o primeiro de 3 que apresentam os conceitos e breve explicação das suas funcionalidades fundamentais sem aprofundamento. O objetivo primário é evidenciar a existência desses recursos.
 
 <div id='projetos'></div>
 
@@ -58,7 +57,7 @@ Organizações dentro do GitHub são perfis compartilhados que representam por e
 
 ### Criando uma organização
 
-Para criar uma organização entre na página de organizações como mostrado na imagem abaixo:
+Para criar uma organização, entre na página de organizações como mostrado na imagem abaixo:
 
 ![perfil-acessar-organizacoes](https://raw.githubusercontent.com/balta-io/blog/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/profile-organizations.png)
 
@@ -82,13 +81,27 @@ Como podemos ver na imagem acima, temos opções para gerenciar repositórios, p
 
 No Github podemos gerenciar equipes. Isto envolve criar, adicionar e remover pessoas, gerenciar níveis de acesso por equipe e acompanhar o desempenho e atividade dos membros.
 
-```
-Vamos praticar então!
-```
+Para criar uma equipe vamos acessar clicar na opção `Teams` (ou Pessoas) e em `New Team` (ou Nova Equipe) e teremos a seguinte visualização:
 
-<div id='projetos-kanban'></div>
+<!-- new-team.png -->
 
-### Projetos - KanBan
+Ao inserir os dados necessários teremos a nossa equipe criada e seremos enviados para uma página onde podemos adicionar pessoas ou editar permissões. Se voltarmos ao perfil da nossa organização poderemos ter uma visão rápida das equipes existentes e seus membros;
 
-Vamos então criar um projeto para demonstrar demonstrar o passo a passo. Usaremos o contexto de uma editora de artigos e o objetivo aqui e gerencia propostas de artigos, artigos em progresso, artigos publicados e artigos arquivados.
+<!-- new-team-view.png -->
 
+## Continue lendo:
+`Publicação em breve` - [GitHub - Trabalhando com projetos, equipes e ornagizações - Parte 2 (Entendendo melhor as ferramentas)](https://balta.io/blog/github-trabalhando-com-projetos-equipes-e-organizacoes-pt2-entendendo-melhor-as-ferramentas)
+
+[Git e GitHub - Instalaçõ, Configuração e primeiros passos](https://balta.io/blog/git-github-primeiros-passos)
+
+[ASP.NET Deploy com GitHub Actions e Microsoft Azurel](https://balta.io/blog/aspnet-deploy-github-actions-azure)
+
+[GitHub Packages e GitHub Actions - Distribuindo contextos delimitados](https://balta.io/blog/github-packages-github-actions-distribuindo-contextos-delimitados)
+## Cursos relacionados
+
+`Gratuito` | [Fundamentos do Git e Azure DevOps](https://balta.io/cursos/fundamentos-git-azure-devops)
+
+<div id='ref'></div> 
+
+## Referências
+[Documentação do GitHub](https://docs.github.com/)
