@@ -5,6 +5,7 @@ Sumário
  2. [Projetos](#projetos)
  3. [Organizações](#organizacoes)
     - [Criando uma organização](#criando-uma-organizacao)
+ 4. [Equipes](#equipes)
 
 
 <div id='introducao'></div>
@@ -76,6 +77,8 @@ Agora temos nossa organização:
 ![organizacao](https://raw.githubusercontent.com/balta-io/blog/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/organization.png)
 
 Como podemos ver na imagem acima, temos opções para gerenciar repositórios, pacotes, pessoas, equipes, projetos e por último as configurações da própria organização. Vamos ao próximo passo, criar uma equipe dentro da nossa organização.
+ 
+ <div id='projetos'></div>
 
 ## Equipes
 
@@ -83,11 +86,15 @@ No Github podemos gerenciar equipes. Isto envolve criar, adicionar e remover pes
 
 Para criar uma equipe vamos acessar clicar na opção `Teams` (ou Pessoas) e em `New Team` (ou Nova Equipe) e teremos a seguinte visualização:
 
-<!-- new-team.png -->
+![nova-equipe-form](https://github.com/balta-io/blog/blob/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/new-team.png)
 
 Ao inserir os dados necessários teremos a nossa equipe criada e seremos enviados para uma página onde podemos adicionar pessoas ou editar permissões. Se voltarmos ao perfil da nossa organização poderemos ter uma visão rápida das equipes existentes e seus membros;
 
-<!-- new-team-view.png -->
+![visualizacao-da-equipe](https://github.com/balta-io/blog/blob/main/github-trabalhando-com-projetos-equipes-e-organizacoes/images/new-team-view.png)
+
+## Conclusão: 
+
+Na próxima parte vamos entender melhor as ferramentas e suas propriedades simulando o uso real delas em um ambiente de trabalho em equipe.
 
 ## Continue lendo:
 `Publicação em breve` - [GitHub - Trabalhando com projetos, equipes e ornagizações - Parte 2 (Entendendo melhor as ferramentas)](https://balta.io/blog/github-trabalhando-com-projetos-equipes-e-organizacoes-pt2-entendendo-melhor-as-ferramentas)
