@@ -19,4 +19,4 @@
 Conclusão? Bom, caso você opte pelo desenvolvimento web, ASP Net, desenvolver em C# no Linux, até o presente o momento, será uma experiência bastante agradável. Mas, caso você precise desenvolver aplicações locais usando WinForms, eu sinto em informar que somente pelo Windows mesmo, visto que o WinForms, assim como o Visual Basic For Application, depende de componentes do Windows para funcionar [Design Windows Forms | JetBrains Rider](https://www.jetbrains.com/help/rider/Working_with_Windows_Forms.html), você precisará usar o SO da Microsoft (ou via máquina virtual ou dual boot). 
 
 #### Qual previsão para submissão deste artigo?
-=> 06/02/2022
+=> 07/02/2022
