@@ -106,4 +106,4 @@ False
 ```
 
 ## Conclusão
-Fazer conversões de valores no C# não é uma tarefa fácil e temos vários recursos para isto, incluindo o Parse e TryParse como vimos neste artigo.
+Fazer conversões de valores no C# é uma tarefa fácil e temos vários recursos para isto, incluindo o Parse e TryParse como vimos neste artigo.
