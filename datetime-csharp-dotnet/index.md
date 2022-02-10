@@ -1,10 +1,10 @@
 Tabelas de conteúdo 
  1. [Começando com DateTime?](#comecandocomdatetime)
- 2. [Obtendo data e hora atual com DateTime](#why)
- 3. [Formatando um DateTime](#tools)
- 4. [Manipulação de datas com DateTime](#syntax)
- 5. [Cultures e TimeZones UTC no DateTime](#syntax)
- 6. [Referências](#syntax)
+ 2. [Obtendo data e hora atual com DateTime](#obtendo-data-e-hora-atual-com-datetime)
+ 3. [Formatando um DateTime](#formatando-um-datetime)
+ 4. [Manipulação de datas com DateTime](#manipulacao-de-datas-com-datetime)
+ 5. [Cultures e TimeZones UTC no DateTime](#cultures-e-timezones-utc-no-datetime)
+ 6. [Referências](#referencias)
 
 *******
 
@@ -28,6 +28,8 @@ Console.WriteLine(date);
 
 Estes são os valores iniciais de um DateTime. Precisamos entender também que o formato é retornado de acordo com a cultura do sistema sob o qual o código foi executado, a menos que uma configuração seja aplicada para modificar este comportamento.
 
+<div id="obtendo-data-e-hora-atual-com-datetime"></div>
+
 ## Obtendo data e hora atual com DateTime
 Agora que sabemos como criar a nossa váriavel, temos a opção de atribuir e exibir a data atual. Fazemos isto utilizando a propriedade `DateTime.Now`.
 
@@ -46,6 +48,8 @@ Console.WriteLine(date);
 ```
 
 Note que ele retornou corretamente a data e hora do momento em que o código foi executado, porém exibiu o mês antes do dia e o horário em formato AM/PM. Este padrão é chamado de cultura e entenderemos ele mais a frente.
+
+<div id="formatando-um-datetime"></div>
 
 ## Formatando um DateTime
 
@@ -96,6 +100,8 @@ var formattedDate = String.Format("{0:s}", date);
 // 2020-07-02T22:59:59
 ```
 
+<div id="manipulacao-de-datas-com-datetim"></div>
+
 ## Manipulação de datas com DateTime
 
 Até aqui aprendemos a definir e exibir de várias formas as datas e horas. Em situações em que precisamos calcular datas e horas nós podemos utilizar alguns métodos já existentes no DateTime.
@@ -116,6 +122,8 @@ Console.WriteLine(date.AddDays(-20));
 
 Podemos ver que ao retirar uma quantidade de dias maior que a data atual ele lidou com a regressão do mês. Usar o método existente é a forma correta de utilização da ferramenta.
 
+<div id="cultures-e-timezones-utc-no-datetime"></div>
+
 ## Cultures e TimeZones UTC no DateTime
 
 Como sabemos, os horários são diferentes de acordo com a região do planeta em que estamos. Dentro do C# lidamos com estas diferenças através da classe `TimeZoneInfo`.
@@ -135,6 +143,8 @@ Console.WriteLine(DateTime.UtcNow.ToString(CultureInfo.CreateSpecificCulture("pt
 *Para ver a lista completa de culturas recomendamos que visite o [codedigest](http://www.codedigest.com/CodeDigest/207-Get-All-Language-Country-Code-List-for-all-Culture-in-C---ASP-Net.aspx).*
 
 ## [Curso Fundamentos do C#](https://beta.balta.io/cursos/fundamentos-csharp)
+
+<div id="referencias"></div>
 
 ## Referências
 [Structs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/structs) | [DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | [DateTime constructors](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.-ctor?view=net-5.0) | [TimeZoneInfo](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=net-5.0) | [CultureInfo](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-5.0) | [System](https://docs.microsoft.com/en-us/dotnet/api/system?view=net-5.0) | [Strings](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/) | [ToString](https://docs.microsoft.com/en-us/dotnet/api/system.object.tostring?view=net-5.0) | [CreateSpecificCulture](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.createspecificculture?view=net-5.0)
