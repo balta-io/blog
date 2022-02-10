@@ -100,7 +100,7 @@ var formattedDate = String.Format("{0:s}", date);
 // 2020-07-02T22:59:59
 ```
 
-<div id="manipulacao-de-datas-com-datetim"></div>
+<div id="manipulacao-de-datas-com-datetime"></div>
 
 ## Manipulação de datas com DateTime
 
