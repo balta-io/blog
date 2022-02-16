@@ -54,7 +54,7 @@ Note que temos apenas um retorno do tipo `IAsyncEnumerable<int>`, em seguida rec
 
 Não há necessidade de configurar nenhuma informação adicional aqui, apenas retornar um `IAsyncEnumerable` já basta.
 
-IMAGEM
+![Resultado](https://raw.githubusercontent.com/balta-io/blog/main/aspnet-async-streaming/images/asyncenum.gif)
 
 ## Conclusão
 Podemos utilizar o `IAsyncEnumerable` para enviar dados para tela ou outras interfaces no formato de **Stream** de forma simples e fácil no ASP.NET 6.
