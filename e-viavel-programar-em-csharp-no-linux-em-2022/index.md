@@ -23,5 +23,7 @@ Bom, caso você opte pelo desenvolvimento web, ASP Net, desenvolver em C# no Lin
 ## Continue lendo:
 
 [Visual Studio Code - Instalação e costumização](https://balta.io/blog/visual-studio-code-instalacao-customizacao)
+
 [WSL - Windows Subsystem for Linux](https://balta.io/blog/wsl)
+
 [Plataform Specific no .NET](https://balta.io/blog/dotnet-platform-specific)
