@@ -141,3 +141,11 @@ O Hangfire além de ser uma solução completa e robusta, é extensível e possu
 O repositório do projeto de demonstração criado está disponível no github: https://github.com/lucasdemoraesc/Demo.Hangfire
 
 No mais, espero que você tenha gostado deste artigo e que ele tenha lhe ajudado de alguma forma! Um grande abraço!
+
+## Continue lendo:
+
+[ASP.NET HealhCheck](https://balta.io/blog/aspnet-health-check)
+
+[Utilizando ILogger no ASP.NET](https://balta.io/blog/aspnet-logger)
+
+[Utilizando o Discord como repositório de log em .NET](https://balta.io/blog/utilizando-discord-repositorio-log-dotnet)
