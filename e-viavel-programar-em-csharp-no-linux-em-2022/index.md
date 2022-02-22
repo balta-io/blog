@@ -4,7 +4,7 @@ C# e Linux, um casamento complicado? A um bom tempo atrás, era apenas possível
 
 Bom, um pouco de história: em 2016, a Microsoft anunciava o .Net Core, uma reimplementação do famoso e amado, por uns odiados, Framework de sua autoria, dessa vez disponível para, além do Windows, o macOS e Linux. Claro, nem tudo são flores e é impossível fazer uma reimplementação de um gigantesco Framework igualmente completo como o seu “pai” do dia para a noite e distribuir por ai aos SO’s de maior relevância do mercado, mesmo que de forma gratuita e open source.
 
-No ano de 2019, a versão 5 do .Net foi disponibilizada como estável, tanto SDK como para run time, o que marcou a unificação de uma baita confusão de versões do .Net, deixando para trás o .Net Framework (aquele exclusivo para Windows), .Net Core (versões iniciais do .Net open source) e a criação do padrão “.Net Standard.” Mas, agora retomando o rumo da venta. É viável programar em C# no Linux em 2022? Bom, a resposta é dupla: sim e não.
+No ano de 2020, a versão 5 do .Net foi disponibilizada como estável, tanto SDK como para run time, o que marcou a unificação de uma baita confusão de versões do .Net, deixando para trás o .Net Framework (aquele exclusivo para Windows), .Net Core (versões iniciais do .Net open source) e a criação do padrão “.Net Standard.” Mas, agora retomando o rumo da venta. É viável programar em C# no Linux em 2022? Bom, a resposta é dupla: sim e não.
 
 ## Explicando
 
