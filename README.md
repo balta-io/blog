@@ -39,7 +39,7 @@ Após o tema ter sido aceito, você pode começar a escrever seu artigo, ele tem
 ### Imagens
 Utilize imagens grandes e visíveis, e não se esqueça de salvá-las dentro de uma pasta `imagens` no mesmo diretório do seu artigo, vamos precisar dos arquivos destas imagens para colocar seu artigo no ar.
 
-### Publicação
+### 🟣 Publicação
 Para publicar seu artigo, basta fazer um **Pull request** para este repositório, criando uma pasta (Não usar espaços ou caracteres especiais no nome da pasta) com os seguintes arquivos:
 * nome-do-artigo/index.md -> Seu artigo
 * nome-do-artigo/images/ -> Imagens do seu artigo
