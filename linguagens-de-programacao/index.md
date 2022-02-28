@@ -1,7 +1,5 @@
 Uma breve história contextual rica em fundamentos, entenda linguagens de programação antes de programar.
 
-![Linguagens de Programação](https://baltaio.blob.core.windows.net/static/images/articles/linguagens-de-programacao_share.jpg "Linguagens de Programação")
-
 Sumário
  1. [Introdução](#introducao)
  2. [O que são linguagens de programação?](#oquesaolps)
