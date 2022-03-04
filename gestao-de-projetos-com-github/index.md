@@ -50,7 +50,7 @@ Dentro do GitHub temos organizações, equipes e repositórios. Cada um destes p
 
 Ao acessar a página principal da organização, selecione a opção `Projetos` no menu como mostra o exemplo abaixo:
 
-<!-- creating-project-organization-menu.jpg -->
+![creating-project-organization-menu](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/creating-project-organization-menu.jpg)
 
 <div id='atraves-do-menu-de-equipe'></div> 
 
@@ -58,7 +58,7 @@ Ao acessar a página principal da organização, selecione a opção `Projetos` 
 
 Na página da equipe encontraremos o menu de opções na parte superior logo abaixo do menu principal. Neste também podemos encontrar a opção `Projetos`. Clique nela para criar um projeto associado a esta equipe.
 
-<!-- creating-project-team-menu.jpg -->
+![creating-project-team-menu](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/creating-project-team-menu.jpg)
 
 <div id='atraves-do-menu-de-usuario'></div> 
 
@@ -66,7 +66,7 @@ Na página da equipe encontraremos o menu de opções na parte superior logo aba
 
 No canto superior direito da tela clique na sua imagem de perfil para abrir o menu de opções do usuário e selecione a opção `Seus projetos`
 
-<!-- creating-project-user-menu.jpg -->
+![creating-project-user-menu](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/creating-project-user-menu.jpg)
 
 <div id='atraves-do-menu-de-repositorio'></div> 
 
@@ -74,13 +74,13 @@ No canto superior direito da tela clique na sua imagem de perfil para abrir o me
 
 Assim como o menu da organização, o menu do repositório está abaixo do menu superior principal. Identifique a opção `Projetos` e clique.
 
-<!-- creating-project-repository-menu.jpg -->
+![creating-project-repository-menu](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/creating-project-repository-menu.jpg)
 
 ---
 
 Logo após vocÊ estará na página de projetos, clique no botão `Novo projeto` e Selecione a primeira opção:
 
-<!-- selecting-project-style.jpg -->
+![selecting-project-style.jpg](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/selecting-project-style.jpg)
 
 <div id='sobre-o-modelo-planilha'></div> 
 
@@ -109,11 +109,11 @@ Como atividade podemos entender os issues (tarefas, problemas, correções), pul
 
 Para adicionar manualmente uma atividade ao projeto você pode utilizar o atalho `ctrl`+ `espaço` ou selecionar o ícone de `+` na lateral esquerda das linhas do projeto.
 
-<!-- add-new-item-option.jpg -->
+![dd-new-item-option.jpg](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/add-new-item-option.jpg)
 
 Digite o título da atividade e então pressione `enter` para salvar, logo em seguida vocÊ pode associar alguém ou você mesmo para esta atividade e definir o estado atual dela. Veja o exemplo abaixo:
 
-<!-- manual-activity.jpg -->
+![manual-activity](https://github.com/balta-io/blog/blob/main/gestao-de-projetos-com-github/images/manual-activity.jpg)
 
 <div id='atraves-de-um-issue'></div> 
 
@@ -121,19 +121,19 @@ Digite o título da atividade e então pressione `enter` para salvar, logo em se
 
 Para adicionar uma atividade através de um issue e/ou associar um issue ao projeto é simples. Antes vamos criar um issue de exemplo acessando o repositório que desejamos associar ao projeto:
 
-<!-- creating-an-issue-on-repository.jpg -->
+![creating-an-issue-on-repository](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/creating-an-issue-on-repository.jpg)
 
 `NOTA 1`: Observe que estamos na página do repositório, aqui podemos ver o botão `Novo issue`.
 
 Ao adicionar as informações ao nosso issue podemos selecionar no menu lateral direito a opção de projetos e associar este issue a um projeto determinado.
 
-<!-- link-issue-with-project.jpg -->
+![link-issue-with-project.jpg](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/link-issue-with-project.jpg)
 
 `NOTA 2`: Caso seu projeto não apareça aqui verifique as permissões do projeto, usuário, organização ou equipe.
 
 Após atribuir o issue a um projeto veremos a opção de marcar o estado atual daquele issue.
 
-<!-- change-issue-status.jpg -->
+![change-issue-status](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/change-issue-status.jpg)
 
 `NOTA 3`: O mesmo processo pode ser feito para atribuir um pull request ao projeto.
 
@@ -149,11 +149,11 @@ Como dito antes podemos costumizar as colunas, células e visualizações (views
 
 Para adicionar uma coluna precisamos apenas clicar no ícone de `+ ` localizado no final dos títulos das colunas e selecionar se queremos adicionar um campo personalizado (definindo o título e tipo) ou um campo já oferecido pelo projects. No exemplo abaixo selecionaremos um campo já configurado para exibir o nome do repositório. Assim podemos saber qual o contexto da atividade.
 
-<!-- add-repository-column-to-project.jpg -->
+![add-repository-column-to-project.jpg](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/add-repository-column-to-project.jpg)
 
 E depois de arrastar a coluna para o início o resultado é este:
 
-<!-- result-of-new-repository-column.jpg -->
+![result-of-new-repository-column.jpg](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/result-of-new-repository-column.jpg)
 
 <div id='adicionando-uma-nova-opcao-a-uma-coluna-existente'></div> 
 
@@ -161,23 +161,23 @@ E depois de arrastar a coluna para o início o resultado é este:
 
 Vamos adicionar a opção de `backlog` na coluna de `Status` para mapearmos quais atividades estão no pipeline para serem desenvolvidas. Precisamos então clicar no botão ao lado do título da coluna e selecionar `Editar valores`:
 
-<!-- edit-values-of-status.jpg -->
+![edit-values-of-status](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/edit-values-of-status.jpg)
 
 Iremos parar na tela das opções, adicionamos a opção `Backlog` e então podemos salvar as mudanças.
 
-<!-- saving-changes-of-edition-values-of-status.jpg -->
+![saving-changes-of-edition-values-of-status>](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/saving-changes-of-edition-values-of-status.jpg)
 
 Agora podemos ver que temos uma opção a mais na coluna de status:
 
-<!-- result-of-save-changes-of-edition-of-status-values.jpg -->
+![result-of-save-changes-of-edition-of-status-values](https://github.com/balta-io/blog/blob/main/gestao-de-projetos-com-github/images/result-of-save-changes-of-edition-of-status-values.jpg)
 
 `IMPORTANTE`: As modificações que acabamos de fazer ainda não foram salvas então antes de sair da página verifique sempre se há o ícone que nos notifica de mudanças não salvas. Ele fica no cabeçalho da view como no exemplo abaixo:
 
-<!-- unsaved-changes-on-project-view.jpg -->
+![unsaved-changes-on-project-view](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/unsaved-changes-on-project-view.jpg)
 
 Para salvar as mudanças, clique no botão ao lado do título da view e selecione a opção de `Salvar mudanças`.
 
-<!-- save-changes-on-project-view.jpg -->
+![save-changes-on-project-view](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/save-changes-on-project-view.jpg)
 
 `NOTA 4`: Observe que ao abrir as opções da view podemos também mudar a visualização para o modelo KanBan (Colunas e cartões), Reordenar a visualização, Filtrar e Salvar tudo que fizemos em uma View diferente, mantendo a inicial.
 
