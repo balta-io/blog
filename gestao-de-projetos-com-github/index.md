@@ -1,6 +1,6 @@
 # Sumário
 
- 1. [Introdução](#introducao)- [Introdução](#introdução)
+ 1. [Introdução](#introducao)
  2. [O que é o GitHub Projects](#o-que-é-o-github-projects)
  3. [Criando um projeto](#criando-um-projeto)
      - [Através do menu de Organização](#através-do-menu-de-organização)
