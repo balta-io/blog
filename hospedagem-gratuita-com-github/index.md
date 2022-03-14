@@ -29,15 +29,15 @@ Para que seja possível publicar o site no GitHub Pages é necessário acessar o
 
 1 - Acesse as configurações do repositório.
 
-<!-- organization-settings.jpg -->
+![organization-settings](https://raw.githubusercontent.com/balta-io/blog/main/hospedagem-gratuita-com-github/images/organization-settings.jpg)
 
 2 - Encontre a sessão de 'Código e automação' e selecione o item 'Páginas'.
 
-<!-- pages-option.jpg -->
+![pages-options](https://raw.githubusercontent.com/balta-io/blog/main/hospedagem-gratuita-com-github/images/pages-option.jpg)
 
 3 - Ao chegar em uma página semelhante ao exemplo abaixo você verá a opção de selecionar a fonte onde está localizado o código. Você deve selecionar a branch do repositório que você armazenou o mesmo. Logo abaixo você pode escolher temas que o próprio GitHub oferece para o seu site.
 
-<!-- pages-settings.jpg -->
+![pages-settings](https://raw.githubusercontent.com/balta-io/blog/main/hospedagem-gratuita-com-github/images/pages-settings.jpg)
 
 E então podemos salvar. A partir de agora o conteúdo da branch seleciona será lido pelo github pages e pode ser acessado através do link fornecido ao salvar as configurações que tem o seguinte formato:
 
@@ -67,11 +67,11 @@ git push -u origin main
 
 Ao inserir o código dentro do index.html e subir as modificações para a branch definida anteriormente, o GitHub começará o processo automático de deploy (publicação) que pode ser acompanhado ao clicar na opção de `Actions` no menu superior do repositório.
 
-<!-- deploy-page.jpg -->
+![deploy-page](https://raw.githubusercontent.com/balta-io/blog/main/hospedagem-gratuita-com-github/images/deploy-page.jpg)
 
 Quando o processo for concluído podemos conferir o resultado no link do site estático que nos foi informando durante o processo de habilitação do GitHub Pages. Veja o resultado abaixo:
 
-<!-- result-page.jpg -->
+![result-page](https://raw.githubusercontent.com/balta-io/blog/main/hospedagem-gratuita-com-github/images/result-page.jpg)
 
 # Agora é com você
 
