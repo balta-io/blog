@@ -10,7 +10,7 @@ No ano de 2020, a versão 5 do .Net foi disponibilizada como estável, tanto SDK
 
 **Por que sim?**
 
-Com o amadurecimento da ferramenta ao passar dos anos e, um gigante apoio, da JetBrains com a IDE Rider, desenvolver com C#, especialmente para a Web, Console applications, Worker Services e Unit Tests, hoje possuímos uma baita ferramenta completa, apesar de salgada, para desenvolver com comodidade no Linux (até mesmo no Mac, além do Visual Studio for Mac, e no Windows, caso não queira o Visual Studio). Para os que ainda duvidam, deem uma olhada no meu mais recente e maduro projeto de APS Net feito 100% no Linux: [A basic Snack Store MVC project.](https://github.com/JGMelon22/Snacks_Web_MVC_SqlServer)
+Com o amadurecimento da ferramenta ao passar dos anos e, um gigante apoio, da JetBrains com a IDE Rider, desenvolver com C#, especialmente para a Web, Console applications, Worker Services e Unit Tests, hoje possuímos uma baita ferramenta completa, apesar de salgada, para desenvolver com comodidade no Linux (até mesmo no Mac, além do Visual Studio for Mac, e no Windows, caso não queira o Visual Studio). Para os que ainda duvidam, deem uma olhada no meu mais recente e maduro projeto de ASP Net Core feito 100% no Linux: [A basic Snack Store MVC project.](https://github.com/JGMelon22/Snacks_Web_MVC_SqlServer)
 
 ![ImagemRider](https://user-images.githubusercontent.com/73988556/151468561-fbaa27be-625f-47c2-ac71-80a7a7f826d2.png)
 
