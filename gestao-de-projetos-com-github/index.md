@@ -16,7 +16,7 @@
      - [Adicionando colunas](#adicionando-colunas)
      - [Adicionando uma nova opção à uma coluna existente](#adicionando-uma-nova-opção-à-uma-coluna-existente)
  6. [Agora é com você](#agora-é-com-você)
- 7. [Continue lendo:](#continue-lendo)
+ 7. [Continue lendo](#continue-lendo)
  8. [Cursos relacionados](#cursos-relacionados)
  9. [Referências](#referências)
 
@@ -169,7 +169,7 @@ Iremos parar na tela das opções, adicionamos a opção `Backlog` e então pode
 
 Agora podemos ver que temos uma opção a mais na coluna de status:
 
-![result-of-save-changes-of-edition-of-status-values](https://github.com/balta-io/blog/blob/main/gestao-de-projetos-com-github/images/result-of-save-changes-of-edition-of-status-values.jpg)
+![result-of-save-changes-of-edition-of-status-values](https://raw.githubusercontent.com/balta-io/blog/main/gestao-de-projetos-com-github/images/result-of-save-changes-of-edition-of-status-values.jpg)
 
 `IMPORTANTE`: As modificações que acabamos de fazer ainda não foram salvas então antes de sair da página verifique sempre se há o ícone que nos notifica de mudanças não salvas. Ele fica no cabeçalho da view como no exemplo abaixo:
 
