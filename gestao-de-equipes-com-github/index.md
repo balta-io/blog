@@ -16,7 +16,7 @@
 
 # Introdução
 
-Já conhecemos a confunsão ao surgir a necessidade de modificar o acesso de um certo grupo de pessoas em um repositório quando não utilizamos o recurso de equipes. Quando em vez de um repositório temos vários onde pessoas diferentes(ou as mesmas pessoas) possuem níveis de acesso diferentes a situação fica ainda mais confusa. O recurso de equipes do GitHub é uma ferramenta que existe para nos auxiliar nestes processos.
+Já conhecemos a confusão ao surgir a necessidade de modificar o acesso de um certo grupo de pessoas em um repositório quando não utilizamos o recurso de equipes. Quando em vez de um repositório temos vários onde pessoas diferentes(ou as mesmas pessoas) possuem níveis de acesso diferentes a situação fica ainda mais confusa. O recurso de equipes do GitHub é uma ferramenta que existe para nos auxiliar nestes processos.
 
 <div id='equipes-no-github'></div> 
 
