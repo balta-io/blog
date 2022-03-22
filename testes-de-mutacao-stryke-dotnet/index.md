@@ -72,7 +72,7 @@ No windows explorer navegue até onde está salvo o arquivo csproj do seu projet
 ![Projeto](Images/img-url.png)
 
 
-Com o browser aberto teremos nosso relatório mostrando quantos mutantes foram criandos, sobreviveram ou morreram com as mutações criadas e também o nosso **score** , o mais importante para nós são a quantidade de mutantes que sobreviveram aos testes, eles são indicativos de testes que estão faltando
+Com o browser aberto teremos nosso relatório mostrando quantos mutantes foram criados, sobreviveram ou morreram com as mutações criadas e também o nosso **score** , o mais importante para nós são a quantidade de mutantes que sobreviveram aos testes, eles são indicativos de testes que estão faltando
 
 ![Projeto](Images/img-mutantes.png)
 
@@ -81,11 +81,11 @@ Ao selecionar a box de killed poderemos ver todas as alterações que foram feit
 
 ![Projeto](Images/img-killed.png)
 
-Selecionando a box de Survived será mostrando todas as alterações feitas e que fizeram os testes falharem e mostrando possíveis alterações para melhorar o código, mas fique atento, nem todas alterações recomendadas atendem nossas necessidades, temos que saber analisar e usar o que for necessário para nassa regra de negório, assim
+Selecionando a box de Survived será mostrando todas as alterações feitas e que fizeram os testes falharem e mostrando possíveis alterações para melhorar o código, mas fique atento, nem todas alterações recomendadas atendem nossas necessidades, temos que saber analisar e usar o que for necessário para nossa regra de negócio, assim
 
 ![Projeto](Images/img-survived.png)
 
-Tendo todos esses dados, vamos ajustar nosso método e melhorar os testes
+Tendo todos esses dados, iremos ajustar nosso método e melhorar os testes
 Vamos adicionar mais uma condicional no método para que seja aceito a idade de 10 anos também
 ```csharp
 public bool RecomendadeAge(int age)
@@ -123,7 +123,7 @@ Vamos rodar nossos testes e ver se todos passam
 ![Projeto](Images/img-testes.png)
 
 Os testes continuam passando, agora vamos novamente executar o comando ```dotnet Stryker``` cmd ou powerShell na pasta onde está nosso projeto de testes, em seguida copiar a URL gerada e abrir no browser para podermos usar o relatório.
-Com ele aberto ja teremos nosso relatório, mostrando todas as alterações feitas em nosso método e a quantidade de mutantes de sobreviveram ou morreram aos testes
+Com ele aberto ja teremos nosso relatório, mostrando todas as alterações feitas em nosso método e a quantidade que mutantes de sobreviveram ou morreram aos testes
 
 ![Projeto](Images/img-final.png)
 
@@ -131,7 +131,7 @@ Na imagem acima ja podemos ver que nenhum mutante sobreviveu, todos nossos teste
 
 Considerações finais
 ---
-Nossos códigos nem sempre vão estar cobertos totalmente pelos testes, os testes de mutação podem nos ajudar a criar novos cenários e a ajudar o programador a prevenir possíveis bugs, aqui tivemos um exemplo simples, apenas para mostrar a biblioteca e falar um pouco sobre os testes de mutação, mas com projetos reais a quantidade de combinações criadas pode crescer muito, com isso criando vários cenários e ajudando o programados a melhorar os testes, vale lembrar que nem todas as alterações recomendadas quando um mutante sobrevive são as melhores para nossa regra de negócio, devemos saber analisar para utilizar a melhor recomendação
+Nossos códigos nem sempre vão estar cobertos totalmente pelos testes, os testes de mutação podem nos ajudar a criar novos cenários e a ajudar o programador a prevenir possíveis bugs, aqui tivemos um exemplo simples, apenas para mostrar a biblioteca e falar um pouco sobre os testes de mutação, mas com projetos reais a quantidade de combinações criadas pode crescer muito, com isso criando vários cenários e ajudando o programadores a melhorar os testes, vale lembrar que nem todas as alterações recomendadas quando um mutante sobrevive são as melhores para nossa regra de negócio, devemos saber analisar para utilizar a melhor recomendação
 
 Referências [Stryker.NET](https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/)
 
