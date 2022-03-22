@@ -85,7 +85,7 @@ Selecionando a box de Survived será mostrando todas as alterações feitas e qu
 
 ![Projeto](Images/img-survived.png)
 
-Tendo todos esses dados, vamos ajustar nosso método e melhorar os testes
+Tendo todos esses dados, iremos ajustar nosso método e melhorar os testes
 Vamos adicionar mais uma condicional no método para que seja aceito a idade de 10 anos também
 ```csharp
 public bool RecomendadeAge(int age)
@@ -131,7 +131,7 @@ Na imagem acima ja podemos ver que nenhum mutante sobreviveu, todos nossos teste
 
 Considerações finais
 ---
-Nossos códigos nem sempre vão estar cobertos totalmente pelos testes, os testes de mutação podem nos ajudar a criar novos cenários e a ajudar o programador a prevenir possíveis bugs, aqui tivemos um exemplo simples, apenas para mostrar a biblioteca e falar um pouco sobre os testes de mutação, mas com projetos reais a quantidade de combinações criadas pode crescer muito, com isso, criando vários cenários e ajudando o programados a melhorar os testes, vale lembrar que nem todas as alterações recomendadas quando um mutante sobrevive são as melhores para nossa regra de negócio, devemos saber analisar para utilizar a melhor recomendação
+Nossos códigos nem sempre vão estar cobertos totalmente pelos testes, os testes de mutação podem nos ajudar a criar novos cenários e a ajudar o programador a prevenir possíveis bugs, aqui tivemos um exemplo simples, apenas para mostrar a biblioteca e falar um pouco sobre os testes de mutação, mas com projetos reais a quantidade de combinações criadas pode crescer muito, com isso, criando vários cenários e ajudando o programadores a melhorar os testes, vale lembrar que nem todas as alterações recomendadas quando um mutante sobrevive são as melhores para nossa regra de negócio, devemos saber analisar para utilizar a melhor recomendação
 
 Referências [Stryker.NET](https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/)
 
