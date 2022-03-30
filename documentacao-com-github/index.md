@@ -109,9 +109,196 @@ O trecho de código adicionado abaixo do subtítulo:
 </p>
 ```
 
-# Wiki
+`Nota 2:` Para exemplicar a utilidade de Wiki e Discussions que vem abaixo será utilizado um repositório de um outro projeto já existente e de código aberto.
 
-# Discus
+# Wiki
+A Wiki do GitHub que pode ser descrita como uma ferramenta para gestão de conteúdo é um espaço onde podemos paginar a documentação e contar com um sumário bem posicionado, diferente do README que contém uma única página.
+
+Na Wiki todos os títulos (conhecidos pela marcação `<h></h>` ou `#`) são identificados como tópico do sumário. Veja abaixo:
+
+Código:
+```markdown
+# Oldcare - Cuidando com amor
+
+## Histórico de revisão
+
+# 1 - Objetivo do documento
+
+## 1.1 - Objetivos
+
+## 1.2 - Abrangência do projeto
+```
+
+Resultado:
+
+![wiki-example-result](images/wiki-example-result.jpg)
+
+## Criando uma página da wiki
+
+Para criar a wiki é necessário acessar a página de wiki no menu superior da página do repositório:
+
+![wiki-repo-item](images/wiki-repo-item.jpg)
+
+Ao acessar a primeira vez, você verá uma mensagem descrevendo os possíveis usos do recurso e um botão para criar sua primeira página, vamos clicar neste botão:
+
+![clean-wiki-page](images/clean-wiki-page.jpg)
+
+Colando aqui o código do README que construimos acima e salvar será possível ver o sumário ao lado:
+
+![wiki-final-summary](images/wiki-final-summary.jpg)
+
+E com isto fica aberta a possibilidade para desenvolvermos novas páginas e seguir documentando o nosso repositório. Veja abaixo exemplo trazidos de um outro repositório:
+
+### Tabelas
+![table-example](images/table-example.jpg)
+
+Código:
+
+```markdown
+## Histórico de revisão
+
+<table>
+    <thead>
+        <th style="width: 25%;">
+            Data
+        </th>
+        <th style="width: 25%;">
+            Versão
+        </th>
+        <th style="width: 25%;">
+            Descrição
+        </th>
+        <th style="width: 25%;">
+            Participantes
+        </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                10/08/2021
+            </td>
+            <td>
+                0.1
+            </td>
+            <td>
+                Criação do documento e preenchimento dos primeiros tópicos
+            </td>
+            <td>
+                Abiratan Lopes, Brewerton Santos, Gizele Bedaque, Juan Rodrigues
+            </td>
+        </tr>
+        <tr>
+            <td>
+                14/08/2021
+            </td>
+            <td>
+                0.2
+            </td>
+            <td>
+                Migração do documento visão e relatórios de reunião para o github. Criação de novas regras de negócio (2 à 12)
+            </td>
+            <td>
+                Abiratan Lopes, Brewerton Santos, Juan Rodrigues
+            </td>
+        </tr>
+        <tr>
+            <td>
+                17/08/2021
+            </td>
+            <td>
+                0.3
+            </td>
+            <td>
+                Desenvolvimento dos tópicos que estavam em branco (com exceção do item "4.1 - avaliação de concorrentes").
+            </td>
+            <td>
+                Abiratan Lopes, Brewerton Santos, Juan Rodrigues
+            </td>
+        </tr>
+        <tr>
+            <td>
+                21/08/2021
+            </td>
+            <td>
+                0.4
+            </td>
+            <td>
+                Criação do diagrama de classes e caso de uso de autenticação e cadastro de usuário; Adição de 2 novas regras de negócio (13, 14).
+            </td>
+            <td>
+                Abiratan Lopes, Brewerton Santos, Juan Rodrigues
+            </td>
+        </tr>
+    </tbody>
+</table>
+```
+
+### Acordeões:
+
+![accordion-example](images/accordion-example.jpg)
+
+Código:
+
+```markdown
+# 2 - Descrição dos problemas
+
+## Problemas
+
+<details><summary>1 - Ausência de controle das informações da entidade</summary>
+    <p>
+        <table>
+            <tbody>
+                <tr>
+                    <th style="width: 25%;">
+                        Problema
+                    </th>
+                    <td>
+                        Ausência de controle das informações da entidade 
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 25%;">
+                        Afeta
+                    </th>
+                    <td>
+                        Entidade/Diretoria/Funcionários
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 25%;">
+                        Impacto
+                    </th>
+                    <td>
+                        Dificuldade em atender as exigências da LGPD pela ausência de segmentação no controle de acesso.
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 25%;">
+                        Solução
+                    </th>
+                    <td>
+                        Virtualização dos dados e restrição de acesso às informações através de do sistema via autenticação e autorização dos usuários.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </p>
+</details>
+```
+
+# Discussions
+
+O recurso de discussions é um espaço semelhante a um fórum. Onde podemos ter diversos assuntos em palta, separados por temas e tópicos. No exemplo abaixo é exibida a página de relatórios de reunião utilizadas no repositório do `OldCare`:
+
+![discussion-page](images/discussion-page.jpg)
+
+A esquerda é possível ver os temas que existem (podendo ser editados e removidos) e no centro/direita temos os tópicos referentes à cada registro.
+
+O uso do discussions é livre contanto que não quebre as regras de conduta do GitHub. Ele não vem habilitado por padrão nos repositórios, podendo ser habilitado através do menu de configurações do repositório:
+
+![way-to-discussion-feature-option](images/way-to-discussion-feature-option.jpg)
+
+![discussion-feature-option](images/discussion-feature-option.jpg)
 
 # Continue lendo:
 
@@ -120,6 +307,14 @@ O trecho de código adicionado abaixo do subtítulo:
 [ASP.NET Deploy com GitHub Actions e Microsoft Azurel](https://balta.io/blog/aspnet-deploy-github-actions-azure)
 
 [GitHub Packages e GitHub Actions - Distribuindo contextos delimitados](https://balta.io/blog/github-packages-github-actions-distribuindo-contextos-delimitados)
+
+Ou pelo através da url:
+
+```url
+https://github.com/user/repository/settings#discussions-feature
+```
+
+Modifique `user` para o nome de usuário do proprietário do repositório e `repository` para o nome do repositório. Ao acessar você verá a opção de habilitar o discussions.
 
 ## Cursos relacionados
 
