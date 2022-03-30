@@ -30,7 +30,7 @@ Console.WriteLine("Hello World!");
 ```
 
 ### Conteúdo
-Após o tema ter sido aceito, você pode começar a escrever seu artigo, ele tem que ser no formato **Markdown** e conter pelo menos **1200 palavras**. Lembre-se de adicionar sumário e tópicos corretamente em seu artigo.
+Após o tema ter sido aceito, você pode começar a escrever seu artigo, ele tem que ser no formato **Markdown** e conter pelo menos **1000 palavras**. Lembre-se de adicionar sumário e tópicos corretamente em seu artigo.
 
 `NOTA 1`: Caso tenha usado outros artigos, documentação e pesquisas durante o processo de desenvolvimento do seu artigo. Adicione as referências no final do seu artigo.
 
