@@ -166,19 +166,10 @@ Se você executar um **dotnet new** por exemplo, para criar uma nova aplicação
 
 O mesmo ocorre quando você executa o comando **dotnet restore**, para restaurar os pacotes da sua aplicação. Ele sempre se baseia na SDK padrão que no caso é a última versão disponível.
 
-Particularmente, não recomendamos alterar este comportamento. Você pode remover uma SDK, mas imagina o trabalho que isto dá.
-
-A solução para este comportamento, é a criação de um arquivo **_Global.json_** na raiz da aplicação ou da pasta onde você está executando os comandos **dotnet**.
-
-O comando **dotnet** **SEMPRE** olhará este arquivo antes de prosseguir, e nele podemos definir qual versão do SDK queremos usar para criação do App ou restauração dos pacotes.
-
-Abaixo temos um exemplo de um **Global.json** que especifica que a versão 3.1.100 do .NET Core deve ser utilizada.
-
-    {  
-        "sdk": {  
-            "version": "3.1.100"  
-        }  
-    }
+Para criar um projeto em uma versão anterior do .NET, como por exemplo no .NET 5, basta utilizar a flag `-f netX.X` onde `X.X` é a versão do .NET (3.1, 5.0, 6.0).
+```
+dotnet new console -o MeuConsoleApp -f net5.0
+```
 
 Criando seu primeiro App
 ------------------------
