@@ -1,12 +1,23 @@
 # Sumário
 
  1. [Introdução](#introducao)
+ 2. [O README do repositório](#o-readme-do-repositorio)
+ 3. [Wiki](#wiki)
+ 4. [Discussions](#discussions)
+ 5. [Continue lendo](#continue-lendo)
+ 6. [Referências](#ref)
+
+<div id="introducao"></div>
+
+# Introdução
 
 Comentar exageradamente o código ou escrever documentação em arquivos Word é uma prática bem comum na rotina de trabalho de muitas pessoas desenvolvedoras. Aprenderemos neste artigo reforçaremos o que já foi mostrado nos artigos anteriores desta série: o GitHub é além de uma ferramenta de versionamento de código, uma ferramenta de DevOps também e este argumento se aplica neste artigo através da documentação.
 
 A forma mais direta de apresentar um resumo e descrição do repositório é através do `README.md` o tão conhecido arquivo é muitas vezes mal produzido se não, ignorado. Este não deve ser menosprezado e sim visto como a oportunidade de fazer uma boa apresentação do conteúdo do repositório.
 
 O README.md é muito eficiente mas os recursos de documentação do GitHub vão muito além dele oferecendo uma WiKi (Coleção de documentos) que podem ser escritos e formatados através do formato MarkDown. Também é possível gerar discussões sobre tarefas, desafios, sugestões de novas funcionalidades e diversos outros assuntos que seja do interesse dos administradores do repositório. Tudo exibido de forma organizada e bem segmentada.
+
+<div id="o-readme-do-repositorio"></div>
 
 # O README do repositório
 
@@ -110,6 +121,8 @@ O trecho de código adicionado abaixo do subtítulo:
 ```
 
 `Nota 2:` Para exemplicar a utilidade de Wiki e Discussions que vem abaixo será utilizado um repositório de um outro projeto já existente e de código aberto.
+
+<div id="wiki"></div>
 
 # Wiki
 A Wiki do GitHub que pode ser descrita como uma ferramenta para gestão de conteúdo é um espaço onde podemos paginar a documentação e contar com um sumário bem posicionado, diferente do README que contém uma única página.
@@ -286,6 +299,8 @@ Código:
 </details>
 ```
 
+<div id="discussions"></div>
+
 # Discussions
 
 O recurso de discussions é um espaço semelhante a um fórum. Onde podemos ter diversos assuntos em palta, separados por temas e tópicos. No exemplo abaixo é exibida a página de relatórios de reunião utilizadas no repositório do `OldCare`:
@@ -300,14 +315,6 @@ O uso do discussions é livre contanto que não quebre as regras de conduta do G
 
 ![discussion-feature-option](images/discussion-feature-option.jpg)
 
-# Continue lendo:
-
-[Gestão de projetos com GitHub](https://balta.io/blog/gestao-de-projetos-com-github)
-
-[ASP.NET Deploy com GitHub Actions e Microsoft Azurel](https://balta.io/blog/aspnet-deploy-github-actions-azure)
-
-[GitHub Packages e GitHub Actions - Distribuindo contextos delimitados](https://balta.io/blog/github-packages-github-actions-distribuindo-contextos-delimitados)
-
 Ou pelo através da url:
 
 ```url
@@ -315,6 +322,16 @@ https://github.com/user/repository/settings#discussions-feature
 ```
 
 Modifique `user` para o nome de usuário do proprietário do repositório e `repository` para o nome do repositório. Ao acessar você verá a opção de habilitar o discussions.
+
+<div id="continue-lendo"></div>
+
+# Continue lendo:
+
+[Gestão de projetos com GitHub](https://balta.io/blog/gestao-de-projetos-com-github)
+
+[ASP.NET Deploy com GitHub Actions e Microsoft Azurel](https://balta.io/blog/aspnet-deploy-github-actions-azure)
+
+[GitHub Packages e GitHub Actions - Distribuindo contextos delimitados](https://balta.io/blog/github-packages-github-actions-distribuindo-contextos-delimitados)
 
 ## Cursos relacionados
 
