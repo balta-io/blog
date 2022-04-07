@@ -130,6 +130,7 @@ Outro diferencial do uso do parâmetro `-o` é que ele cria um diretório com o 
 ## Cursos relacionados
 
 `Gratuito` | [Fundamentos do C#](https://balta.io/cursos/fundamentos-git-azure-devops)
+
 [Fundamentos do ASP.NET 6](https://balta.io/cursos/fundamentos-aspnet)
 
 <div id='ref'></div> 
