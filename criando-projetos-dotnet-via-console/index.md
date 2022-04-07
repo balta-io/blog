@@ -135,4 +135,4 @@ Outro diferencial do uso do parâmetro `-o` é que ele cria um diretório com o 
 <div id='ref'></div> 
 
 ## Referências
-[Documentação do GitHub](https://docs.github.com/)
+[Documentação da Microsoft](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new)
