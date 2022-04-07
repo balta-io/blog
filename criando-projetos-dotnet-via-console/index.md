@@ -121,15 +121,16 @@ Outro diferencial do uso do parâmetro `-o` é que ele cria um diretório com o 
 
 # Continue lendo:
 
-[Gestão de projetos com GitHub](https://balta.io/blog/gestao-de-projetos-com-github)
+[.NET - Instalação, Configuração e primeiros passos](https://balta.io/blog/dotnet-instalacao-configuracao-e-primeiros-passos)
 
-[ASP.NET Deploy com GitHub Actions e Microsoft Azurel](https://balta.io/blog/aspnet-deploy-github-actions-azure)
+[Números no C# e .NET](https://balta.io/blog/numeros-csharp-dotnet)
 
-[GitHub Packages e GitHub Actions - Distribuindo contextos delimitados](https://balta.io/blog/github-packages-github-actions-distribuindo-contextos-delimitados)
+[DateTime no C# e .NET](https://balta.io/blog/datetime-csharp-dotnet)
 
 ## Cursos relacionados
 
-`Gratuito` | [Fundamentos do Git e Azure DevOps](https://balta.io/cursos/fundamentos-git-azure-devops)
+`Gratuito` | [Fundamentos do C#](https://balta.io/cursos/fundamentos-git-azure-devops)
+[Fundamentos do ASP.NET 6](https://balta.io/cursos/fundamentos-aspnet)
 
 <div id='ref'></div> 
 
