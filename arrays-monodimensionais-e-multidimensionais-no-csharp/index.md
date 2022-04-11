@@ -123,7 +123,7 @@ foreach (var item in monodimensionalArray)
 
 # Array multidimensional (matriz)
 
-Um array multidimensional (matriz) é uma tabela. Podendo ser exemplificado graficamente assim (matriz 2x3):
+Um array multidimensional (matriz) é uma tabela, podendo ser exemplificado graficamente assim (matriz 3x2):
 
 ![square-table](images/matriz.png)
 
