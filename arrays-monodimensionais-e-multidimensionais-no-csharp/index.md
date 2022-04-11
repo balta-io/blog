@@ -54,7 +54,7 @@ O array monodimensional, também conhecido como vetor, é uma lista simples que 
 var monodimensionalArray = new int[10];
 ```
 
-É preciso lembrar que os arrays no C# a posição inicial como zero. Sendo assim, um array de 10 elementos fica com as posições: 0, 1, 2... 8, 9.
+É preciso lembrar que os arrays no C# tem a posição inicial como zero. Sendo assim, um array de 10 elementos fica com as posições: 0, 1, 2... 8, 9.
 
 O C# uma linguagem tipada e isto implica que, uma vez definido o tipo do array, apenas valores do mesmo tipo serão aceitos.
 
