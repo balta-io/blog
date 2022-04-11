@@ -34,7 +34,7 @@
 
 # Introdução
 
-Os arrays são representações de listas no C#. Eles podem ser compostos por uma variedade de itens do mesmo tipo e podem ser manipulados ao apontar a posição desejada.
+Os arrays são representações de listas no C#. Eles podem ser compostos por um conjunto de itens do mesmo tipo e podem ser manipulados ao apontar a posição desejada.
 
 Este artigo tem o  objetivo de introduzir ao uso de arrays monodimensionais (também conhecidos como vetores) e multidimensionais (também conhecidos como matrizes) passando por declaração, inicialização, leitura e manipulação.
 
@@ -48,13 +48,13 @@ Este artigo tem o  objetivo de introduzir ao uso de arrays monodimensionais (tam
 
 # Declarando o vetor
 
-O array monodimensional, também conhecido como vetor é uma lista simples que pode ser declarada da seguinte forma:
+O array monodimensional, também conhecido como vetor, é uma lista simples que pode ser declarada da seguinte forma:
 
 ```csharp
 var monodimensionalArray = new int[10];
 ```
 
-É preciso lembrar que os arrays no C# tem como posição inicial a posição zero. Sendo assim, um array de 10 posições fica com as posições: 0, 1, 2... 8, 9.
+É preciso lembrar que os arrays no C# a posição inicial como zero. Sendo assim, um array de 10 posições fica com as posições: 0, 1, 2... 8, 9.
 
 O C# uma linguagem típada e isto implica que uma vez definido o tipo do array, apenas valores do mesmo tipo serão aceitos.
 
@@ -74,7 +74,7 @@ Ou posteriormente adicionando valor a cada posição:
 monodimensionalArray[0] = 61;
 ```
 
-O valor entre colchetes representa a posição do array que deve receber o valor. No exemplo acima a posição zero está recebendo o valor 61 ou seja, ao lermos a primeira posição do nosso array teremos 61 como retorno.
+O valor entre colchetes representa a posição do array que deve receber o valor. No exemplo acima, a posição zero está recebendo o valor 61, ou seja, ao lermos a primeira posição do nosso array teremos 61 como retorno.
 
 <div id='lendo-itens'></div> 
 
@@ -92,18 +92,18 @@ E assim teremos como saída no console o valor da posição indicada.
 
 # Percorrendo o vetor
 
-Nós podemos utilizar tanto a condicional `for` quanto a condicional `foreach` para percorrer o nosso array e declararmos uma ação cada vez que chegarmos em uma posição diferente.
+Nós podemos utilizar tanto a instrução `for` quanto a instrução `foreach` para percorrer o nosso array e declararmos uma ação cada vez que chegarmos em uma posição diferente.
 
-Primeiro vamos atribuir valores para cada posição do nosos array:
+Primeiro vamos atribuir valores para cada posição do nosso array:
 
 ```csharp
 for (var item = 0; item < monodimensionalArray.Length; item++)
     monodimensionalArray[item] = item;
 ```
 
-No exemplo acima para cada posição do nosso array o valor desta mesma posição (representada por monodimensionalArray[item]) é atribuido com o número da posição no array. Ou seja: A posição zero recebe o valor 0, a posição um recebe o valor 1 e assim por diante.
+No exemplo acima, para cada posição do nosso array, o valor desta posição (representada por monodimensionalArray[item]) é atribuido com o número da posição no array. Ou seja: A posição zero recebe o valor 0, a posição um recebe o valor 1 e assim por diante.
 
-Nos exemplos abaixo o array é percorrido e para cada vez que passarmos em uma posição dele, o valor desta é exibido no console:
+Nos exemplos abaixo, o array é percorrido e o valor armazenado em cada posição é exibido no console:
 
 ```csharp
 for (var item = 0; item < monodimensionalArray.Length; item++)
@@ -117,7 +117,7 @@ foreach (var item in monodimensionalArray)
     Console.WriteLine(monodimensionalArray[item]);
 ```
 
-`Nota 1:` *Nos casos em que se faça necessário copiar um array não assimile valores. Opte sempre pelo método `.Clone()`. Para criar uma nova versão do array em vez de apenas referênciar a antiga (ou uma edição pode acabar modificando os dois arrays).*
+`Nota 1:` *Nos casos em que se faça necessário copiar um array, opte sempre pelo método `.Clone()`. Usar `=` com arrays apenas cria uma nova referência para os mesmos elementos, e a edição de um elemento pode acabar modificando os "dois" arrays.*
 
 <div id='array-multidimensional'></div> 
 
@@ -196,7 +196,7 @@ foreach (var item in multidimensionalArray)
 
 # Agora é com você
 
-Para exercitar o que foi mostrado neste artigo podem ser feitos outros exemplos com vetores de objetos e matrizes com 2+ dimensões. Exibir e percorrer graficamente um vetor ou matriz também pode ser de grande aprendizado considerando que envolve mais complexidade que apenas declarar e percorrer matrizes em um contexto estático.
+Para exercitar o que foi mostrado neste artigo, podem ser feitos outros exemplos com vetores de objetos e matrizes com 2+ dimensões. Exibir e percorrer graficamente um vetor ou matriz também pode ser de grande aprendizado, considerando que envolve mais complexidade do que apenas declarar e percorrer matrizes em um contexto estático.
 
 <div id='continue-lendo'></div> 
 
