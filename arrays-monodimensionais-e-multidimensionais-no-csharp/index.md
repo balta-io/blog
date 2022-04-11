@@ -54,9 +54,9 @@ O array monodimensional, também conhecido como vetor, é uma lista simples que 
 var monodimensionalArray = new int[10];
 ```
 
-É preciso lembrar que os arrays no C# a posição inicial como zero. Sendo assim, um array de 10 posições fica com as posições: 0, 1, 2... 8, 9.
+É preciso lembrar que os arrays no C# a posição inicial como zero. Sendo assim, um array de 10 elementos fica com as posições: 0, 1, 2... 8, 9.
 
-O C# uma linguagem típada e isto implica que uma vez definido o tipo do array, apenas valores do mesmo tipo serão aceitos.
+O C# uma linguagem tipada e isto implica que, uma vez definido o tipo do array, apenas valores do mesmo tipo serão aceitos.
 
 <div id='inicializando'></div> 
 
@@ -80,7 +80,7 @@ O valor entre colchetes representa a posição do array que deve receber o valor
 
 # Lendo itens do vetor
 
-Ler o valor de um item do array é bem simples. Basta chamar o array e entre colchetes passar a posição que desejamos:
+Ler o valor de um elemento do array é bem simples. Basta chamar o array e entre colchetes passar a posição que desejamos:
 
 ```csharp
 Console.WriteLine($"{monodimensionalArray[0]}")
@@ -167,7 +167,7 @@ multidimensionalArray[2,0] = 77; // terceira linha, coluna um
 multidimensionalArray[2,1] = 28; // terceira linha, coluna dois
 ```
 
-Observe que diferente do vetor, atribuir valor à matriz exige que seja declarada a linha e coluna do item que está recebendo valor.
+Observe que, diferente do vetor, atribuir valor à matriz exige que seja declarada a linha e coluna do item que está recebendo valor.
 
 <div id='lendo-itens-matriz'></div> 
 
@@ -185,7 +185,7 @@ E assim teremos como saída no console o valor da posição indicada.
 
 # Percorrendo a matriz
 
-Com a nossa matriz definida, vamos percorrer os itens utilizando a condicional `foreach` para exibir o valor dos itens no console:
+Com a nossa matriz definida, vamos percorrer os elementos utilizando a instrução `foreach` para exibir o valor dos elementos no console:
 
 ```csharp
 foreach (var item in multidimensionalArray)
