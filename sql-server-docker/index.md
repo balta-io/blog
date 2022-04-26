@@ -30,6 +30,13 @@ Nosso primeiro passo então é obter a imagem do SQL Server que será o molde pa
 docker pull mcr.microsoft.com/mssql/server
 ```
 
+#### Mac com chip M1
+No momento o SQL Server ainda não suporta os chips M1 da Apple, desta forma, precisamos rodar o Azure SQL Edge:
+
+```
+docker pull mcr.microsoft.com/azure-sql-edge
+```
+
 Note que a primeira mensagem será <code>Using default tag: latest</code> o que significa que estamos obtendo a última versão desta imagem, provavelmente com a última versão estável do Mongo.
 
 Caso queira baixar alguma versão específica, verifique as [tags disponíveis aqui](https://hub.docker.com/_/microsoft-mssql-server).
@@ -51,6 +58,14 @@ docker run -v ~/docker --name sqlserver -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD
 ```
 
 Para parar a execução você pode pressionar <kbd>CTRL</kbd> + <kbd>C</kbd> no Terminal. Deste momento em diante, seu container vai aparecer na **Dashboard** do Docker de forma visual, onde você poderá parar ou iniciar ela a qualquer momento.
+
+### Mac M1
+
+Continuando a saga do M1, a execução muda para os comandos abaixo:
+
+```
+docker run -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=1q2w3e4r@#$" -e "MSSQL_PID=Developer" -e "MSSQL_USER=SA" -p 1433:1433 -d --name=sqlserver mcr.microsoft.com/azure-sql-edge
+```
 
 ## Connection String
 
