@@ -190,7 +190,7 @@ para execução de testes.
 
 [Fundamentos do C#, balta.io](https://balta.io/cursos/fundamentos-csharp)
 
-[Wikipédia](https://pt.wikipedia.org)
+[http://www.dsc.ufcg.edu.br/~jacques/cursos/map/html/frame/oque.htm](http://www.dsc.ufcg.edu.br/~jacques/cursos/map/html/frame/oque.htm)
 
 [https://edisciplinas.usp.br/pluginfile.php/4101209/mod_resource/content/1/Aula4a-RosanaFrameworks.pdf](https://edisciplinas.usp.br/pluginfile.php/4101209/mod_resource/content/1/Aula4a-RosanaFrameworks.pdf)
 
