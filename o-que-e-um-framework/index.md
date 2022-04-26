@@ -190,8 +190,6 @@ para execução de testes.
 
 [Fundamentos do C#, balta.io](https://balta.io/cursos/fundamentos-csharp)
 
-[Wikipédia](https://pt.wikipedia.org)
-
 [https://edisciplinas.usp.br/pluginfile.php/4101209/mod_resource/content/1/Aula4a-RosanaFrameworks.pdf](https://edisciplinas.usp.br/pluginfile.php/4101209/mod_resource/content/1/Aula4a-RosanaFrameworks.pdf)
 
 [http://www.ic.uff.br/~anselmo/cursos/ProjSoft/apresentacoes/Frameworks.pdf](http://www.ic.uff.br/~anselmo/cursos/ProjSoft/apresentacoes/Frameworks.pdf)
