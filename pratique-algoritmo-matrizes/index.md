@@ -28,7 +28,7 @@ Este artigo apresenta 30 enunciados de exercícios de algoritmo envolvendo array
 
 ---
 
-4 - Escreva um programa para ler uma matriz D de dimensão N x M, onde N e M não poderem ser menores que um. Gerar os elementos aleatoriamente. O usuário deve informar a dimensão (linha e coluna) e um valor máximo para elementos aleatórios. O programa efetuar todas as validações. Lembre-se de aproveitar os recursos da linguagem Java para facilitar as validações.
+4 - Escreva um programa para ler uma matriz D de dimensão N x M, onde N e M não poderem ser menores que um. Gerar os elementos aleatoriamente. O usuário deve informar a dimensão (linha e coluna) e um valor máximo para elementos aleatórios. O programa efetuar todas as validações. Lembre-se de aproveitar os recursos da linguagem para facilitar as validações.
 
 ---
 
@@ -130,17 +130,11 @@ Este artigo apresenta 30 enunciados de exercícios de algoritmo envolvendo array
 
 29 - Escreva um programa para solicitar ao usuário um valor. Este valor lido será a quantidade de elementos de um vetor. Gerar os elementos do vetor. A partir do vetor gerado, criar uma matriz, onde a quantidade de linhas será igual à quantidade de elementos do vetor e as colunas serão os valores dos elementos do vetor mais um. Com a matriz criada, armazenar na primeira coluna de cada linha o respectivo elemento do vetor criado inicialmente e os demais elementos da linha serão formados pela sequencia de Primos. Imprimir a matriz resultante.
 
-Exemplo:
-
-```console
-Quantidade de elementos: 4
-Vetor gerado: 3, 5, 1, 6
-Matriz gerada: 3, 1, 2, 3
-               5, 1, 2, 3, 5, 7
-               6, 1, 2, 3, 5, 7, 11
-```
+---
 
 30 - Escreva um programa para gerar uma matriz (N x M). O usuário deve informar uma faixa de valores inteiros positivos (valor inicial e valor final). O programa deve gerar aleatoriamente os elementos da matriz, respeitando a faixa de valores fornecida pelo usuário. Ao final, imprimir a matriz resultante.
+
+---
 
 <div id='conclusao'></div>
 
