@@ -10,7 +10,7 @@
 
 # Introdução
 
-Este artigo apresenta 30 enunciados de exercícios de algoritmo envolvendo arrays monodimensionais e multidimensionais (matrizes). Podendo ser desenvolvidos na linguagem de programação com a qual o leitor tenha mais facilidade.
+Este artigo apresenta 30 enunciados de exercícios de algoritmo envolvendo matrizes. Podendo ser desenvolvidos na linguagem de programação com a qual o leitor tenha mais facilidade.
 
 <div id='exercicios'></div> 
 
