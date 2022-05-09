@@ -44,4 +44,4 @@ Para publicar seu artigo, basta fazer um **Pull request** para este repositório
 * nome-do-artigo/index.md -> Seu artigo
 * nome-do-artigo/images/ -> Imagens do seu artigo
 
-Nós vamos priorizar artigos escritos **exclusivamente** para nossa plataforma.
+Nós vamos priorizar artigos escritos **exclusivamente** para nossa plataforma..
