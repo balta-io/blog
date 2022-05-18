@@ -124,5 +124,10 @@ on:
   workflow_call:
 ```
 
-Após a criação do repositório com o fluxo de trabalho adicionado, no repositório de destino em que você deseja reutilizar o fluxo, podemos criar a estrutura:
+Após a criação do repositório com o fluxo de trabalho adicionado, no repositório de destino em que você deseja reutilizar o fluxo, podemos criar a pasta .github com workflows e um nome de fluxo de trabalho de sua escolha. Para demonstração, irei identificar apenas com um fluxo de trabalho reutilizável.
 
+![Reutilizando fluxos de trabalho](images/calling-reusable-workflow.png?raw=true)
+
+A visualização do fluxo poderá ser encontrada em Actions no menu do repositorio.
+
+![Visualizando a execução do fluxo de trabalho](images/showing-reusable-workflow.png?raw=true)
