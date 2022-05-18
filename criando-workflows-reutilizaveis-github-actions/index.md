@@ -1,4 +1,4 @@
-# Criando workflows reutilizáveis no GitHub Actions
+# Usando fluxos de trabalho no GitHub Actions
 
 Requisitos
 ----------
@@ -13,13 +13,18 @@ A automação desse processo pode ser realizada através de um método chamado C
 
 ## Motivação
 
-Dentro do repositório da sua organização, você provavelmente pode ter se deparado com projetos que utilizam o mesmo fluxo de trabalho para automatizar o processo comentado. Isso pode gerar workflows duplicados entre os repositórios e que, a longo prazo, dependendo do contexto de negócio e saúde das aplicações, a sua manutenção pode acabar ficando complexa quando uma mudança surgir ou uma etapa for adicionada. E a duplicação não necessariamente garante que as etapas adicionadas sejam similares. Partindo desse princípio, que talvez pode não ser identificado com o seu contexto, uma dúvida surgiu: será que é possível reutilizar workflows? E a resposta é: sim, é possível.
+Dentro da sua organização, você pode ter se deparado com um cenário que para reutilizar um fluxo de trabalho, você pode ter utilizado o famoso ctrl+c -> ctrl+v para copiar os principais comandos e adicioná-los ao seu repositório. Partindo desse princípio, que talvez pode não ser identificado com o seu contexto, mas uma dúvida surgiu: será que é possível reutilizar workflows? E a resposta é: sim, é possível.
 
 ![Criando workflows em repositórios diferentes](images/repositories.png?raw=true)
 
 ## Contexto
 
-Podemos criar templates e reutilizá-los de duas maneiras diferentes. Mas antes, utilizaremos o modelo abaixo definido em uma versão simplificada no exemplo de reutilização do workflow.
+Vamos apresentar duas maneiras de reutilizar fluxos de trabalho e como realizar suas configurações: 
+
+1. Criando fluxos de trabalho; 
+2. Reutilizando fluxos de trabalho;
+
+Mas antes, utilizaremos o modelo abaixo definido em uma versão simplificada para apresentarmos as etapas de configuração posteriores para os dois contextos apresentados.
 
 ![CI simplificado](images/ci-cd.png?raw=true)
 
@@ -59,8 +64,41 @@ jobs:
         run: npm run build
 ```
 
-![CI simplificado](images/criando-templates.png?raw=true)
+## Criando fluxos de trabalho iniciais
 
-## Criando templates
+Talvez você já tenha se deparado com os modelos de exemplo abaixo ao tentar adicionar um novo workflow na seção Actions do repositório do GitHub:
+
+![Selecionando um template de exemplo](images/criando-templates.png?raw=true)
+
+Para adicionarmos um template de início para a criação de workflows para a sua organização, é necessário realizar as etapas:
+
+- [ ] Criar um repositório na organização chamado .github;
+- [ ] Criar uma pasta chamada `workflow-templates`;
+- [ ] Criar 3 arquivos:
+  - [ ] react-workflow.yml
+  - [ ] react-workflow.properties.json
+  - [ ] icon-wechoo.svg
+
+O arquivo de metadados que contém o nome properties.json em sua extensão deve conter o mesmo nome do arquivo do fluxo de trabalho.
+
+[react-workflow].yml && [react-workflow].properties.json
+
+A imagem svg pode ser o ícone da sua aplicação, da sua empresa ou organização.
+
+O conteúdo do **react-workflow.properties.json** de exemplo que iremos utilizar será:
+
+```json
+{
+  "name": "Wechoo Organization React Workflow",
+  "description": "Wechoo Organization CI workflow template.",
+  "iconName": "icon-wechoo",
+  "categories": ["JavaScript"]
+}
+```
+
+As propriedades name e description são informações obrigatórias. A imagem e a categoria são de sua escolha.
+
+Com este fluxo de trabalho, podemos criar fluxos iniciais para 
+![Criando um template](images/criando-templates.png?raw=true)
 
 ## Reutilizando workflows
