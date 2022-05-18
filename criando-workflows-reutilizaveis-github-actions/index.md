@@ -4,6 +4,7 @@ Requisitos
 ----------
 
 - [ ] Criar uma conta GitHub;
+- [ ] Habilitar o fluxo de trabalho para a sua organização;
 
 ## História
 
@@ -98,7 +99,30 @@ O conteúdo do **react-workflow.properties.json** de exemplo que iremos utilizar
 
 As propriedades name e description são informações obrigatórias. A imagem e a categoria são de sua escolha.
 
-Com este fluxo de trabalho, podemos criar fluxos iniciais para 
+Com este fluxo de trabalho, podemos criar fluxos iniciais para serem reutilizados em sua organização.
+
 ![Criando um template](images/criando-templates.png?raw=true)
 
-## Reutilizando workflows
+Isso permite que cada repositório utilize um fluxo de trabalho inicial adicionando e alterando as etapas conforme a sua necessidade. O resultado da configuração anterior pode ser visualizado abaixo:
+
+![Utilizando um fluxo de trabalho inicial](images/workflow-setup.png?raw=true)
+
+## Reutilizando fluxos de trabalho
+
+Uma outra maneira de reutilizar fluxos de trabalho é referenciando arquivos de chamada através de uma única linha reduzinho ainda mais o custo e padronizando seus fluxos, além de utilizar um fluxo que pode ter sido previamente validado e certificado.
+
+![Reutilizando fluxos de trabalho](images/reusing-workflows.png?raw=true)
+
+Eu criei um repositório de modelo para realizar o testes para essa abordagem com o fluxo de trabalho abaixo:
+
+![Reutilizando fluxos de trabalho](images/reusing-workflows-template.png?raw=true)
+
+Para que o fluxo de trabalho seja reutilizável, a chave `workflow_call` deve ser adicionada ao conjunto de valores de `on`:
+
+```yml
+on:
+  workflow_call:
+```
+
+Após a criação do repositório com o fluxo de trabalho adicionado, no repositório de destino em que você deseja reutilizar o fluxo, podemos criar a estrutura:
+
