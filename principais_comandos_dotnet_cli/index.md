@@ -4,7 +4,7 @@ Sumário
 1. [Introdução.](#introducao)
 2. [O que é .NET CLI?](#oqueedotnetcli)
 3. [Como usamos a .NET CLI?](#comousamosadotnetcli)
-4. [Comando **"dotnet"**:](#comandodotnet)
+4. [Comando **dotnet**:](#comandodotnet)
 5. [Opções para o comando **dotnet** (driver).](#opcoesparaocomandodotnet)
 6. [Comandos gerais.](#comandosgerais)
 7. [Comandos para referências de projeto.](#comandosparareferênciasdeprojeto)
@@ -32,7 +32,7 @@ qual a prontidão para aceitar comandos. O prompt pode conter as informações:
 de comando a ser executado, ou seja, se a execução do comando será permitida ou não, dependendo de quem e de onde o comando irá ser 
 executado.
 
-[//]: # (Imagem de um Shell CLI)
+![image-1]()
 
 <div id='oqueedotnetcli'></div> 
 
