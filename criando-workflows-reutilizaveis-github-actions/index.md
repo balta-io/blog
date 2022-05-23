@@ -8,24 +8,19 @@ Requisitos
 
 ## História
 
-Em muitos projetos, a entrega de um software passa por um processo manual para que a sua entrega e implementação sejam realizadas. Passando por um processo de instalação, testes, validação e implantação copiando os arquivos quando as etapas anteriores forem realizadas com sucesso. Neste fluxo, muitas etapas requerem esforços manuais e a cada etapa, a chance de um erro ou falha serem ocasionados acabam aumentando a medida que o seu produto continuará recebendo funcionalidades ou um arquivo de configuração seja modificado.
+Em muitos projetos, um software necessita passar por um processo manual para que a sua entrega e implementação sejam realizadas. Nisto, podemos destacar os processos de instalação, testes, validação e implantação copiando os arquivos quando as etapas anteriores forem realizadas com sucesso. Neste fluxo, muitas etapas requerem esforços manuais e a chance de um erro ou falha serem ocasionados acabam aumentando a medida que o seu produto continuará recebendo funcionalidades ou um arquivo de configuração seja modificado.
 
-A automação desse processo pode ser realizada através de um método chamado CI/CD. Essa é apenas uma visão muito macro para apresentarmos a motivação e apresentar o exemplo.
+A automação desse processo pode ser realizada através de um método chamado CI/CD. Essa é apenas uma visão muito macro para apresentarmos a motivação e o exemplo.
 
 ## Motivação
 
-Dentro da sua organização, você pode ter se deparado com um cenário que para reutilizar um fluxo de trabalho, você pode ter utilizado o famoso ctrl+c -> ctrl+v para copiar os principais comandos e adicioná-los ao seu repositório. Partindo desse princípio, que talvez pode não ser identificado com o seu contexto, mas uma dúvida surgiu: será que é possível reutilizar workflows? E a resposta é: sim, é possível.
+Dentro da sua organização, você pode ter se deparado com um cenário que para reutilizar um fluxo de trabalho, você pode ter utilizado o famoso ctrl+c -> ctrl+v para copiar os principais comandos e adicioná-los ao seu repositório. Partindo desse exemplo, mais uma dúvida surgiu: será que é possível reutilizar workflows? E a resposta é: sim, é possível.
 
 ![Criando workflows em repositórios diferentes](images/repositories.png?raw=true)
 
 ## Contexto
 
-Vamos apresentar duas maneiras de reutilizar fluxos de trabalho e como realizar suas configurações: 
-
-1. Criando fluxos de trabalho; 
-2. Reutilizando fluxos de trabalho;
-
-Mas antes, utilizaremos o modelo abaixo definido em uma versão simplificada para apresentarmos as etapas de configuração posteriores para os dois contextos apresentados.
+Vamos apresentar duas maneiras de reutilizar fluxos de trabalho e como realizar suas configurações. Mas antes, utilizaremos o modelo abaixo definido em uma versão simplificada para apresentarmos as etapas de configuração posteriores para os dois contextos apresentados.
 
 ![CI simplificado](images/ci-cd.png?raw=true)
 
