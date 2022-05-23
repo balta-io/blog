@@ -11,7 +11,6 @@ Sumário
 8. [Comandos para pacotes NuGet.](#comandosparapacotesnuget)
 9. [Comandos globais de ferramentas.](#comandosglobaisdeferramentas)
 11. [Opções do SDK para executar um comando.](#opçõesdosdkparaexecutarumcomando)
-12. [Sujestão de conteúdo relacionado:](#sujestaodeconteudorelacionado)
 13. [Referências.](#referencias)
 
 
@@ -31,8 +30,6 @@ qual a prontidão para aceitar comandos. O prompt pode conter as informações:
 - E é comumente terminado pelos caracteres '$', '%', '#', ':', '>', indicando o previlégio sobre o qual as permissões serão definidas para o tipo 
 de comando a ser executado, ou seja, se a execução do comando será permitida ou não, dependendo de quem e de onde o comando irá ser 
 executado.
-
-![image-1]()
 
 <div id='oqueedotnetcli'></div> 
 
@@ -62,6 +59,9 @@ do computador), o que irá facilitar o acesso. E assim,  iniciando com comando *
 a seguir serão executados pelo driver da CLI. do .NET, e é a partir desse ponto que vamos passar as informações que irão estruturar o comando 
 **dotnet** a ser executado.
 
+![image-1](https://github.com/CristianoBNoronha/blog/blob/48ebe210e6206700bf26c87385ea58e3159c4f79/principais_comandos_dotnet_cli/Images/image-1.png)
+
+
 <div id='comandodotnet'></div> 
 
 ### Comando **dotnet**:
@@ -80,6 +80,10 @@ Neste exemplo estamos criando um novo projeto, através do comando **new**, o qu
 referenciando o framework .NET Standard versão 2.0; e **-o MyLibrary**, onde **-o** ou **--output** é o argumento especificando o diretório 
 MyLirary.
 
+A fim de fornecer uma informação mais prática, todos os comandos a seguir serão pontuados resumidamente, caso queira uma informação mais
+detalhada sobre eles clique **[aqui]((https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet))** para ser redirecionado á documentação 
+oficial da Microsoft.
+
 <div id='#opcoesparaocomandodotnet'></div> 
 
 ### Opções para o comando **dotnet** (driver).
@@ -87,10 +91,10 @@ MyLirary.
 **dotnet --info** => Imprime informações detalhadas sobre uma instalação do .NET e o ambiente do computador, como o sistema operacional atual, e 
 o SHA do commit da versão do .NET.
 
-**dotnet --version** => Imprime a versão do SDK do .NET usado pelos comandos dotnet. Inclui os efeitos de qualquer global.json
+**dotnet --version** => Imprime a versão do SDK do .NET que será usada pelos comandos dotnet. Incluindo efeitos de qualquer global.json
 
-**dotnet --list-runtimes** => Imprime uma lista dos runtimes do .NET instalados. Uma versão x86 do SDK lista apenas runtimes x86 e uma versão x64 do 
-SDK lista apenas runtimes x64.
+**dotnet --list-runtimes** => Imprime uma lista dos Runtimes do .NET instalados. Uma versão x86 do SDK lista apenas runtimes x86 e uma versão x64 
+do SDK lista apenas runtimes x64.
 
 **dotnet --list-sdks** => Imprime uma lista dos SDKs do .NET instalados.
 
@@ -100,39 +104,39 @@ SDK lista apenas runtimes x64.
 
 ### Comandos gerais.
 
-**[dotnet build](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-build)** => Cria um aplicativo .NET.
+**dotnet build** => Executa um aplicativo .NET, para o .NET Core 3.0 ou posterior..
 
-**[dotnet clean](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-clean)** => Limpa saídas de build no terminal.
+**dotnet clean** => Limpa saídas de build no terminal.
 
-**[dotnet help](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-help)** => Mostra uma documentação mais detalhada online para o comando.
+**dotnet {comando} --help** => Mostra uma documentação mais detalhada online para o comando.
 
-**[dotnet new](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new)** => Inicializa um projeto do C# ou F# de um modelo especificado.
+**dotnet new** => Cria um projeto do C# ou F#, necessita da instrução explícita sobre o modelo de projeto a ser especificado.
 
-**[dotnet restore](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-restore)**	=> Restaura as dependências para um determinado aplicativo.
+**dotnet restore**	=> Restaura as dependências contidas em um projeto.
 
-**[dotnet run](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-run)** => Executa o aplicativo do caminho especificado.
+**dotnet run** => Executa o projeto existente do caminho especificado no prompt de comando.
 
-**[dotnet sln](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-sln)** => Opções para adicionar, remover e listar projetos em um arquivo de solução.
+**dotnet sln** => Fornece opções para adicionar, remover e listar projetos dentro de um arquivo de solução.
 
-**[dotnet test](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-test)** =>	Executa testes usando um executor de teste.
+**dotnet test** =>	Executa testes usando o executor de teste especificado no projeto.
 
 <div id='comandosparareferênciasdeprojeto'></div> 
 
 ### Comandos para referências de projeto.
 
-**[dotnet add reference](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-add-reference)** => Adiciona uma referência ao projeto.
+**dotnet add reference** => Adiciona uma referência ao projeto.
 
-**[dotnet list reference](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-list-reference)** => Lista referências ao projeto.
+**dotnet list reference** => Lista as referências ao projeto.
 
-**[dotnet remove reference](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-remove-reference)** => Remove uma referência ao projeto.
+**dotnet remove reference** => Remove uma referência do projeto.
 
 <div id='comandosparapacotesnuget'></div> 
 
 ### Comandos para pacotes NuGet.
 
-**[dotnet add package](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-add-package)** => Adiciona um pacote NuGet.
+**dotnet add package** => Adiciona ou atualiza um pacote NuGet ao arquivo de um projeto.
 
-**[dotnet remove package](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-remove-package)** => Remove um pacote NuGet.
+**dotnet remove package** => Remove um pacote NuGet.
 
 <div id='comandosglobaisdeferramentas'></div> 
 
@@ -140,23 +144,28 @@ SDK lista apenas runtimes x64.
 
 **Ferramentas locais**
 
-**[dotnet tool install](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-tool-install)** => Instala uma ferramenta em seu computador.
+**dotnet tool install {nomeDaFerramenta}** => Instala uma ferramenta .NET em seu computador, necessita da instrução explícita sobre a 
+ferramenta a ser instalada.
 
-**[dotnet tool list](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-tool-list)** => Lista todas as ferramentas globais, caminhos de ferramentas,  ou ferramentas locais instaladas no computador.
+**dotnet tool list** => Lista todas as ferramentas globais, caminhos de ferramentas, ou ferramentas locais instaladas no computador.
 
-**[dotnet tool search](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-tool-search)** => Pesquisa NuGet.org em busca de ferramentas que tenham o item da pesquisa especificado em seu nome ou metadados.
+**dotnet tool search** => Pesquisa NuGet.org em busca de ferramentas que tenham o item da pesquisa especificado em seu nome ou metadados.
 
-**[dotnet tool uninstall](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-tool-uninstall)** => Desinstala uma ferramenta do computador.
+**dotnet tool uninstall {nomeDaFerramenta}** => Desinstala uma ferramenta do computador, necessita da instrução explícita sobre a ferramenta 
+a ser desinstalada.
 
-**[dotnet tool update](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-tool-update)** => Atualiza ferramentas instaladas em seu computador.
+**dotnet tool update {idDaFerramenta}** => Atualiza ferramentas instaladas em seu computador, necessita da instrução explícita sobre a 
+ferramenta a ser atualizada.
 
 **Ferramentas adicionais**
 
-**[dotnet ef](https://docs.microsoft.com/pt-BR/ef/core/cli/dotnet)** =>	Ferramentas de linha de comando do Entity Framework Core.
+**dotnet ef {comando}** =>	Recursos de linha de comando do Entity Framework Core, podem ser usadas durante o desenvolvimento, para 
+executar tartefas relacionadas ao designing e desenvolvimento usando Entity Framework Core.
 
-**[dotnet user-secrets](https://docs.microsoft.com/pt-BR/aspnet/core/security/app-secrets?view=aspnetcore-6.0&tabs=windows)** => Gerencia os segredos do usuário de desenvolvimento.
+**dotnet user-secrets** => Ferramenta que possibilita gerenciamento de dados sencíveis do desenvolvimento.
 
-**[dotnet watch](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-watch)** => Um recurso que acompanha a execução do aplicativo e quando detecta alterações no código-fonte, reinicia ou recarrega a execução.
+**dotnet watch** => Um recurso que acompanha a execução do aplicativo e quando detecta alterações no código-fonte, reinicia ou recarrega 
+a execução.
 
 <div id='opçõesdosdkparaexecutarumcomando'></div> 
 
@@ -169,13 +178,10 @@ n (normal), d (detailed) e diag (diagnostic). Não suporta todos os comandos, co
 
 dotnet {comando} -? | dotnet {comando} -h | dotnet {comando} --help => Imprime a documentação para um determinado comando.
 
-<div id='sujestaodeconteudorelacionado'></div> 
 
-### Sujestão de conteúdo relacionado:
+**Sujestão de conteúdo relacionado:**
 
 [Criando projetos .NET via console.](https://balta.io/blog/criando-projetos-dotnet-via-console)
-
-[.NET - Instalação, Configuração e Primeiros Passos](https://balta.io/blog/dotnet-instalacao-configuracao-e-primeiros-passos)
 
 [Windows Terminal](https://balta.io/blog/windows-terminal)
 
@@ -186,8 +192,6 @@ dotnet {comando} -? | dotnet {comando} -h | dotnet {comando} --help => Imprime a
 [Fundamentos do C#, balta.io](https://balta.io/cursos/fundamentos-csharp)
 
 [https://docs.microsoft.com/pt-br/dotnet/core/tools/](https://docs.microsoft.com/pt-br/dotnet/core/tools/)
-
-[https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet)
 
 
 
