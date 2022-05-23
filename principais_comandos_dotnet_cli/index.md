@@ -1,4 +1,4 @@
-﻿Neste artigo iremos falar um pouco sobre o .NET CLI e os seu principais comandos.
+﻿Neste artigo iremos falar um pouco sobre o .NET CLI e os seus principais comandos.
 
 Sumário
 1. [Introdução.](#introducao)
@@ -20,14 +20,14 @@ Sumário
 
 ## Introdução
 
-Cli, Comand Line Interface, ou Interface de Linha de Comando, é uma forma de interagir com programas atravéz de comandos em forma de texto. 
-Cada sistema operacional possui um programa padrão (shell, console, ou terminal) para interpretar esses comandos em texto, e executar as tarefas 
-que são específicas a cada comando. Um Shell Cli se inicia com uma sequência de caracteres, a qual chamamos de prompt de comando,  indicando 
-qual a prontidão para aceitar comandos. O prompt pode conter as informações: 
+Cli, Comand Line Interface, ou Interface de Linha de Comando, é uma forma de interagir com programas através de comandos em forma de texto. 
+Cada sistema operacional possui um programa padrão (shell, console ou terminal) para interpretar esses comandos em texto, e executar as tarefas 
+que são específicas a cada comando. Um Shell Cli se inicia com uma sequência de caracteres, região a qual chamamos de prompt de comando,  
+indicando qual é a prontidão para aceitar comandos. O prompt pode conter as informações: 
 
 - Nome do computador (Hostname) ou usuário (username), indicando quem irá executar o comando; 
 - Caminho (path) do diretório atual (directory), pasta atual (folder) ou arquivo atual (file), indicando onde o comando será executado; 
-- E é comumente terminado pelos caracteres '$', '%', '#', ':', '>', indicando o previlégio sobre o qual as permissões serão definidas para o tipo 
+- E é comumente terminado pelos caracteres '$', '%', '#', ':', '>', indicando o privilégio sobre o qual as permissões serão definidas para o tipo 
 de comando a ser executado, ou seja, se a execução do comando será permitida ou não, dependendo de quem e de onde o comando irá ser 
 executado.
 
@@ -36,7 +36,7 @@ executado.
 ## O que é .NET CLI?
 
 .NET CLI, .NET Command Line Interface, ou Interface de Linha de Comando do .NET, é a ferramenta usada para desenvolver, criar, executar e publicar 
-aplicativos .NET, multiplataforma, atravéz de comandos de texo em um console. Ela está inclusa na SDK do .NET, cujo o driver da CLI é chamado de dotnet, 
+aplicativos .NET, multiplataforma, através de comandos de texto em um console. Ela está inclusa na SDK do .NET, cujo o driver da CLI é chamado de dotnet, 
 e tem duas responsabilidades:
 
 - Executar um aplicativo, o qual deve ser dependente da estrutura do .NET, ou seja, que inclui somente seu aplicativo e suas dependências, o que 
@@ -48,14 +48,14 @@ implica na necessidade da instalação do Runtime do .NET separadamente, para po
 
 ### Como usamos a .NET CLI?
 
-Para ter acesso à .NET CLI, e aos comando "**dotnet**", devemos ter instalado a SDK do .NET. Disponível em [https://dotnet.microsoft.com/en-us/](https://dotnet.microsoft.com/en-us/), 
+Para ter acesso à .NET CLI, e ao comando "**dotnet**", devemos ter instalado a SDK do .NET. Disponível em [https://dotnet.microsoft.com/en-us/](https://dotnet.microsoft.com/en-us/), 
 e você também pode encontrar maiores informações em nosso artigo [.NET - Instalação, Configuração e Primeiros Passos](https://balta.io/blog/dotnet-instalacao-configuracao-e-primeiros-passos).
 Após a instalação, os comandos poderão ser executados em um terminal (console). Existem opções de terminais para Windows 
-(Windows Power Shel, Windows Terminal, etc), Mac (ITerm2, Hyper, etc), ou Linux (Gnome Terminal, Terminal Xfce, etc).
+(Windows Power Shel, Windows Terminal, etc.), Mac (ITerm2, Hyper, etc.), ou Linux (Gnome Terminal, Terminal Xfce, etc.).
 
-Assim, no terminal, sem a necessidade do previlégio de administrador, devemos navegar até a pasta onde vamos trabalhar, atravéz do comando "cd" 
-seguido do caminho da pasta. Lembrando que é recomendado armazenarmos os nossos projetos em uma pasta segura, com um caminho curto (raíz 
-do computador), o que irá facilitar o acesso. E assim,  iniciando com comando **"dotnet"**, estaremos identificando que os comandos 
+Assim, no terminal, sem a necessidade do privilégio de administrador, devemos navegar até a pasta onde vamos trabalhar, através do comando "cd" 
+seguido do caminho da pasta. Lembrando que é recomendado armazenarmos os nossos projetos em uma pasta segura, com um caminho curto (
+diretório raíz), o que irá facilitar o acesso. E assim,  iniciando com comando **"dotnet"**, estaremos identificando que os comandos 
 a seguir serão executados pelo driver da CLI. do .NET, e é a partir desse ponto que vamos passar as informações que irão estruturar o comando 
 **dotnet** a ser executado.
 
@@ -66,22 +66,22 @@ a seguir serão executados pelo driver da CLI. do .NET, e é a partir desse pont
 
 ### Comando **dotnet**:
 
-Após termos executado os comandos que definem o caminho no prompt de comandos, iremos estruturar os comandos da CLI do .NET, sempre iniciando
-com a referência ao driver da CLI .NET, com o texto **"dotnet"** , e, separados com espaço, seguimos com o comando  a ser executado, o qual é 
-implementado da mesma forma que aplicativos de console, seguindo a convenção: **"dotnet"** {comando} {opção} {argumento}. O comando 
-também pode receber instruções para as opções, cujos valores podem ser passados ao comando invocado,  e os argumentos pertencentes a ele.
+Após termos definido o caminho no prompt, iremos estruturar os comandos, sempre iniciando com a referência ao driver da CLI do .NET
+, com o texto **"dotnet"** , e, separados com espaço, seguimos com o comando  a ser executado, o qual é implementado da mesma forma que 
+aplicativos de console, seguindo a convenção: **"dotnet"** {comando} {opção} {argumento}, onde o comando poderá receber instruções para 
+as opções, cujos valores serão passados ao comando invocado, e, também, os argumentos pertencentes a ele.
 
 ```
 dotnet new classlib --framework "netstandard2.0" -o MyLibrary
 ```
 
-Neste exemplo estamos criando um novo projeto, através do comando **new**, o qual vai receber a instrução para a optar por um projeto do tipo 
-**classlib** (biblioteca de classes), com os argumentos: **--framework "netstandard2.0"**, onde **--framework** ou **--f** é o argumento 
-referenciando o framework .NET Standard versão 2.0; e **-o MyLibrary**, onde **-o** ou **--output** é o argumento especificando o diretório 
-MyLirary.
+Neste exemplo estamos criando um novo projeto, através do comando **new**, o qual vai receber a instrução para criar um projeto do tipo classlib 
+(biblioteca de classes), como opção, com os argumentos: **--framework "netstandard2.0"**, onde **--framework** ou **--f** é o 
+argumento referenciando o framework .NET Standard versão 2.0; e, **-o MyLibrary**, onde **-o** ou **--output** é o argumento especificando o 
+diretório MyLirary.
 
 A fim de fornecer uma informação mais prática, todos os comandos a seguir serão pontuados resumidamente, caso queira uma informação mais
-detalhada sobre eles clique **[aqui]((https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet))** para ser redirecionado á documentação 
+detalhada sobre eles clique **[aqui]((https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet))** para ser redirecionado à documentação 
 oficial da Microsoft.
 
 <div id='#opcoesparaocomandodotnet'></div> 
@@ -104,7 +104,7 @@ do SDK lista apenas runtimes x64.
 
 ### Comandos gerais.
 
-**dotnet build** => Executa um aplicativo .NET, para o .NET Core 3.0 ou posterior..
+**dotnet build** => Executa um aplicativo .NET, para o .NET Core 3.0 ou posterior.
 
 **dotnet clean** => Limpa saídas de build no terminal.
 
@@ -160,9 +160,9 @@ ferramenta a ser atualizada.
 **Ferramentas adicionais**
 
 **dotnet ef {comando}** =>	Recursos de linha de comando do Entity Framework Core, podem ser usadas durante o desenvolvimento, para 
-executar tartefas relacionadas ao designing e desenvolvimento usando Entity Framework Core.
+executar tarefas relacionadas ao designing e desenvolvimento usando Entity Framework Core.
 
-**dotnet user-secrets** => Ferramenta que possibilita gerenciamento de dados sencíveis do desenvolvimento.
+**dotnet user-secrets** => Ferramenta que possibilita gerenciamento de dados sensíveis do desenvolvimento.
 
 **dotnet watch** => Um recurso que acompanha a execução do aplicativo e quando detecta alterações no código-fonte, reinicia ou recarrega 
 a execução.
@@ -179,7 +179,7 @@ n (normal), d (detailed) e diag (diagnostic). Não suporta todos os comandos, co
 dotnet {comando} -? | dotnet {comando} -h | dotnet {comando} --help => Imprime a documentação para um determinado comando.
 
 
-**Sujestão de conteúdo relacionado:**
+**Sugestão de conteúdo relacionado:**
 
 [Criando projetos .NET via console.](https://balta.io/blog/criando-projetos-dotnet-via-console)
 
