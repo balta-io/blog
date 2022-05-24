@@ -59,7 +59,7 @@ diretório raíz), o que irá facilitar o acesso. E assim,  iniciando com comand
 a seguir serão executados pelo driver da CLI. do .NET, e é a partir desse ponto que vamos passar as informações que irão estruturar o comando
 **dotnet** a ser executado.
 
-![image-1](https://github.com/CristianoBNoronha/blog/blob/f6d52c189a43f157ac17854174afd2ca34442c83/principais_comandos_dotnet_cli/Images/image-1.png)
+![image-1](https://github.com/CristianoBNoronha/blog/blob/cc0ca6354819526cce77991c16ff0390f75f4be6/dotnet_cli_introducao_e_principais_comandos/Images/image-1.png)
 
 
 <div id='comandodotnet'></div> 
