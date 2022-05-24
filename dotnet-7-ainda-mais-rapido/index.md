@@ -1,7 +1,7 @@
 Existe um motivo pelo qual o .NET 7 vai ser muito mais rápido do que o .NET 6, e você não precisar alterar nenhuma linha de código para se beneficiar disto.
 
 ## Vídeo
-[![O .NET 7 vai ser muito mais rápido por este motivo...](https://img.youtube.com/vi/Vae07KDcpaw/0.jpg)](https://www.youtube.com/watch?v=Vae07KDcpaw)
+[![O .NET 7 vai ser muito mais rápido por este motivo...](https://baltaio.blob.core.windows.net/static/images/articles/dotnet-7-ainda-mais-rapido_play.png)](https://www.youtube.com/watch?v=Vae07KDcpaw)
 
 ## Transcrição
 Estamos falando do AOT ou **Ahead of time**, um tipo de compilação que deixa tudo muito mais otimizado, mas é claro que isto tem um preço.
