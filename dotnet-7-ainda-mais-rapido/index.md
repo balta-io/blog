@@ -1,13 +1,9 @@
 Existe um motivo pelo qual o .NET 7 vai ser muito mais rápido do que o .NET 6, e você não precisar alterar nenhuma linha de código para se beneficiar disto.
 
-<iframe
-    uk-video="automute: false; autoplay: false"
-    src="https://www.youtube.com/embed/Vae07KDcpaw"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-</iframe>
+## Vídeo
+[![O .NET 7 vai ser muito mais rápido por este motivo...](https://img.youtube.com/vi/Vae07KDcpaw/0.jpg)](https://www.youtube.com/watch?v=Vae07KDcpaw)
 
+## Transcrição
 Estamos falando do AOT ou **Ahead of time**, um tipo de compilação que deixa tudo muito mais otimizado, mas é claro que isto tem um preço.
 
 O .NET é um dos Frameworks mais rápidos do mercado, chegando a ser até 10x mais rápido que o Node e só perdendo (Por pouca diferença) para o Rust.
