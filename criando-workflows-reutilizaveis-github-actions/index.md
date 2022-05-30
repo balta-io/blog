@@ -1,4 +1,4 @@
-# Usando fluxos de trabalho no GitHub Actions
+# Criando e reutilizando fluxos de trabalho no GitHub Actions
 
 Requisitos
 ----------
@@ -14,7 +14,7 @@ A automação desse processo pode ser realizada através de um método chamado C
 
 ## Motivação
 
-Dentro da sua organização, você pode ter se deparado com um cenário que para reutilizar um fluxo de trabalho, você pode ter utilizado o famoso ctrl+c -> ctrl+v para copiar os principais comandos e adicioná-los ao seu repositório. Partindo desse exemplo, mais uma dúvida surgiu: será que é possível reutilizar workflows? E a resposta é: sim, é possível.
+Dentro da sua organização, você pode ter se deparado com um cenário que para reutilizar um fluxo de trabalho (workflow), você pode ter utilizado o famoso ctrl+c -> ctrl+v para copiar os principais comandos e adicioná-los ao seu repositório. Partindo desse exemplo, mais uma dúvida surgiu: será que é possível reutilizar workflows? E a resposta é: sim, é possível.
 
 ![Criando workflows em repositórios diferentes](images/repositories.png?raw=true)
 
