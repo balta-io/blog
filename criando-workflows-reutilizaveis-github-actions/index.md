@@ -1,7 +1,18 @@
-# Criando e reutilizando fluxos de trabalho no GitHub Actions
+## Sumário
 
-Requisitos
-----------
+O GitHub Actions é uma ferramenta de fluxo de trabalho (ou workflow) presente no GitHub que permite a automação de nosso fluxo de trabalho. Neste breve artigo, vamos apresentar duas maneiras de como criar, reaproveitar e compartilhar fluxos de trabalho entre os diferentes repositórios da sua organização.
+
+Os tópicos apresentados são:
+  - Requisitos;
+  - História;
+  - Motivação;
+  - Contexto do problema;
+  - Criando fluxos de trabalho iniciais;
+  - Reutilizando fluxos de trabalho;
+  - Breve encerramento;
+  - Referências massinhas;
+
+## Requisitos
 
 - [ ] Criar uma conta GitHub;
 - [ ] Habilitar o fluxo de trabalho para a sua organização;
@@ -18,7 +29,7 @@ Dentro da sua organização, você pode ter se deparado com um cenário que para
 
 ![Criando workflows em repositórios diferentes](images/repositories.png?raw=true)
 
-## Contexto
+## Contexto do problema
 
 Vamos apresentar duas maneiras de reutilizar fluxos de trabalho e como realizar suas configurações. Mas antes, utilizaremos o modelo abaixo definido em uma versão simplificada para apresentarmos as etapas de configuração posteriores para os dois contextos apresentados.
 
@@ -130,3 +141,12 @@ Após a criação do repositório com o fluxo de trabalho adicionado, no reposit
 A visualização do fluxo poderá ser encontrada em Actions no menu do repositorio.
 
 ![Visualizando a execução do fluxo de trabalho](images/showing-reusable-workflow.png?raw=true)
+
+## Breve encerramento
+
+As duas maneiras apresentadas descrevem como reaproveitar fluxos de trabalho. No primeiro modelo, com templates, temos a liberdade de adicionar um pouco mais de configurações e inclusive remover etapas do processo. Uma de suas vantagens é o poder de reaproveitar configurações iniciais mesclados a flexibilidade de suas configurações.
+No segundo cenário, podemos com três linhas de código, reutilizar um workflow inteiro. Permitindo uma série de configurações, padronização e versionamento.
+
+## Referências massinhas
+
+Você pode conferir mais sobre acessando o blog do balta, ler mais a documentação [aqui](https://docs.github.com/en/actions) ou o livro: *Entrega Contínua: Como Entregar Software de Forma Rápida e Confiável*.
