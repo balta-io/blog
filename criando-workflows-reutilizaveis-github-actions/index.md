@@ -14,7 +14,7 @@ A automação desse processo pode ser realizada através de um método chamado C
 
 ## Motivação
 
-Dentro da sua organização, você pode ter se deparado com um cenário que para reutilizar um fluxo de trabalho (workflow), você pode ter utilizado o famoso ctrl+c -> ctrl+v para copiar os principais comandos e adicioná-los ao seu repositório. Partindo desse exemplo, mais uma dúvida surgiu: será que é possível reutilizar workflows? E a resposta é: sim, é possível.
+Dentro da sua organização, você pode ter se deparado com um cenário que para reutilizar um fluxo de trabalho (workflow), você pode ter utilizado o famoso ctrl+c -> ctrl+v para copiar os principais comandos e adicioná-los ao seu repositório. Partindo desse exemplo, uma dúvida surgiu: será que é possível reutilizar workflows? E a resposta é: sim!
 
 ![Criando workflows em repositórios diferentes](images/repositories.png?raw=true)
 
@@ -64,9 +64,11 @@ jobs:
 
 Talvez você já tenha se deparado com os modelos de exemplo abaixo ao tentar adicionar um novo workflow na seção Actions do repositório do GitHub:
 
-![Selecionando um template de exemplo](images/criando-templates.png?raw=true)
+![Selecionando um template de exemplo](images/github-actions-samples.png?raw=true)
 
-Para adicionarmos um template de início para a criação de workflows para a sua organização, é necessário realizar as etapas:
+Pensando em um cenário em que repositórios diferentes da sua organização utilizem a mesma base de configuração para os seus fluxos de trabalho, e que você tenha um fluxo pré-definido, podemos adicionar templates customizados que atendam a nossa demanda e que ficam internas para os repositórios.
+
+Para isto, para adicionarmos um template de início para a criação de workflows para a sua organização, é necessário realizar as etapas:
 
 - [ ] Criar um repositório na organização chamado .github;
 - [ ] Criar uma pasta chamada `workflow-templates`;
@@ -74,6 +76,8 @@ Para adicionarmos um template de início para a criação de workflows para a su
   - [ ] react-workflow.yml
   - [ ] react-workflow.properties.json
   - [ ] icon-wechoo.svg
+
+![Criando uma pasta .github na organização](images/github-template.png?raw=true)
 
 O arquivo de metadados que contém o nome properties.json em sua extensão deve conter o mesmo nome do arquivo do fluxo de trabalho.
 
@@ -98,17 +102,17 @@ Com este fluxo de trabalho, podemos criar fluxos iniciais para serem reutilizado
 
 ![Criando um template](images/criando-templates.png?raw=true)
 
-Isso permite que cada repositório utilize um fluxo de trabalho inicial adicionando e alterando as etapas conforme a sua necessidade. O resultado da configuração anterior pode ser visualizado abaixo:
+Isso permite que cada repositório utilize um fluxo de trabalho inicial adicionando e alterando as etapas conforme a sua necessidade. O resultado da configuração anterior pode ser visualizado ao entrarmos em um outro repositório de sua organização e no mesmo caminho de *Actions*, você poderá visualizar seu fluxo de trabalho.
 
 ![Utilizando um fluxo de trabalho inicial](images/workflow-setup.png?raw=true)
 
 ## Reutilizando fluxos de trabalho
 
-Uma outra maneira de reutilizar fluxos de trabalho é referenciando arquivos de chamada através de uma única linha reduzinho ainda mais o custo e padronizando seus fluxos, além de utilizar um fluxo que pode ter sido previamente validado e certificado.
+Uma outra maneira de reutilizar fluxos de trabalho é referenciando arquivos de chamada através de uma única linha reduzinho ainda mais o custo e padronizando seus fluxos, além de utilizar um fluxo que pode ter sido previamente validado e certificado. Perceba que na imagem abaixo, diferente do primeiro fluxo, a seta está com a direção contrária. Isso significa que o fluxo não estará com sua alteração ou configuração inicial no repositório em que será utilizado, mas em um contexto da organização.
 
 ![Reutilizando fluxos de trabalho](images/reusing-workflows.png?raw=true)
 
-Eu criei um repositório de modelo para realizar o testes para essa abordagem com o fluxo de trabalho abaixo:
+Eu criei um repositório de modelo com o nome de *workflow-templates* para realizar os testes para essa abordagem com o fluxo de trabalho abaixo:
 
 ![Reutilizando fluxos de trabalho](images/reusing-workflows-template.png?raw=true)
 
