@@ -40,7 +40,11 @@ Após o tema ter sido aceito, você pode começar a escrever seu artigo, ele tem
 Utilize imagens grandes e visíveis, e não se esqueça de salvá-las dentro de uma pasta `imagens` no mesmo diretório do seu artigo, vamos precisar dos arquivos destas imagens para colocar seu artigo no ar.
 
 ### 🟣 Publicação
-Para publicar seu artigo, basta fazer um **Pull request** para este repositório, criando uma pasta (Não usar espaços ou caracteres especiais no nome da pasta) com os seguintes arquivos:
+Para publicar seu artigo será necessário fazer um fork do nosso blog clicando no botão  fork  localizado no canto superior direito da tela abaixo do ícone de usuário do seu GitHub:
+
+![image](https://user-images.githubusercontent.com/55927647/169020355-09803d8d-7d2e-4a25-bd39-f68c9b071507.png)
+
+Depois basta imcorporar seu artigo ao fork criado no seu perfil e fazer um **Pull request** para este repositório, lembrece de seguir os passos: Criar uma pasta (Não usar espaços ou caracteres especiais no nome da pasta) com os seguintes arquivos:
 * nome-do-artigo/index.md -> Seu artigo
 * nome-do-artigo/images/ -> Imagens do seu artigo
 

@@ -1,5 +1,3 @@
-Um breve resumo sobre os mecanismos internos que o Git usa para gerenciar as mudanças nos arquivos de um diretório.
-
 Sumário
 
  1. [Introdução](#introducao)
