@@ -42,7 +42,7 @@ A comunicação é um recurso crucial no desenvolvimento humano. Isto não é di
 
 <div id='impacto-significativo-no-portfolio'></div>
 
-# 3 - Impacto significativo no portffólio
+# 3 - Impacto significativo no portfólio
 
 As contribuições são uma experiência tão relevantes quanto trabalhos anteriores. Projetos de código aberto envolvem feedbacks diversos, comunicação com pessoas de diferentes culturas e visibilidade. Com estas características este tipo de projeto oferece oportunidades para desenvolver qualidades como trabalho em equipe, empatia, pensamento objetivo e compromisso.
 
