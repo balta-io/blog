@@ -43,11 +43,17 @@ Caso queira baixar alguma versão específica, verifique as [tags disponíveis a
 
 ## Rodando o SQL Server
 
-Para executar esta imagem você pode usar a linha abaixo. Não se esqueça de mudar o <code>MSSQL_SA_PASSWORD</code> para a senha desejado.
+Para executar esta imagem você pode usar a linha abaixo. Não se esqueça de mudar o <code>MSSQL_SA_PASSWORD</code> para a senha desejado. **Mas atenção!** A senha tem um nível mínimo de complexidade, se você definir uma senha muito fácil (ex: 1q2w3e4r) o container vai finalizar sozinho.
 
 ```
 docker run --name sqlserver -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=1q2w3e4r@#$" -p 1433:1433 -d mcr.microsoft.com/mssql/server
 ```
+
+Caso a senha que você escolheu seja fraca demais, você verá ```Exited(1)``` e a seguinte mensagem:
+```
+ERROR: Unable to set system administrator password: Password validation failed. The password does not meet SQL Server password policy requirements because it is not complex enough. The password must be at least 8 characters long and contain characters from three of the following four sets: Uppercase letters, Lowercase letters, Base 10 digits, and Symbols..
+```
+Veja os requisitos para a senha de administrador [aqui](https://docs.microsoft.com/en-us/sql/relational-databases/security/password-policy?view=sql-server-ver16#password-complexity).
 
 ### Windows
 
@@ -57,7 +63,11 @@ Caso esteja no Windows, com **WSL 2** é importante informar o volume onde este 
 docker run -v ~/docker --name sqlserver -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=1q2w3e4r@#$" -p 1433:1433 -d mcr.microsoft.com/mssql/server
 ```
 
+
 Para parar a execução você pode pressionar <kbd>CTRL</kbd> + <kbd>C</kbd> no Terminal. Deste momento em diante, seu container vai aparecer na **Dashboard** do Docker de forma visual, onde você poderá parar ou iniciar ela a qualquer momento.
+
+Veja os requisitos para a senha de administrador [aqui](https://docs.microsoft.com/en-us/sql/relational-databases/security/password-policy?view=sql-server-ver16#password-complexity).
+
 
 ### Mac M1
 
@@ -66,6 +76,9 @@ Continuando a saga do M1, a execução muda para os comandos abaixo:
 ```
 docker run -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=1q2w3e4r@#$" -e "MSSQL_PID=Developer" -e "MSSQL_USER=SA" -p 1433:1433 -d --name=sqlserver mcr.microsoft.com/azure-sql-edge
 ```
+
+Veja os requisitos para a senha de administrador [aqui](https://docs.microsoft.com/en-us/sql/relational-databases/security/password-policy?view=sql-server-ver16#password-complexity).
+
 
 ## Connection String
 
