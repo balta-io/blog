@@ -104,4 +104,6 @@ Com tudo finalizado podemos rodar a aplicação com o comando:
 ```
 dotnet run
 ```
-Vamos ver o resultado:
+Termos a seguinte saída no console:
+![image](https://github.com/diegostan/blog/blob/main/csharp-paralelismo/images/saida1.png)
+>Note o tempo gasto para realizar o processamento total
