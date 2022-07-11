@@ -26,9 +26,9 @@ IU moderna e responsiva
 Desenvolvido e mantido por _Etienne Baudoux_ e _Benjamin Titeux._
 
 Link para download:
-https://apps.microsoft.com/store/detail/devtoys/9PGCV4V3BK4W?hl=pt-br&gl=BR
+<https://apps.microsoft.com/store/detail/devtoys/9PGCV4V3BK4W?hl=pt-br&gl=BR>
 
 GitHub:
-https://github.com/veler/DevToys
+<https://github.com/veler/DevToys>
 
-Fonte: https://devtoys.app/
+Fonte: <https://devtoys.app/>
