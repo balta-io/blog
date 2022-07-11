@@ -30,7 +30,7 @@ app.MapGet("/", () => "Hello World");
 
 app.Run();
 ```
-[![Aprenda .NET do ZERO ao PROFISSIONAL](https://baltaio.blob.core.windows.net/static/images/temp/chamada-carreira-dotnet.png)](https://balta.io/premium)
+[![Aprenda .NET do ZERO ao PROFISSIONAL](https://baltaio.blob.core.windows.net/static/images/temp/chamada-carreira-dotnet.png)](https://balta.io/carreiras/desenvolvedor-backend-dotnet)
 
 ## Minimal APIs - Atribuir a porta dinamicamente
 Porém, caso queira especificar a porta durante a execução, ou seja, não deixar isto especificado no código, podemos especificar o parâmetro `--urls` durante a execução.
