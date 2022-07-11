@@ -118,7 +118,8 @@ var parallelOptions = new ParallelOptions();
 parallelOptions.MaxDegreeOfParallelism = 8;
 ```
 A opção **MaxDegreeOfParallelism** está atribuida com 8 o que significa que iremos utilizar um máximo de 8 threads para o processamento.
-Agora vamos substituir nosso loop foreach sequencial por um loop presente na classe parallel:
+Agora vamos substituir nosso loop foreach sequencial por um loop presente na classe parallel
+
 Antes:
 ``` csharp
 foreach(var cep in ceps)
