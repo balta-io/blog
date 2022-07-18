@@ -113,6 +113,8 @@ Com isto, definimos também o **SPOF** (Single Point of Failure -- Ponto único 
 
 Atingindo este objetivo, sempre que houver algum problema com conexão ao banco por exemplo, sabemos que será naquela classe, naquele código, pois ele só está lá, os demais lugares apenas fazem uso dele.
 
+[![Masterclass Dependency Injection](https://baltaio.blob.core.windows.net/temp/banner_masterclass.png)]([https://go.balta.io](https://go.balta.io/masterclass-injecao-dependencia))
+
 ## Divisão de responsabilidades
 
 Claro que a injeção de dependência (Dependency Injection) não é a solução para tudo, mas fica mais fácil explicar quando estamos alinhados. Então, partindo deste código, o que e como você mudaria?
