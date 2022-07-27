@@ -7,6 +7,9 @@ Porém, precisamos entender como ele resolve as dependências para aproveitar me
 
 Caso esteja com dúvidas em relação a DI, sugiro que veja [**este artigo**](https://balta.io/blog/dependency-injection) no qual abordo mais a fundo o assunto.
 
+## Versão em vídeo
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/9n0jOl7L9oM/0.jpg)](https://www.youtube.com/watch?v=9n0jOl7L9oM)
+
 ## Criando dependências
 Antes de resolver as dependências, precisamos entender o que são dependências. E o código abaixo ilustra bem esta visão, note que temos uma dependência do `ICustomerRepository`.
 
