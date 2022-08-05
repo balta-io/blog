@@ -42,7 +42,7 @@ public class OrderController : Controller
     }
 ```
 
-[![Masterclass Dependency Injection](https://baltaio.blob.core.windows.net/temp/banner_masterclass.png)](https://go.balta.io/masterclass-injecao-dependencia)
+[![Dominando Injeção de Dependência](https://baltaio.blob.core.windows.net/static/images/articles/dominando-injecao-de-dependencia-banner.jpg)](https://balta.io/cursos/dominando-injecao-de-dependencia)
 
 Se notarmos, este código está **acoplado** o que significa que não podemos reutilizar esta pesquisa por cliente em nenhum outro ponto do sistema. A manutenção também é difícil neste momento, pois precisamos lembrar de alterar **todo** lugar onde este código é chamado, e para finalizar a visibilidade é ruim, já que tem muita coisa para **se preocupar** acontecendo no momento.
 
