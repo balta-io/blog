@@ -33,8 +33,7 @@ public class OrderController : Controller
 
 Neste caso, como dependemos de uma implementação concreta, não temos a flexibilidade para ter diversas implementações deste repositório.
 
-<!-- [![Curso de Dependency Injection](https://baltaio.blob.core.windows.net/static/images/articles/banner-curso-dependency-injection.png)](https://balta.io/cursos/injecao-dependencia-dotnet) -->
-[![Masterclass de Dependency Injection](https://baltaio.blob.core.windows.net/temp/banner_masterclass.png)](https://go.balta.io/masterclass-injecao-dependencia)
+[![Dominando Injeção de Dependência](https://baltaio.blob.core.windows.net/static/images/articles/dominando-injecao-de-dependencia-banner.jpg)](https://balta.io/cursos/dominando-injecao-de-dependencia)
 
 ## Dependency Inversion Principle e testes de unidade
 Mas por que ter diversas implementações de uma mesma interface? Um cenário simples e objetivo são os **testes de unidade**, cujo não devem depender de itens externos.
