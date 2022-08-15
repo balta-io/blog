@@ -1,5 +1,3 @@
-# Trabalhando com mais de uma configuração do git em um único computador
-
 **Sumário**
  1. [Contextualizando](#introducao)
  2. [Entendendo o arquivo .gitconfig](#oqueegitconfig)
