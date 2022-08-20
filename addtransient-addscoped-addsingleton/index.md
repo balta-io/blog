@@ -7,6 +7,9 @@ Porém, precisamos entender como ele resolve as dependências para aproveitar me
 
 Caso esteja com dúvidas em relação a DI, sugiro que veja [**este artigo**](https://balta.io/blog/dependency-injection) no qual abordo mais a fundo o assunto.
 
+## Versão em vídeo
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/9n0jOl7L9oM/0.jpg)](https://www.youtube.com/watch?v=9n0jOl7L9oM)
+
 ## Criando dependências
 Antes de resolver as dependências, precisamos entender o que são dependências. E o código abaixo ilustra bem esta visão, note que temos uma dependência do `ICustomerRepository`.
 
@@ -121,7 +124,7 @@ Uma vez que ele passe pelo construtor do **CustomerRepository** e resolva a depe
 
 Isto termina no fim da requisição. Após enviar os dados para o client, o ASP.NET se encarrega de remover os objetos da memória.
 
-[![Masterclass de Dependency Injection](https://baltaio.blob.core.windows.net/temp/banner_masterclass.png)](https://go.balta.io/masterclass-injecao-dependencia)
+[![Dominando Injeção de Dependência](https://baltaio.blob.core.windows.net/static/images/articles/dominando-injecao-de-dependencia-banner.jpg)](https://balta.io/cursos/dominando-injecao-de-dependencia)
 
 ## Singleton
 Antes de falar do **AddSingleton** precisamos entender que **Singleton** também é o nome de um padrão, que garante que um objeto tem uma e apenas uma instância para a aplicação como um todo.
