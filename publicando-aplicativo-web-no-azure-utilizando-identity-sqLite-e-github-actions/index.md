@@ -9,7 +9,8 @@ Sumário
 5. [Gerando as páginas do Identity.](#gerandoaspaginasdoidentity)
 7. [Modelo do usuário da nossa app.](#modelocousuariodanossaapp)
 8. [Personalizando a página de registro do usuário.](#personalizandoapaginaderegistrodousuario)
-9. [Referências](#referencias)
+9. [Email service.](#emailservice)
+9. [Referências.](#referencias)
 
 *******
 
@@ -126,10 +127,9 @@ Lembrando que caso você tenha modificado o local onde estão dispostos DataCont
 deverão
 ser corrigidos, assim como as referências "using" das classes que estão utilizando eles.
 
-Note que estamos sobrescrevendo UserName para poder receber a entrada de um valor do tipo string (por padrão recebe o
-valor
-do e-mail), que vai nos possibilitar a utilização de um nome de usuário personalizado, o que nos obriga a alterar a
-propriedade NormalizedUserName, que vai receber o valor de UserName convertido para letras maiúsculas.
+Note que estamos sobrescrevendo UserName, para poder receber a entrada de um valor do tipo string (por padrão recebe o
+valor do e-mail), que vai nos possibilitar a utilização de um nome de usuário personalizado, o que nos obriga a alterar 
+a propriedade NormalizedUserName, que vai receber o valor de UserName convertido em letras maiúsculas.
 
 Note também que na classe em que manipulamos o DataContext, devemos adicionar uma referência ao nosso ApplicationUser, e
 como estamos alterando o tipo do Id, também devemos referenciar IdentityRole, informando que os dois devem estar
@@ -168,12 +168,95 @@ o input do UserName.
     <span asp-validation-for="Input.UserName" class="text-danger"></span>
 </div>
 ```
+<div id='emailservice'></div>
+
+## Email service.
+
+Para configuração do serviço de e-mail, eu estou utilizando a API do SendGrid, adicionando o pacote nuget através do 
+comando ```dotnet add package SendGrid```. Você pode criar uma conta grátis, https://sendgrid.com/free/?source=sendgrid-csharp. 
+Na sua conta, para possibilitar a cofiguração do serviço de e-mail na nossa aplicação, você vai precisar de uma chave 
+da API do SendGrid. Para criar a chave você deve navegar para aba "Settings", "Api Keys", "Create API Key", adicionando 
+o nome que será tribuido a essa chave, selecionando "Restricted Access", arrastando a barra "Mail Send" até "Full Access", 
+e por fim "Create API Key". Você será redirecionado à página, que irá te mostrar a chave uma única vez, é recomendado copiar 
+e armazenar essa chave em um local seguro, nós vamos precisar dela mais para frente, lembrando que essa chave é sua 
+e ninguém mais pode ter acesso a ela.
+
+Na nossa aplicação, criando a pasta Services, vamos adicionar a classe EmailSender, que vai receber os dados para o 
+serviço de envio de e-mail.
+
+```csharp
+public class EmailSender : IEmailSender
+{
+    public async Task SendEmailAsync(string toEmail, string subject, string message)
+    {
+        if (string.IsNullOrEmpty(Configuration.SendGridKey.SendGridApiKey)) throw new Exception("Null SendGridKey");
+
+        await Execute(Configuration.SendGridKey.SendGridApiKey, subject, message, toEmail);
+    }
+
+    public static async Task Execute(string apiKey, string subject, string message, string toEmail)
+    {
+        var client = new SendGridClient(apiKey);
+        var msg = new SendGridMessage
+        {
+            From = new EmailAddress("email@email.com", "Cristiano Noronha"),
+            Subject = subject,
+            PlainTextContent = message,
+            HtmlContent = message
+        };
+        msg.AddTo(new EmailAddress(toEmail));
+
+        msg.SetClickTracking(false, false);
+        await client.SendEmailAsync(msg);
+    }
+}
+```
+O Identity usa injeção de dependêcia da interface IEmailSender para instânciar o serviço de e-mail. Na classe EmailSender, 
+que acabamos de criar, nós estamos implementando essa interface, porém para a nossa aplicação saber que nas ingeções de 
+dependência da interface IEmailSender, deverá ser utilizada a implementação que criamos no Program.cs, nós devemos 
+resolver a dependência adicionando a linha de código ```builder.Services.AddSingleton<IEmailSender, EmailSender>();```,
+onde estamos passando o tempo de vida da instância como Singleton, porque ela não vai ser modificada ao longo do tempo, e 
+assim, sempre que o Identity precisar do IEmailSender, saberá que deve utilizar a implementação EmailSender.
+
+Além disso, para receber a API Key do SendGrid, no arquivo appsettings.json, vamos adicionar uma seção com o 
+nome usado na criação da chave, no SendGrid, para receber a API Key, que estará configurada no Azure. No caso eu nomeei 
+como "My_SendGrid_Key".
+```json
+{
+  "SendGridKey": {
+    "SendGridApiKey": "My_SendGrid_Key"
+  }
+}
+```
+
+E, para receber essa chave na nossa aplicação vamos criar a classe Configuration.cs: 
+```csharp
+public class Configuration
+{
+    public static SendGridConfig SendGridKey { get; set; }
+    
+    public class SendGridConfig
+    {
+        public string SendGridApiKey { get; set; }
+    }
+}
+```
+
+E,  no Program.cs, vamos instanciá-la, pegando o valor da chave que estará entrando pelo appsettings.json, e atribuindo 
+à propriedade SendGridKey, adicionando as seguintes linhas:
+
+```csharp
+var sendGridKey = new Configuration.SendGridConfig();
+app.Configuration.GetSection("SendGridKey").Bind(sendGridKey);
+Configuration.SendGridKey = sendGridKey;
+```
+
 
 
 
 <div id='referencias'></div>
 
-## Referências
+## Referências.
 
 [Curso: Fundamentos do Azure, Git, GitHub e DevOps](https://balta.io/player/assistir/442da086-3cac-4d96-9332-cdab3797c01c)
 
