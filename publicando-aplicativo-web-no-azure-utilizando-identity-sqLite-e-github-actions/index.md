@@ -10,6 +10,8 @@ Sumário
 7. [Modelo do usuário da nossa app.](#modelocousuariodanossaapp)
 8. [Personalizando a página de registro do usuário.](#personalizandoapaginaderegistrodousuario)
 9. [Email service.](#emailservice)
+10. [Microsoft Azure](#microsoftazure)
+11. [Criando workflow.](#criandoworkflow)
 9. [Referências.](#referencias)
 
 *******
@@ -251,7 +253,33 @@ app.Configuration.GetSection("SendGridKey").Bind(sendGridKey);
 Configuration.SendGridKey = sendGridKey;
 ```
 
+<div id='microsoftazure'></div>
 
+## Microsoft Azure.
+
+Nós vamos fazer toda a parte do deployment do nosso app no Azure, plataforma de núvem da Microsoft. Onde é possível 
+criar uma conta grátis, acessando https://azure.microsoft.com/. Ao criar a conta, é gerado uma "Assinatura" 
+(Subscription), "Azure Subscription 1". Com essa assinatura nós vamos criar um "Grupo de Recursos" (Resource Group), 
+que também pode ser encontrado pela barra de busca, e navegando até a respectiva página, clicando no botão "+ Criar"
+(Create), onde selecionando a assinatura, dando um nome ao grupo de recursos, e selecionando a nossa região 
+"(South America) Brazil South", vamos clicar no botão "Revisar + criar" (Review + create), em seguida "Criar" (Create).
+
+![Resource_group](images/resourcegroup.png?raw=true)
+
+Da mesma forma, vamos criar o "Serviços de Aplicativos" (App Service), navegando até a página, clicando no botão 
+"+ Criar", seremos redirecionados à pagina onde selecionando a nossa "Assinatura" (Subscription), o 
+"Grupo de recursos" (Resource Group) que criamos, escolhendo um nome para a aplicação, que deve ser único pois será 
+utilizado na Url, "Publicar" (Publish) como "Codigo", "Pilha de Runtime" (Runtime Stack) nós vamos selecionar a versão
+do .NET que estamos utilizando no nosso app, "Sistema Operacional" (Operating System) como "Linux", "Região" (Region) 
+como "Brazil South", "Plano do Linux (Brazil South)" (Linux Plan) clicando no "Criar Novo" (Create New), vamos dar 
+um nome ao plano Linux, que na sequência, clicando no botão "Alterar Tamanho" (Change Size), estaremos selecionando o 
+plano "Gratuito F1, 1 GB de memória", então clicar em "Revisar + criar" (Review + create), e por fim "Criar" (Create).
+
+![App_service](images/appservice.png?raw=true)
+
+<div id='criandoworkflow'></div>
+
+## Criando workflow.
 
 
 <div id='referencias'></div>
