@@ -11,7 +11,8 @@ Sumário
 8. [Personalizando a página de registro do usuário.](#personalizandoapaginaderegistrodousuario)
 9. [Email service.](#emailservice)
 10. [Microsoft Azure](#microsoftazure)
-11. [Criando workflow.](#criandoworkflow)
+11. [Configurando Azure.](#configurandoazure)
+12. [Workflow no GitHub.](#workflownogithub)
 9. [Referências.](#referencias)
 
 *******
@@ -277,9 +278,44 @@ plano "Gratuito F1, 1 GB de memória", então clicar em "Revisar + criar" (Revie
 
 ![App_service](images/appservice.png?raw=true)
 
-<div id='criandoworkflow'></div>
+<div id='configurandoazure'></div>
 
-## Criando workflow.
+## Configurando Azure.
+
+Quando criamos o app, por estarmos utilizando Sqlite, a connection string é gerada no appsettings.json como
+"Data Source=Article.db", que está indicando a raíz da nossa aplicação como local para criação do banco de dados,
+porém no Azure nós devemos modificar a connection string, indicando wwroot como local, caso contrário irá gerar
+uma Exception, porque não será possível acessar o banco.
+
+Para configuração da connection string, no portal do Azure, navegando para "Serviços de Aplicativos", clicando no link 
+que está com o nome que utilizamos para criar a Url, seremos redirecionados para a aba do nosso app, podemos parar 
+a execução do app clicando em "Parar" (Stop), e, no menu lateral, vamos para as "Configurações", e clicando em 
+"+ New connection string", no campo "Name" vamos colocar ```DefaultConnection```, em "Value" 
+```DataSource=wwwroot/app.db;Cache=Shared```, "Type" ```Custom```, "Ok" parar criar. E dessa forma, no arquivo 
+appsettings.json, a connection string ficará da seguinte forma:
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "My_Connection_String"
+  }
+}
+```
+Lembrando que no Program.cs devemos utilizar o mesmo nome. 
+
+```csharp
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+```
+
+ E da mesma forma, ainda na página das configurações do nosso app, no portal do Azure, nós também vamos passar 
+o valor da API key do SendGrid, clicando em "+ New application setting", o nome deverá ser o mesmo que utilizamos 
+no appsettings.jso da nossa aplicação, porém devemos indicar qual seção, e como estamos em uma máquina Linux, 
+ para separar a seção e o item devemos usar "__" (2 X underline), ```SendGridKey__SendGridApiKey```, o valor será
+a chave que criamos no SendGrid, ```SG.HashGeradoNoPortalDoSendGrid```, lembrando que nunca devemos expor esse 
+ hash, "Ok" para criar.
+
+<div id='workflownogithub'></div>
+
+## Workflow no GitHub.
 
 
 <div id='referencias'></div>
