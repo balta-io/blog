@@ -188,6 +188,10 @@ app.Configuration.GetSection("SendGridKey").Bind(sendGridKey);
 Configuration.SendGridKey = sendGridKey;
 ```
 
+Por fim, vamos fazer as alterações nas classes do Identity na nossa aplicação. Em Register.cshtml vamos remover a `<div>` que está recebendo a entrada de ExternalLogins. E Register.cshtml.cs, no final do método OnPostAsync(), vamos remover o if else que está verificando a confirmação de conta, e vamos deixar apenas o retorno que está no if, como mostro na imagem a seguir. E, em RegisterConfirmation.cshtml vamos remover o `if (@Model.DisplayConfirmAccountLink)` e vamos deixar apenas o parágrafo `<p>` com a mensagem para confirmação do email. Lembrando que no Program.cs, onde estamos configurando a injeção do Identity, `options.SignIn.RequireConfirmedAccount` deve estar como `true`.
+
+![Cofirm_account](images/registerconfirmation.png?raw=true)
+
 <div id='microsoftazure'></div>
 
 ### Microsoft Azure.
