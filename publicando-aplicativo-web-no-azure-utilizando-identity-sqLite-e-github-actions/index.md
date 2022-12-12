@@ -21,7 +21,9 @@ Sumário
 
 ### Introdução
 
-Neste artigo vou falar sobre uma forma simples e prática de implementar e publicar um aplicativo web no Azure. Este app será criado através de comandos CLIs: .NET, Git, GitHub, e Azure. E nele, vamos implementar autenticação e autorização com Identity, SQLite como banco de dados, e o processo de deployment será feito em um App Service no Azure, automatizado pelo GitHub Actions, em uma máquina Linux.
+Neste artigo vou falar sobre uma forma simples e prática de implementar e publicar um aplicativo web, usando linhas de comando, implementando autenticação com Identity, usando SQLite como banco de dados, e o processo de deployment será feito em um App Service no Azure, máquina Linux, automatizado pelo GitHub Actions.
+
+Você pode conferir o código fonte da aplicação que vamos criar no repositório: https://github.com/crisnordev/Article
 
 <div id='instalacoes'></div>
 
@@ -77,7 +79,7 @@ Agora, vamos chamar as opções do scaffolder do Identity, e se por acaso retorn
 
 ```
 dotnet aspnet-codegenerator identity --help
-dotnet aspnet-codegenerator identity --userClass ApplicationUser --files "Account.Register;Account.Login;Account.Logout;Account.RegisterConfirmation" --useSqLite
+dotnet aspnet-codegenerator identity --userClass ApplicationUser --files "Account.Register;Account.Login;Account.Logout;Account.RegisterConfirmation;Account.Manage.Index" --useSqLite
 ```
 
 Para disponibilizar os botões do login nas páginas da nossa aplicação, no arquivo Pages/Shared/_Layout.cshtml, depois da `</ul>` que fecha a declaração dos links das páginas do nosso app, devemos adicionar a linha de código `<partial name="_LoginPartial" />`. E caso queira que o scaffolder gere todas as páginas do identity, basta remover o parâmetro ``--files`` que está recebendo os nomes dos arquivos que especifiquei para serem criados.
@@ -86,47 +88,72 @@ Para disponibilizar os botões do login nas páginas da nossa aplicação, no ar
 
 ### Modelo de usuário.
 
-A fim de oferecer uma experiência um mais personalizada ao usuário da nossa aplicação, junto com as páginas do Identity nós criamos a classe para o modelo do usuário. Porém, como sugestão, eu vou modificar o local da pasta Data, e também vou criar a pasta Models, na raiz do nosso app, onde vou colocar a classe "ApplicationUser". Note que esta classe está indicando ser do tipo IdentityUser através de herança, e também vamos alterar o tipo que será atribuído ao Id do usuário para Guid (padrão string). Além disso, vamos sobrescrever algumas propriedades, para que o cadastro do usuário tenha o comportamento que nós queremos.
+A fim de oferecer uma experiência um mais personalizada ao usuário da nossa aplicação, junto com as páginas do Identity nós criamos a classe para o modelo do usuário. Como sugestão, eu vou modificar o local da pasta Data, e também vou criar a pasta Models, na raiz do nosso app, onde vou colocar a classe "ApplicationUser". Note que esta classe está indicando ser do tipo IdentityUser através de herança, e também vamos alterar o tipo que será atribuído ao Id do usuário para Guid (padrão string). Além disso, vamos adicionar a propriedade "Name", para que o cadastro do usuário tenha o comportamento que nós queremos.
 
 ![ApplicationUser](images/applicationuser.png?raw=true)
 
-Lembrando que caso você tenha modificado o local onde estão dispostos DataContext e ApplicationUser, os namespaces deverão ser corrigidos, assim como as referências "using" das classes que estão utilizando eles. Note que estamos sobrescrevendo UserName, para poder receber a entrada de um valor do tipo string (por padrão recebe o valor do e-mail), que vai nos possibilitar a utilização de um nome de usuário personalizado, o que nos obriga a alterar a propriedade NormalizedUserName, que vai receber o valor de UserName convertido em letras maiúsculas.
+Lembrando que caso você tenha modificado o local onde estão dispostos DataContext e ApplicationUser, os namespaces deverão ser corrigidos, assim como as referências "using" das classes que estão utilizando eles. Note que estamos adicionando "Name", para poder receber a entrada de um valor do tipo string, que vai nos possibilitar a utilização de um nome personalizado para o usuário.
 
-Note também que na classe em que manipulamos o DataContext, devemos adicionar uma referência ao nosso ApplicationUser, e como estamos alterando o tipo do Id, também devemos referenciar IdentityRole, informando que os dois devem estar utilizando o tipo Guid no Id.
+Note também que na classe do nosso DataContext, devemos adicionar uma referência ao nosso ApplicationUser, e como estamos alterando o tipo do Id, também devemos referenciar IdentityRole, informando que os dois devem estar utilizando o tipo Guid no Id.
 
 <div id='personalizandoapaginaderegistrodousuario'></div>
 
 ### Personalizando a página de registro do usuário.
 
-Agora nós vamos alterar Register.cshtml.cs, e Register.cshtml, para receber a entrada personalizada do UserName. Para isso, em Areas/Identity/Pages/Account, em Register.cshtml.cs, vamos até a classe ImputModel, e vamos adicionar a propriedade UserName.
+Para receber a entrada "Name", em Areas/Identity/Pages/Account/Register.cshtml.cs, vamos até a classe ImputModel, e vamos adicionar a propriedade "Name".
 
 ```csharp
 [Required]
-[Display(Name = "User Name")]
-public string UserName { get; set; }
+[Display(Name = "Name")]
+public string Name { get; set; }
 ```
 
-Também em Register.cshtml.cs, vamos alterar o método OnPostAsync(), na linha onde estamos atribuindo o valor para o nome do usuário, substituindo pela seguinte linha.
+Também vamos alterar o método OnPostAsync(), depois da linha onde estamos criando uma instancia do "user", `var user = CreateUser();`, vamos adicionar a linha `user.Name = Input.Name;`, atribuindo o valor da entrada à propriedade "Name" do user.
 
-```csharp
-await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
-```
 
-Agora, em Register.cshtml, na `<div>` que está recebendo o input do email, na primeira linha do `<input>` vamos alterar o componente "autocomplete" para `autocomplete="email"`, e antes dessa `<div>` vamos adicionar o código para receber o input do UserName.
+Agora, em Register.cshtml, antes da `<div>` que está recebendo o "Input.Email", vamos adicionar o código para receber o "Input.Name".
 ```csharp
 <div class="form-floating mb-3">
-    <input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" placeholder="User name"/>
-    <label asp-for="Input.UserName">User Name</label>
-    <span asp-validation-for="Input.UserName" class="text-danger"></span>
+    <input asp-for="Input.Name" class="form-control" autocomplete="name" aria-required="true" placeholder="Name"/>
+    <label asp-for="Input.Name">Name</label>
+    <span asp-validation-for="Input.Name" class="text-danger"></span>
 </div>
 ```
+Também, em Account/Manage/Index.cshtml.cs, dentro do "InputMode", vamos adicionar a propriedade "Name", e no método LoadAsync(), na instancia "Imput = new InputModel{}". 
+```csharp
+Input = new InputModel
+{
+    Name = user.Name,
+    PhoneNumber = phoneNumber
+};
+```
+E, no método OnPostAsync(), depois do if que altera o telefone, nós vamos adicionar as seguintes linhas:
+```csharp
+if (Input.Name != user.Name)
+{ 
+    user.Name = Input.Name;
+}
+
+await _userManager.UpdateAsync(user);
+```
+Em Account/Manage/Index.cshtml, depois da `<div>` que recebe "UserName", vamos adicionar as seguintes linhas:
+```csharp
+<div class="form-group">
+    <label asp-for="Input.Name" class="form-control"></label>
+    <input asp-for="Input.Name" class="form-label" />
+    <span asp-validation-for="Input.Name" class="text-danger"></span>
+</div>
+```
+E também vamos alterar, em Pages/Shared/_LoginPartial.cshtml, o trecho `Hello @UserManager.GetUserName(User)!</a>` para `Hello @UserManager.GetUserAsync(User).Result.Name!</a>`, que vai exibir o nome do usuário no lugar do e-mail.
+
+
 <div id='emailservice'></div>
 
 ### Email service.
 
-Para configuração do serviço de e-mail, eu estou utilizando a API do SendGrid, adicionando o pacote nuget através do comando `dotnet add package SendGrid`. Você pode criar uma conta grátis, https://sendgrid.com/free/?source=sendgrid-csharp. Na sua conta, para possibilitar a configuração do serviço de e-mail na nossa aplicação, vamos precisar de uma chave da API do SendGrid. Para criar a chave, no portal do SendGrid você deve navegar para aba "Settings", "Api Keys", "Create API Key", adicionando o nome que será atribuido a essa chave, selecionando "Restricted Access", arrastando a barra "Mail Send" até "Full Access", e por fim "Create API Key". Você será redirecionado à página, que irá te mostrar a chave uma única vez, é recomendado copiar e armazenar essa chave em um local seguro, pois nós vamos precisar dela mais para frente, lembrando que essa chave é sua e ninguém mais pode ter acesso a ela.
+Para configuração do serviço de e-mail, eu estou utilizando a API do SendGrid. Você pode criar uma conta grátis, https://sendgrid.com/free/?source=sendgrid-csharp. Na sua conta, para possibilitar a configuração do serviço de e-mail na nossa aplicação, vamos precisar de uma chave da API do SendGrid. Para criar a chave, no portal do SendGrid você deve navegar para aba "Settings", "Api Keys", "Create API Key", adicionando o nome que será atribuido a essa chave, selecionando "Restricted Access", arrastando a barra "Mail Send" até "Full Access", e por fim "Create API Key". Você será redirecionado à página, que irá te mostrar a chave uma única vez, é recomendado copiar e armazenar essa chave em um local seguro, pois nós vamos precisar dela mais para frente, lembrando que essa chave é sua e ninguém mais pode ter acesso a ela.
 
-Na nossa aplicação, criando a pasta Services, vamos adicionar a classe EmailSender, que vai receber os dados para o serviço de envio de e-mail.
+Na nossa aplicação, vamos adicionar o pacote nuget do SendGrid através do comando `dotnet add package SendGrid`. Vamos criar a pasta Services, que vai conter a classe EmailSender, com os códigos para o serviço de envio de e-mail.
 
 ```csharp
 public class EmailSender : IEmailSender
@@ -155,9 +182,9 @@ public class EmailSender : IEmailSender
     }
 }
 ```
-O Identity usa injeção de dependência da interface IEmailSender para instanciar o serviço de e-mail. Na classe EmailSender, que acabamos de criar, nós estamos implementando essa interface, porém para a nossa aplicação saber que nas injeções de dependência da interface IEmailSender, deverá ser utilizada a implementação que criamos no Program.cs, nós devemos resolver a dependência adicionando a linha de código `builder.Services.AddSingleton<IEmailSender, EmailSender>();`, onde estamos passando o tempo de vida da instância como Singleton, porque ela não vai ser modificada ao longo do tempo, e assim, sempre que o Identity precisar do IEmailSender, saberá que deve utilizar a implementação EmailSender.
+O Identity usa injeção de dependência da interface IEmailSender para instanciar o serviço de e-mail. Na classe EmailSender, que acabamos de criar, nós estamos implementando essa interface, porém para a nossa aplicação saber que, nas injeções da interface IEmailSender, deverá utilizar a implementação que criamos, no Program.cs, nós devemos resolver a dependência, adicionando a linha de código `builder.Services.AddSingleton<IEmailSender, EmailSender>();`, onde estamos passando o ciclo de vida como Singleton, porque ela não vai ser modificada ao longo do tempo, e assim, sempre que o Identity precisar do IEmailSender, saberá que deve utilizar a implementação EmailSender.
 
-Além disso, para receber a API Key do SendGrid, no arquivo appsettings.json, vamos adicionar uma seção com o nome usado na criação da chave, no SendGrid, para receber a API Key, que estará configurada no Azure. No caso eu nomeei como "My_SendGrid_Key".
+Além disso, para receber a API Key do SendGrid, no arquivo appsettings.json, vamos adicionar uma seção, para receber a API Key, que estará configurada no Azure. No caso eu nomeei como "My_SendGrid_Key".
 ```json
 {
   "SendGridKey": {
@@ -166,7 +193,7 @@ Além disso, para receber a API Key do SendGrid, no arquivo appsettings.json, va
 }
 ```
 
-E, para receber essa chave na nossa aplicação vamos criar a classe Configuration.cs: 
+E, para receber essa chave na nossa aplicação, na raiz da aplicação, vamos criar a classe Configuration.cs: 
 ```csharp
 public class Configuration
 {
@@ -188,7 +215,7 @@ app.Configuration.GetSection("SendGridKey").Bind(sendGridKey);
 Configuration.SendGridKey = sendGridKey;
 ```
 
-Por fim, vamos fazer as alterações nas classes do Identity na nossa aplicação. Em Register.cshtml vamos remover a `<div>` que está recebendo a entrada de ExternalLogins. E Register.cshtml.cs, no final do método OnPostAsync(), vamos remover o if else que está verificando a confirmação de conta, e vamos deixar apenas o retorno que está no if, como mostro na imagem a seguir. E, em RegisterConfirmation.cshtml vamos remover o `if (@Model.DisplayConfirmAccountLink)` e vamos deixar apenas o parágrafo `<p>` com a mensagem para confirmação do email. Lembrando que no Program.cs, onde estamos configurando a injeção do Identity, `options.SignIn.RequireConfirmedAccount` deve estar como `true`.
+Por fim, vamos fazer as alterações em Identity/Pages/Account/Register.cshtml.cs, no final do método OnPostAsync(), como mostra na imagem a seguir, assim como em RegisterConfirmation.cshtml. Lembrando que no Program.cs, onde estamos configurando a injeção do Identity, `options.SignIn.RequireConfirmedAccount` deve estar como `true`.
 
 ![Cofirm_account](images/registerconfirmation.png?raw=true)
 
@@ -196,17 +223,17 @@ Por fim, vamos fazer as alterações nas classes do Identity na nossa aplicaçã
 
 ### Microsoft Azure.
 
-Nós vamos fazer toda a parte do deployment do nosso app no Azure, plataforma de nuvem da Microsoft. Onde é possível criar uma conta grátis, acessando https://azure.microsoft.com/. Ao criar a conta, é gerado uma "Assinatura"(Subscription), "Azure Subscription 1". Com essa assinatura nós vamos criar um "Grupo de Recursos" (Resource Group), que também pode ser encontrado pela barra de busca, e navegando até a respectiva página, clicando no botão "+ Criar" (Create), onde selecionando a assinatura, dando um nome ao grupo de recursos, e selecionando a nossa região" (South America) Brazil South", vamos clicar no botão "Revisar + criar" (Review + create), em seguida "Criar" (Create).
+Nós vamos fazer toda a parte do deployment do nosso app no Azure, plataforma de nuvem da Microsoft. Onde é possível criar uma conta grátis, acessando https://azure.microsoft.com/. Ao criar a conta, é gerado uma "Assinatura"(Subscription), "Azure Subscription 1". Com essa assinatura nós vamos criar um "Grupo de Recursos" (Resource Group), que também pode ser encontrado pela barra de busca, nela vamos clicar no botão "+ Criar" (Create), onde selecionando a assinatura, dando um nome ao grupo de recursos, e selecionando a nossa região" (South America) Brazil South", vamos clicar no botão "Revisar + criar" (Review + create), em seguida "Criar" (Create).
 
-Da mesma forma, vamos criar o "Serviços de Aplicativos" (App Service), navegando até a página, clicando no botão" + Criar", seremos redirecionados à pagina onde selecionando a nossa "Assinatura" (Subscription), o"Grupo de recursos" (Resource Group) que criamos, escolhendo um nome para a aplicação, que deve ser único pois será utilizado na Url, "Publicar" (Publish) como "Código", "Pilha de Runtime" (Runtime Stack) nós vamos selecionar a versão do .NET que estamos utilizando no nosso app, "Sistema Operacional" (Operating System) como "Linux", "Região" (Region)como "Brazil South", "Plano do Linux (Brazil South)" (Linux Plan) clicando no "Criar Novo" (Create New), vamos dar um nome ao plano Linux, que na sequência, clicando no botão "Alterar Tamanho" (Change Size), estaremos selecionando o plano "Gratuito F1, 1 GB de memória", então clicar em "Revisar + criar" (Review + create), e por fim "Criar" (Create).
+Da mesma forma, vamos criar o "Serviços de Aplicativos" (App Service), navegando até a página, clicando no botão" + Criar", seremos redirecionados à pagina onde selecionando a nossa "Assinatura" (Subscription), o "Grupo de recursos" (Resource Group) que criamos, escolhendo um nome para a aplicação, que deve ser único pois será utilizado na Url, em "Publicar" (Publish) selecionar "Código", na "Pilha de Runtime" (Runtime Stack) nós vamos selecionar a versão do .NET que estamos utilizando no nosso app, em "Sistema Operacional" (Operating System) como "Linux", "Região" (Region) como "Brazil South", no "Plano do Linux (Brazil South)" (Linux Plan) vamos criar um plano, "Criar Novo" (Create New), vamos dar um nome ao plano Linux, que na sequência, clicando no botão "Alterar Tamanho" (Change Size), estaremos selecionando o plano "Gratuito F1, 1 GB de memória". Finalizando a criação do "Serviços de aplicativos" clicar em "Revisar + criar" (Review + create), e por fim "Criar" (Create).
 
 <div id='configurandoazure'></div>
 
 ### Connection string, e configurações no Azure.
 
-Quando criamos o app, por estarmos utilizando Sqlite, a connection string é gerada no appsettings.json como "Data Source=Article.db", que está indicando a raíz da nossa aplicação como local para criação do banco de dados, porém no Azure nós devemos modificar a connection string, indicando wwroot como local, caso contrário irá gerar uma Exception, porque não será possível acessar o banco.
+Quando criamos o app, por estarmos utilizando Sqlite, a connection string é gerada no appsettings.json como "Data Source=Article.db", que está indicando a raíz da nossa aplicação como local para criação do banco de dados, porém, para publicar no Azure, nós devemos modificar a connection string, indicando `wwroot` como local para o banco de dados, caso contrário irá gerar uma Exception, porque não será possível acessar o banco.
 
-Para configuração da connection string, no portal do Azure, navegando para "Serviços de Aplicativos", clicando no link que está com o nome que utilizamos para criar a Url, seremos redirecionados para a aba do nosso app, podemos parar a execução do app clicando em "Parar" (Stop), e, no menu lateral, vamos para as "Configurações", e clicando em + New connection string", no campo "Name" vamos colocar `DefaultConnection`, em "Value" `DataSource=wwwroot/app.db;Cache=Shared`, "Type" `Custom`, "Ok" parar criar. E dessa forma, no arquivo appsettings.json, a connection string ficará da seguinte forma:
+Para configuração da connection string, no portal do Azure, navegando para "Serviços de Aplicativos", clicando no link que está com o nome que utilizamos para criar a Url, seremos redirecionados para a aba do nosso app, podemos parar a execução do app clicando em "Parar" (Stop), e, no menu lateral, vamos para as "Configurações", e clicando em + New connection string", no campo "Name" vamos colocar `DefaultConnection`, em "Value" `DataSource=wwwroot/app.db;Cache=Shared`, "Type" `Custom`, "Ok" parar criar. E, no arquivo appsettings.json, a connection string ficará da seguinte forma:
 ```json
 {
   "ConnectionStrings": {
@@ -220,21 +247,21 @@ Lembrando que no Program.cs devemos utilizar o mesmo nome.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 ```
 
- E da mesma forma, ainda na página das configurações do nosso app, no portal do Azure, nós também vamos passar o valor da API key do SendGrid, clicando em "+ New application setting", o nome deverá ser o mesmo que utilizamos no appsettings.jso da nossa aplicação, porém devemos indicar qual seção, e como estamos em uma máquina Linux, para separar a seção e o item devemos usar "__" (2 X underline), `SendGridKey__SendGridApiKey`, o valor será a chave que criamos no SendGrid, `SG.HashGeradoNoPortalDoSendGrid`, lembrando que nunca devemos expor esse hash, "Ok" para criar.
+Na página "Configurações", no portal do Azure, nós também vamos passar o valor da API key do SendGrid, clicando em "+ New application setting", usando o mesmo nome que utilizamos no appsettings.json, indicando a seção, e como estamos em uma máquina Linux, para separar a seção e o item devemos usar "__" (2 X underline), `SendGridKey__SendGridApiKey`, o valor será a chave que criamos no SendGrid, `SG.HashGeradoNoPortalDoSendGrid`, lembrando que nunca devemos expor esse hash, finalizando em "Ok" para criar.
 
 <div id='workflowgithubactions'></div>
 
 ### Workflow, GitHub Actions.
 
-O primeiro passo para a criação do workflow, que vai automatizar o processo de deploy da nossa aplicação, será feito no portal do Azure, navegando para "Serviços de aplicativos" (App Services), clicando no link do nosso app, no menu lateral selecionando "Centro de Implantação" (Deployment Center), vamos setar "Source" como "GitHub", que vai disponibilizar o link para autenticar nosso github, que será feito via Http, no próprio navegador, em seguida, selecionando o nosso usuário do GitHub em "Organization", "Repository" será o nome do repo da nossa aplicação no GitHub, "Branch" iremos selecionar "Main", assim toda mudança feita na branch `main` irá disparar as ações do GitHub Actions, para verificar o arquivo do workflow que vai ser gerado automaticamente no repositório remoto, clicamos no botão "Preview file", para fechar "Close", lembrando de salvar as alterações clicando em "Save".
+O primeiro passo para a criação do workflow, será feito no portal do Azure, navegando para "Serviços de aplicativos" (App Services), clicando no link do nosso app, e na sequência no menu lateral selecionando "Centro de Implantação" (Deployment Center), vamos escolher o "Source" como "GitHub", que vai disponibilizar o link para autenticar nosso github, feito via Http, no próprio navegador. Em seguida, selecionando o nosso usuário do GitHub em "Organization", em "Repository" será o nome do repo da nossa aplicação no GitHub, em "Branch" iremos selecionar "Main", assim toda mudança feita na branch `main` irá disparar as ações do GitHub Actions, caso queira verificar o arquivo do workflow que vai ser gerado no repositório remoto, clicamos no botão "Preview file", vai abrir uma aba com o arquivo, para fechar "Close". Lembrando de salvar as alterações clicando em "Save".
 
-Após finalizada a execução no Azure, navegando até a página do nosso repositório remoto, no GitHub, verificamos a criação da pasta .github/workflows, com o arquivo main_nomeDoApp.yml, contendo os passos que serão executados nas Actions. Então, vamos finalizar essa parte das configurações, navegando até a aba "Settings", no menu lateral seleciona "Actions", "General", e em "Actions permissions", selecionar "Allow all actions and reusable workflow", "Save". Em seguida, no menu lateral, "Secrets", "Actions", onde foi gerado o secret`AZUREAPPSERVICE_PUBLISHPROFILE_HashDoSecret`, referenciando o nosso AppService no Azure, e, vamos criar mais dois secrets.
+Após finalizada a execução no Azure, navegando até a página do nosso repositório remoto, no GitHub, verificamos a criação da pasta .github/workflows, com o arquivo main_nomeDoApp.yml, contendo os passos que serão executados nas Actions. Então, vamos finalizar essa parte das configurações, navegando até a aba "Settings", selecionando a seguir, no menu lateral, "Actions", depois "General", e no campo "Actions permissions", selecionar "Allow all actions and reusable workflow", "Save". Seguindo para a seleção, no menu lateral, da aba "Secrets", "Actions", onde o Azure criou o secret`AZUREAPPSERVICE_PUBLISHPROFILE_HashDoSecret`, referenciando o nosso AppService no Azure, e, vamos criar mais dois secrets.
 
-Primeiro, uma referências à connection string, informando esse caminho às Actions go GitHub. Vamos clicar no botão "New repository secret", no campo"Name" vamos preencher com `AZURE_SQLITE_CONNECTION_STRING`, e no campo"Secret" com `DataSource=wwwroot/app.db;Cache=Shared`. 
+Primeiro, uma referências à connection string, informando o caminho às Actions do GitHub, clicando no botão "New repository secret", no campo "Name" vamos preencher com `AZURE_SQLITE_CONNECTION_STRING`, e no campo"Secret" com `DataSource=wwwroot/app.db;Cache=Shared`. 
 
-A próxima secret, que vai receber o nome `AZURE_CREDENTIALS`, depende de um processo que executaremos no nosso terminal, usando Azure CLI, que vão disponibilizar as credenciais para autorizar a execução das Actions pelo GitHub Actions no nosso App Service do Azure. Então, no terminal, com A CLI do Azure instalada, e autenticada, nós vamos executar o seguinte comando `az ad sp create-for-rbac --name "NomeDoAplicativo" --role contributor --scopes /subscriptions/IdDaAssinatura/resourceGroups/NomeDoGrupoDeRecursos --sdk-auth`, lembrando de buscar no portal do Azure, na página "Serviços de aplicativos", e alterar no comando anterior o"NomeDoAplicativo", "IdDaAssinatura", "NomeDoGrupoDeRecursos". Este comando vai retornar um Json, o qual nós vamos copiar e colar como valor da "Secret".
+A próxima secret, que vai receber o nome `AZURE_CREDENTIALS`, depende de um processo que executaremos no nosso terminal, usando Azure CLI, disponibilizando as credenciais para autorizar a execução das Actions pelo GitHub Actions no nosso App Service do Azure. Então, no terminal, com A CLI do Azure instalada, e autenticada, nós vamos executar o seguinte comando `az ad sp create-for-rbac --name "NomeDoAplicativo" --role contributor --scopes /subscriptions/IdDaAssinatura/resourceGroups/NomeDoGrupoDeRecursos --sdk-auth`, lembrando de buscar no portal do Azure, na página "Serviços de aplicativos", e alterar no comando anterior o "NomeDoAplicativo", "IdDaAssinatura", "NomeDoGrupoDeRecursos". Este comando vai retornar um Json, o qual vamos copiar e colar como valor da "Secret".
 
-Por fim, vamos atualizar o app no nosso repo local, executando um `git pull` no terminal, e vamos acessar o arquivo .yml do nosso workflow, e iremos adicionar as referências da connection string, das credenciais do Azure, os comandos para instalar as ferramentas EF Tools e executar um update database.
+Por fim, vamos atualizar o app no nosso repo local, executando um `git pull` no terminal, e vamos acessar o arquivo .yml do nosso workflow, e iremos adicionar as referências da connection string, credenciais do Azure, comandos para instalar as ferramentas EF Tools e executar um update database.
 
 ```yaml
 name: Build and deploy ASP.Net Core app to Azure Web App - articleidentity
@@ -308,7 +335,11 @@ jobs:
 
 ```
 
-Por último, vamos executar uma migration, `dotnet ef migrations add v1`. No arquivo appsettings.json vamos alterar temporariamente o valor da connection string `DataSource=wwwroot/app.db;Cache=Shared`, em seguida executando`dotnet ef database update`, lembrando de desfazer a alteração que acabamos de fazer na connection string,`My_Connection_String`. No portal do Azure, navegando para "Serviços de aplicativos" (App Services), clicando no link do nosso app, clicando em "Iniciar", para deixar a aplicação em execução. E para mandar as alterações, para o nosso repo remoto, vamos adicionar as alterações, realizar um commit, e um push, que irão disparar as Actions, que pode ser conferidos os detalhes no portal do GitHub, na aba "Actions".
+Por último, vamos executar uma migration, `dotnet ef migrations add v1`. No arquivo appsettings.json vamos alterar temporariamente o valor da connection string `DataSource=wwwroot/app.db;Cache=Shared`, em seguida executando`dotnet ef database update`, lembrando de desfazer essa alteração, retornando para `"DefaultConnection": "My_Connection_String"`. 
+
+No portal do Azure, navegando para "Serviços de aplicativos" (App Services), clicando no link do nosso app, vamos iniciar a execução, clicando em "Iniciar", que vai manter a aplicação em execução. 
+
+E para mandar as alterações, para o nosso repo remoto, vamos adicionar as alterações ao arquivo .git, realizar um commit, e mandar para o remoto com um push, que irão disparar as Actions. Podemos conferir os detalhes da execução das Actions, no nosso portal do GitHub, na aba "Actions", do repositório do nosso app.
 
 ```
 git add .
