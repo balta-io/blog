@@ -336,6 +336,8 @@ jobs:
 
 Por último, vamos executar uma migration, `dotnet ef migrations add v1`. No arquivo appsettings.json vamos alterar temporariamente o valor da connection string `DataSource=wwwroot/app.db;Cache=Shared`, em seguida executando`dotnet ef database update`, lembrando de desfazer essa alteração, retornando para `"DefaultConnection": "My_Connection_String"`. 
 
+Não podemos esquecer de remover no Program.cs o "if (!app.Environment.IsDevelopment())".
+
 No portal do Azure, navegando para "Serviços de aplicativos" (App Services), clicando no link do nosso app, vamos iniciar a execução, clicando em "Iniciar", que vai manter a aplicação em execução. 
 
 E para mandar as alterações, para o nosso repo remoto, vamos adicionar as alterações ao arquivo .git, realizar um commit, e mandar para o remoto com um push, que irão disparar as Actions. Podemos conferir os detalhes da execução das Actions, no nosso portal do GitHub, na aba "Actions", do repositório do nosso app.
