@@ -79,7 +79,7 @@ Agora, vamos chamar as opções do scaffolder do Identity, e se por acaso retorn
 
 ```
 dotnet aspnet-codegenerator identity --help
-dotnet aspnet-codegenerator identity --userClass ApplicationUser --files "Account.Register;Account.Login;Account.Logout;Account.RegisterConfirmation;Account.Manage.Index" --useSqLite
+dotnet aspnet-codegenerator identity --userClass ApplicationUser --files "Account.Register;Account.Login;Account.Logout;Account.RegisterConfirmation;Account._StatusMessage;Account.Manage.Index" --useSqLite
 ```
 
 Para disponibilizar os botões do login nas páginas da nossa aplicação, no arquivo Pages/Shared/_Layout.cshtml, depois da `</ul>` que fecha a declaração dos links das páginas do nosso app, devemos adicionar a linha de código `<partial name="_LoginPartial" />`. E caso queira que o scaffolder gere todas as páginas do identity, basta remover o parâmetro ``--files`` que está recebendo os nomes dos arquivos que especifiquei para serem criados.
@@ -138,10 +138,9 @@ await _userManager.UpdateAsync(user);
 ```
 Em Account/Manage/Index.cshtml, depois da `<div>` que recebe "UserName", vamos adicionar as seguintes linhas:
 ```csharp
-<div class="form-group">
-    <label asp-for="Input.Name" class="form-control"></label>
-    <input asp-for="Input.Name" class="form-label" />
-    <span asp-validation-for="Input.Name" class="text-danger"></span>
+<div class="form-floating mb-3">
+    <input asp-for="Input.Name" class="form-control" placeholder="Please choose your name." />
+    <label asp-for="Input.Name" class="form-label"></label>
 </div>
 ```
 E também vamos alterar, em Pages/Shared/_LoginPartial.cshtml, o trecho `Hello @UserManager.GetUserName(User)!</a>` para `Hello @UserManager.GetUserAsync(User).Result.Name!</a>`, que vai exibir o nome do usuário no lugar do e-mail.
