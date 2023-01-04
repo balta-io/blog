@@ -258,7 +258,11 @@ Após finalizada a execução no Azure, navegando até a página do nosso reposi
 
 Primeiro, uma referências à connection string, informando o caminho às Actions do GitHub, clicando no botão "New repository secret", no campo "Name" vamos preencher com `AZURE_SQLITE_CONNECTION_STRING`, e no campo"Secret" com `DataSource=wwwroot/app.db;Cache=Shared`. 
 
-A próxima secret, que vai receber o nome `AZURE_CREDENTIALS`, depende de um processo que executaremos no nosso terminal, usando Azure CLI, disponibilizando as credenciais para autorizar a execução das Actions pelo GitHub Actions no nosso App Service do Azure. Então, no terminal, com A CLI do Azure instalada, e autenticada, nós vamos executar o seguinte comando `az ad sp create-for-rbac --name "NomeDoAplicativo" --role contributor --scopes /subscriptions/IdDaAssinatura/resourceGroups/NomeDoGrupoDeRecursos --sdk-auth`, lembrando de buscar no portal do Azure, na página "Serviços de aplicativos", e alterar no comando anterior o "NomeDoAplicativo", "IdDaAssinatura", "NomeDoGrupoDeRecursos". Este comando vai retornar um Json, o qual vamos copiar e colar como valor da "Secret".
+A próxima secret, que vai receber o nome `AZURE_CREDENTIALS`, depende de um processo que executaremos no nosso terminal, usando Azure CLI, disponibilizando as credenciais para autorizar a execução das Actions pelo GitHub Actions no nosso App Service do Azure. Então, no terminal, com A CLI do Azure instalada, e autenticada, nós vamos executar o seguinte comando abaixo:
+```
+az ad sp create-for-rbac --name "NomeDoAplicativo" --role contributor --scopes /subscriptions/IdDaAssinatura/resourceGroups/NomeDoGrupoDeRecursos --sdk-auth
+```
+Lembrando de buscar no portal do Azure, na página "Serviços de aplicativos", e alterar no comando anterior o "NomeDoAplicativo", "IdDaAssinatura", "NomeDoGrupoDeRecursos". Este comando vai retornar um Json, o qual vamos copiar e colar como valor da "Secret".
 
 Por fim, vamos atualizar o app no nosso repo local, executando um `git pull` no terminal, e vamos acessar o arquivo .yml do nosso workflow, e iremos adicionar as referências da connection string, credenciais do Azure, comandos para instalar as ferramentas EF Tools e executar um update database.
 
