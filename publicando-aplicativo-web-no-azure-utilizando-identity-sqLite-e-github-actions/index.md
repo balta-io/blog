@@ -1,4 +1,4 @@
-﻿Publicando aplicativo web no Azure, utilizando Identity, SQLite e GitHub Actions.
+Neste artigo vou falar sobre uma forma simples e prática de implementar e publicar um aplicativo web, usando linhas de comando, implementando autenticação com Identity, usando SQLite como banco de dados, e o processo de deployment será feito em um App Service no Azure, máquina Linux, automatizado pelo GitHub Actions.
 
 Sumário
 
