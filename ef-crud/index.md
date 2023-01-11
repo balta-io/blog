@@ -119,40 +119,95 @@ public class AppDbContext : DbContext
 }
 ```
 ## Operações CRUD
-
+Estamos na reta final, agora com tudo configurado, podemos executar as operações CRUD com muita facilidade. Listei elas abaixo, da forma mais simples e objetiva possível.
 
 ### Create - Criar
 ```csharp
+// Instância da entidade
 var category = new Category(0, "Categoria 1", "categoria-1", "Descrição da Categoria 1");
 
+// Instância do Data Context
 using var context = new AppDbContext();
+
+// Adiciona a entidade ao Data Context
 await context.Categories.AddAsync(category);
+
+// Persiste as mudanças
 await context.SaveChangesAsync();
 ```
 
+Dois pontos importantes aqui são o uso do `using` que já se encarregará de fechar a conexão assim que a mesma não for mais utilizada (Assim como no Dapper quando usamos o SQL Connection) e o `await` para tornar as operações **assíncronas**.
+
+Por fim, podemos notar que precisamos de duas linhas de código para persistir os dados (Na verdade para salvar, excluir e atualizar). Isto ocorre pois como comentado anteriormente, o **Data Context** é a representação do banco de dados em memória, logo, quando utilizamos o `AddAsync` ele adiciona a entidade apenas no banco em memória.
+
+Para salvar de fato no banco de dados, precisamos do comando `SaveChangesAsync`. Este mesmo comportamento será visto nos outros métodos (Exceto leitura).
+
 ### Read - Ler
+Como você deve imaginar, ler os dados não é algo difícil, porém tem alguns detalhes. Futuramente vou explicar melhor sobre `AsNoTracking` mas hoje vamos focar no básico.
+
+Desta forma temos tudo o que precisamos no `context.Categories`, porém o resultado desta propriedade é um `IQueryable`, ou seja, não é algo materializado.
+
+Sendo assim, sempre que utilizamos o `ToListAsync()` ou `FirstOrDefaultAsync` (Ou outros métodos do IList) a query de fato é executada no banco.
+
 ```csharp
+// Instância do Data Context
 using var context = new AppDbContext();
-var categories = await context.Categories.ToList();
+
+// Lê todas as categorias
+var categories = await context.Categories.ToListAsync();
+
+// Busca a categoria com ID 1
 var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == 1);
 ```
 
-### Update - Atualizar
+Você percebeu que se inverter o `ToListAsync` com um `Where` pode causar a leitura de todos os dados de uma tabela?
+
 ```csharp
+// 🔴 ERRADO
+var categories = await context.Categories.ToListAsync().Where(x => x.Active == true);
+
+// 🟢 Correto
+var categories = await context.Categories.Where(x => x.Active == true).ToListAsync();
+```
+
+### Update - Atualizar
+Como os processos são muito parecidos, não vou me estender aqui, exceto pelo fato que não temos um método `UpdateAsync` assim como temos no `AddAsync` e `RemoveAsync`, então não precisamos do `await`.
+```csharp
+// Instância do Data Context
 using var context = new AppDbContext();
+
+// Recupera a entidade (Re-hidratação)
 var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == 1);
 
+// Altera a entidade
 category.Title = "Categoria Atualizada";
+
+// Atualiza os dados no Data Context
 context.Categories.Update(category);
+
+// Persiste os dados no banco
 await context.SaveChangesAsync();
 ```
 
 ### Delete - Excluir
+Por fim, temos o método de excluir, que é bem simples.
+
 ```csharp
+// Instância do Data Context
 using var context = new AppDbContext();
+
+// Recupera a entidade
 var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == 1);
-context.Categories.Remove(category);
+
+// Remove ela do Data Context
+await context.Categories.RemoveAsync(category);
+
+// Persiste as mudanças
 await context.SaveChangesAsync();
 ```
 
-
+## Quer aprender mais sobre Dapper?
+* [Masterclass GRAUITA - Dapper VS Entity Framework](https://go.balta.io/masterclass-dapper-vs-entity-framework)
+* [CURSO COMPLETO - Acesso à dados com Dapper e SQL Server](https://balta.io/cursos/acesso-dados-csharp-net-dapper-sql-server)
+* [CURSO COMPLETO - Entity Framework e SQL Server](https://balta.io/cursos/fundamentos-entity-framework)
+* [CARREIRA COMPLETO - .NET do ZERO ao PRO](https://balta.io/carreiras/desenvolvedor-backend-dotnet)
