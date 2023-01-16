@@ -206,7 +206,7 @@ await context.Categories.RemoveAsync(category);
 await context.SaveChangesAsync();
 ```
 
-## Quer aprender mais sobre Dapper?
+## Quer aprender mais sobre Entity Framework?
 * [Masterclass GRAUITA - Dapper VS Entity Framework](https://go.balta.io/masterclass-dapper-vs-entity-framework)
 * [CURSO COMPLETO - Acesso à dados com Dapper e SQL Server](https://balta.io/cursos/acesso-dados-csharp-net-dapper-sql-server)
 * [CURSO COMPLETO - Entity Framework e SQL Server](https://balta.io/cursos/fundamentos-entity-framework)
