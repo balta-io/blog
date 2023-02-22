@@ -32,8 +32,6 @@ Em seu repositório criado no GitHub, o nosso exemplo será disponibilizado nest
 1. Dentro do repositório do Github, crie um diretório `.github/workflows`.
 2. No diretório `.github/workflows`, crie um arquivo `main.yaml` com o conteúdo a seguir: 
 
-.github/workflows/main.yaml
-
 ```yaml
 ---
 name: Running
@@ -68,9 +66,11 @@ jobs:
         run: echo 'production'
 ```
 
+`.github/workflows/main.yaml`
+
 1. Foram criadas três etapas para o fluxo de trabalho: *dev*, *stg* e *prd* que a cada etapa, realiza a impressão de um texto no terminal.
     - Essas etapas tem como objetivo apresentar três contextos de ambientes em que o deploy da aplicação possa ser realizado.
-    - As etapas possuem dependência entre elas. prd depende da execução com sucesso de stg e stg depende de dev.
+    - As etapas possuem dependência entre elas em que prd depende da execução com sucesso de stg e stg depende de dev.
     - Você pode encontrar outras estratégias de deploy como em branches específicas para cada ambiente.
 2. Faça o push para sua branch principal, comumente é a master.
 3. Acesse o menu *Actions* e clique no modelo que está em execução.
