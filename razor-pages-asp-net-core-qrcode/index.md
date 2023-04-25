@@ -29,7 +29,7 @@ public static class QrCodeServices
 ```
 
 ## Gerando o QRCode
-O trecho para gerar um QRCode utilizando o QRCoder é bem simples, precisamos do <code>QRCodeGenerator</code> e dos dados do QRCode.
+O trecho para gerar um QRCode utilizando o <code>QRCoder</code> é bem simples, precisamos do <code>QRCodeGenerator</code> e dos dados do QRCode.
 
 ```csharp
 public static Bitmap GenerateImage(string content)
@@ -46,7 +46,7 @@ public static Bitmap GenerateImage(string content)
 Agora vamos escrever um método para injetar nosso bitmap em uma tag html ```<img>```. Para isso, vamos converter o objeto do tipo <code>System.Drawing.Bitmap</code> em uma imagem que pode ser usada em uma tag html ```<img>```, primeiro precisamos salvar o bitmap em um fluxo de memória e, em seguida, converter o fluxo em uma sequência de bytes. Por fim, é possível criar uma string com a sintaxe correta para uma tag html ```<img>``` e definir o valor do atributo ```src``` como um data URI contendo a sequência de bytes da imagem.
 
 ```csharp
-public static string BitpmapToImageSource(string content)
+public static string BitmapToImageSource(string content)
 {
     var bitmap = GenerateImage(content);
     var imageSource = string.Empty;
@@ -118,7 +118,7 @@ Agora vamos trabalhar na interface para obtenção dos dados que darão origem a
 </form>
 ```
 
-Vamos fazer também a chamado do jQuery para validar nosso formulário do lado do cliente.
+Vamos fazer também a chamado do <code>jQuery</code> para validar nosso formulário do lado do cliente.
 
 ```
 @section scripts{
@@ -132,7 +132,7 @@ Nossa página ficará com o seguinte conteúdo:
 @page
 @model GenerateQrCodeModel
 @{
-    ViewData["Title"] = "Gerar QRCode ";
+    ViewData["Title"] = "Gerar QRCode";
 }
 <h1>@ViewData["Title"]</h1>
 
@@ -181,7 +181,7 @@ public class GenerateQrCodeModel : PageModel
 } 
 ```
 
-Agora vamos trabalhar na interface que vai propriamente gerar e renderizar nosso QRCode, vamos adicionar uma nova página com o nome <code>RenderQrCode</code> post contendo um ```<img>``` onde iremos renderizar o QRCode e um ```<button>``` onde daremos a opção ao usuário de voltar a página anterior, da seguinte forma:
+Agora vamos trabalhar na interface que vai propriamente gerar e renderizar nosso QRCode, vamos adicionar uma nova página com o nome <code>RenderQrCode</code> contendo um ```<img>``` onde iremos renderizar o QRCode e um ```<button>``` onde daremos a opção ao usuário de voltar a página anterior, da seguinte forma:
 
 ```
 @page "~/renderqrcode/{content?}"
@@ -220,7 +220,7 @@ public class RenderQrCodeModel : PageModel
 
     public void OnPost(string content)
     {
-        imageSource = QrCodeServices.BitpmapToImageSource(Request.Form["ContentQrCode"]);
+        imageSource = QrCodeServices.BitmapToImageSource(Request.Form["ContentQrCode"]);
     }
 }
 ```
@@ -234,6 +234,10 @@ Parar finalizarmos, vamos fazer a chamada da página <code>GenerateQrCode</code>
 ```
 
 Pronto! Temos um gerador de QRCode em Razor Pages ASP.NET Core.
+
+![render-qrcode-1](images/render-qrcode-1.png)
+![render-qrcode-2](images/render-qrcode-2.png)
+![render-qrcode-3](images/render-qrcode-3.png)
 
 ## Código fonte:
 https://github.com/jfs-dev/render-qrcode-web/
