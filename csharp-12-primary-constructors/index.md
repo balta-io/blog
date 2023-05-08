@@ -72,10 +72,10 @@ Então, supondo que temos uma classe chamada `Name`, podemos ter um ***Construto
 ```csharp
 public class Name
 {
-		public Name()
-		{
-			// Método Construtor
-		}
+	public Name()
+	{
+		// Método Construtor
+	}
 
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -100,11 +100,11 @@ Sempre que criamos um construtor sem parâmetros, ele recebe o nome de ***Parame
 ```csharp
 public class Name
 {
-		public Name(string firstName, string lastName)
-		{
-			FirstName = firstName;
-			LastName = lastName;
-		}
+	public Name(string firstName, string lastName)
+	{
+		FirstName = firstName;
+		LastName = lastName;
+	}
 
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -126,13 +126,13 @@ Por fim, podemos combinar construtores, tendo mais de um para nossas classes, in
 ```csharp
 public class Name
 {
-		public Name() { }
+	public Name() { }
 
-		public Name(string firstName, string lastName)
-		{
-			FirstName = firstName;
-			LastName = lastName;
-		}
+	public Name(string firstName, string lastName)
+	{
+		FirstName = firstName;
+		LastName = lastName;
+	}
 
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -163,14 +163,14 @@ Para resolver esta situação, podemos utilizaro protected no construtor paramet
 ```csharp
 public class Name
 {
-		// 👇 Agora é protected
-		protected Name() { } 
+	// 👇 Agora é protected
+	protected Name() { } 
 
-		public Name(string firstName, string lastName)
-		{
-			FirstName = firstName;
-			LastName = lastName;
-		}
+	public Name(string firstName, string lastName)
+	{
+		FirstName = firstName;
+		LastName = lastName;
+	}
 
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -199,7 +199,7 @@ public class Measurement
 		int width = 0,  // 👈 Parâmetro opcional, já possui um valor
 		int height = 0) // 👈 Parâmetro opcional, já possui um valor
 	{
-  }
+  	}
 
 	public int Width { get; set; }
 	public int Height { get; set; }
@@ -228,11 +228,11 @@ Legal, mas supondo que eu tenha uma classe com duas propriedades apenas, porém,
 ```csharp
 public class Name
 {
-		public Name(string firstName, string lastName)
-		{
-			FirstName = firstName;
-			LastName = lastName;
-		}
+	public Name(string firstName, string lastName)
+	{
+		FirstName = firstName;
+		LastName = lastName;
+	}
 
     public string FirstName { get; set; }
     public string LastName { get; set; }
