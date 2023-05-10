@@ -1,4 +1,3 @@
-# Razor Pages ASP.NET Core QRCode
 Neste artigo vamos aprender a gerar um QRCode usando o template Razor Pages em ASP.NET Core de forma simples e rápida.
 
 ## Criando a aplicação
