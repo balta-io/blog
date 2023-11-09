@@ -1,5 +1,3 @@
-# O futuro do ASP.NET e Blazor
-
 O ASP.NET 8 chega dia 14 de Novembro deste ano (2023) e com ele venha talvez uma das maiores mudanças do Framework de todos os tempos.
 
 ## Por que ainda usamos o ASP.NET hoje?
