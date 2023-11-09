@@ -39,7 +39,7 @@ Do lado do SSR, podemos destacar diversos pontos fortes e fracos que já comenta
 
 Abaixo temos uma ilustração de como funcionam as requisições e respostas em uma aplicação que se beneficia do SSR.
 
-![Untitled Diagram.drawio.png](images/Untitled_Diagram.drawio.png)
+![Untitled Diagram.drawio.png](images/Untitled_Diagram_drawio.png)
 
 Podemos notar que é uma relação extremamente simples, que desfruta da base de toda aplicação Web, que é uma requisição e uma resposta.
 
@@ -53,7 +53,7 @@ Do lado do SPA, também podemos destacar diversos pontos fortes e fracos que já
 
 Abaixo temos uma ilustração de como funcionam as requisições e respostas em uma aplicação que se beneficia do SPA.
 
-![spa.drawio.png](images/spa.drawio.png)
+![spa.drawio.png](images/spa_drawio.png)
 
 Como podemos ver, neste modelo, nós temos o carregamento inicial similar ao SSR, porém, posteriormente fazemos apenas requisições assíncronas, recebendo um JSON como retorno e gerando o HTML necessário.
 
@@ -78,7 +78,7 @@ A ideia principal do Blazor Server é rodar no servidor, mas diferente de como o
 
 Enquanto o ASP.NET renderiza toda a página novamente, o Blazor foi mais esperto. Ele mantém uma conexão aberta e atualiza só o componente que está sendo manipulado.
 
-![FONTE: Microsoft Learn](images/Untitled%201.png)
+![FONTE: Microsoft Learn](images/Untitled_1.png)
 
 FONTE: Microsoft Learn
 
@@ -90,7 +90,7 @@ Na outra mão temos o Blazor WebAssembly, ou Blazor WASM, que faz um trabalho be
 
 Web Assembly não é uma exclusividade da Microsoft, outras tecnologias como Rust se beneficiam dele, e ele basicamente permite a execução de códigos de máquina no navegador utilizando linguagens que não são necessariamente o JavaScript.
 
-![FONTE: Microsoft Learn](images/Untitled%202.png)
+![FONTE: Microsoft Learn](images/Untitled_2.png)
 
 FONTE: Microsoft Learn
 
@@ -130,7 +130,7 @@ Então utilizar o MVC fica mais para projetos que realmente necessitem esta arqu
 
 Indo além, no .NET 8 temos a unificação dos templates também, sendo que para criar uma nova aplicação Blazor com suporte a SSR, WASM e Blazor Server, basta usar o comando `dotnet new blazor`.
 
-![Untitled](images/Untitled%203.png)
+![Untitled](images/Untitled_3.png)
 
 Este novo projeto combina recursos do ASP.NET, Blazor Server e Blazor Wasm, nos permitindo criar Razor Components, Razor Pages, Blazor Pages, Blazor Components e até utilizar o Blazor WebAssembly no projeto.
 
