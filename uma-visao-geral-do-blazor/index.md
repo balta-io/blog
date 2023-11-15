@@ -1,3 +1,6 @@
+## 📗 eBook COMPLETO: Blazor com .NET 8
+- [👉 Clique aqui para baixar seu eBook 👈](https://go.balta.io/ebook-blazor?utm_source=Website&utm_campaign=website-to-lp&utm_content=blog-post&utm_medium=article)
+
 ## Entendendo as segmentações do Blazor
 
 [No artigo anterior](https://balta.io/blog/o-futuro-do-aspnet-e-blazor) falamos sobre SPA, SSR, WASM e agora vamos entender com mais detalhes como o Blazor trata estes itens, vamos entender na prática a diferença entre uma aplicação WASM e um Server ou SSR.
