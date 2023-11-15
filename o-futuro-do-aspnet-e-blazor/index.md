@@ -1,5 +1,8 @@
 O ASP.NET 8 chega dia 14 de Novembro deste ano (2023) e com ele venha talvez uma das maiores mudanças do Framework de todos os tempos.
 
+## 📗 eBook COMPLETO: Blazor com .NET 8
+- [👉 Clique aqui para baixar seu eBook 👈](https://go.balta.io/ebook-blazor?utm_source=Website&utm_campaign=website-to-lp&utm_content=blog-post&utm_medium=article)
+
 ## Por que ainda usamos o ASP.NET hoje?
 
 Sabemos que C# é a linguagem de programação, .NET é o Framework (Conjunto de bibliotecas que torna o desenvolvimento mais rápido) e que o próprio .NET é escrito em C#.
