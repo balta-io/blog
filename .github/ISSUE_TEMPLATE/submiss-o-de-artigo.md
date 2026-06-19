@@ -22,3 +22,5 @@ assignees: ''
 - Nome:
 - Mini biografia (Até 160 caracteres):
 - Foto profissional (De preferência sem fundo):
+- URL do GItHub: 
+- URL do LinkedIn:
