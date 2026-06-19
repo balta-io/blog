@@ -17,3 +17,8 @@ assignees: ''
 
 ### Sobre o que é este artigo, quais problemas ele resolve?
 (Descreva brevemente -- em até 500 caracteres -- o que você deseja expressar com este artigo)
+
+### Autor
+- Nome:
+- Mini biografia (Até 160 caracteres):
+- Foto profissional (De preferência sem fundo):
