@@ -31,16 +31,22 @@ Não há ação sua neste passo.
 # Produção do artigo
 IMPORTANTE: Só execute estes passos se o seu issue estiver com a tag `produção`.
 
-## Passo 1: Clonar o repositório
+## Passo 1: Estrutura do artigo
+Na issue criada, uma URL foi atribuída ao seu artigo e uma pasta foi criada no repositório.
+Por exemplo, supondo que a URL `fundamentos-do-csharp` foi atribuída ao seu artigo, você verá uma pasta chamada `fundamentos-do-csharp` na raiz do repositório clonado.
+
+## Passo 2: Clonar o repositório
 ```
 git clone https://github.com/balta-io/blog
 ```
 
-## Passo 2: Estrutura do artigo
-Na issue criada, uma URL foi atribuída ao seu artigo e uma pasta foi criada no repositório.
-Por exemplo, supondo que a URL `fundamentos-do-csharp` foi atribuída ao seu artigo, você verá uma pasta chamada `fundamentos-do-csharp` na raiz do repositório clonado.
+## Passo 3: Criar uma branch
+```
+cd blog
+git checkout -b {{URL ATRIBUIDA AO SEU ARTIGO}}
+```
 
-## Passo 3: Criação do arquivo
+## Passo 4: Criação do arquivo
 Crie um arquivo `index.md` na pasta destinada ao seu artigo. Todo conteúdo deve ser escrito neste arquivo.
 Utilize sempre o markdown como base, evitando ao máximo uso de HTML.
 Separe sempre os cabeçalhos de forma concisa, usando #, ## e ### para separação do conteúdo.
@@ -60,3 +66,15 @@ https://raw.githubusercontent.com/balta-io/blog/refs/heads/main/autenticacao-e-a
 - Não utilize espaços em branco ou caracteres especiais nos nomes da imagem. Prefencialmente renomeie-as como `01.jpg`, `02.jpg` e assim por diante.
 - Não use imagens grandes, com mais de 500kb, prefira sempre imagens menores e no formato JPG.
 
+## Passo 5: Versione seu artigo
+Não precisa esperar finalizar o artigo para fazer commits, escreveu um pouco? Comita!!
+```
+git add --all
+git commit -m "Sua mensagem"
+git push -u origin {{URL ATRIBUIDA AO SEU ARTIGO}}
+```
+
+IMPORTANTE: NUNCA ALTERE NENHUMA OUTRA PASTA QUE NÃO SEJA A SUA
+
+## Passo 5: Notificação de submissão
+Volte a sua issue criada e avise que seu artigo está pronto para os próximos passos!
