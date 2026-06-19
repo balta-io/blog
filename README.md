@@ -66,7 +66,7 @@ https://raw.githubusercontent.com/balta-io/blog/refs/heads/main/autenticacao-e-a
 - Não utilize espaços em branco ou caracteres especiais nos nomes da imagem. Prefencialmente renomeie-as como `01.jpg`, `02.jpg` e assim por diante.
 - Não use imagens grandes, com mais de 500kb, prefira sempre imagens menores e no formato JPG.
 
-## Passo 5: Versione seu artigo
+## Passo 6: Versione seu artigo
 Não precisa esperar finalizar o artigo para fazer commits, escreveu um pouco? Comita!!
 ```
 git add --all
