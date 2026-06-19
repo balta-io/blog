@@ -4,14 +4,16 @@ about: Preencha todas as informações corretamente para que possamos dar andame
   ao seu artigo da forma mais rápida possível
 title: 'Proposta de artigo:  TITULO DO ARTIGO AQUI'
 labels: proposta
+assignees: ''
 
 ---
 
-#### Qual título do artigo?
-=> 
+### Informações do Artigo
+- Título do artigo (Até 55 caracteres):
+- Resumo do artigo (Até 80 caracteres):
 
-#### Sobre o que você pretende falar neste artigo?
-=> 
+### Datas
+- Data de entrega: yyyy-mm-dd
 
-#### Qual previsão para submissão deste artigo?
-=> dd/MM/yyyy
+### Sobre o que é este artigo, quais problemas ele resolve?
+(Descreva brevemente -- em até 500 caracteres -- o que você deseja expressar com este artigo)
