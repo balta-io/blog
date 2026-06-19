@@ -1,51 +1,62 @@
-# 📮Blog
-Este repositório é destinado à artigos de alunos do balta.io, veja como você pode contribuir abaixo.
+# Como funciona o processo de submissão
 
-## 🟣 Como funciona o Blog
-O nosso [Blog](https://balta.io/blog) tem como principal conteúdo os artigos técnicos produzidos pelo próprio [André Baltieri](https://github.com/andrebaltieri), pessoas da [equipe balta.io](https://github.com/orgs/balta-io/people) e alunos da plataforma.
+## Passo 1: Proposta do artigo
+[👉 CLIQUE AQUI para submeter sua proposta de artigo](https://github.com/balta-io/blog/issues/new?template=submiss-o-de-artigo.md)
 
-## 🟣 Submetendo uma proposta de artigo
-Sabendo qual o tema que pretende abordar, chegou a hora de apresentar a sua proposta. Para isto você deve preencher os dados do template [aqui!](https://github.com/balta-io/blog/issues/new?assignees=BrewertonSantos&labels=proposta&template=submiss-o-de-artigo.md&title=Proposta+de+artigo%3A++TITULO+DO+ARTIGO+AQUI). É importante ler corretamente e preencher as informações conforme esperado.
+## Passo 2: Revisão da proposta
+Após sua proposta ser submetida, nosso time fará uma análise da mesma. Durante este processo, seu artigo ficará com status `revisão`.
+Não há ação sua neste passo.
 
-Frequêntemente nos deparamos com propostas onde o título do issue ainda está "TíTULO DO ARTIGO AQUI" como no template, isto passa uma primeira impressão de que o autor não está dando a atenção correta ao que está fazendo e consequêntemente a credibilidade é afetada. Entenda melhor é esperado na submissão da sua proposta:
+## Passo 3: Produção
+Caso a sua proposta seja aceita, ela entrará no modo `produção` e você já pode escrever seu artigo.
+Leia atentamente a sessão **Produção do Artigo** para garantir que atenderá todas as expectativas desta fase.
 
-### 🗞️ Tema do artigo
-Antes de escrever é importante alinharmos um tema. Os temas que mais fazem sentido para as tecnologias que trabalhamos serão mais aceitos. VocÊ pode escrever sobre ferramentas, metodologisa, arquitetura, bibliotecas, frameworks e etc.
+## Passo 4: Revisão Técnica
+Após a produção e submissão do artigo, o mesmo entrará novamente em `revisão`, desta vez técnica, sobre o conteúdo.
+Caso seu artigo seja aprovado nesta fase, seu issue será então marcado como `markerting`.
+Não há ação sua neste passo.
 
-Então no tema do artigo você deve inserir um título que considere eficaz e direto quanto ao conteúdo que deseja escrever.
+## Passo 5: Marketing
+Nesta fase nosso time de marketing vai trabalhar nas imagens e outros itens do seu artigo.
+Não há ação sua neste passo.
 
-### 📰 Sobre o que você pretende escrever
-Neste tópico o objetivo é que resuma seu objetivo para o artigo envolvendo o assunto que será abordado, os processos que utilizadá, suas referências, onde pretende chegar e qual a finalidade do artigo.
+## Passo 6: Agendamento
+Nesta fase nosso time vai agendar a publicação do seu artigo e te informar a data/horá que ele será publicado.
+Não há ação sua neste passo.
 
-### Previsão para submissão de artigo
-A data de submissão do artigo se refere à data em que você concluirá o desenvolvimento do artigo. Como se trata de uma previsão, esperamos que uma data seja determinada mas obviamente caso aconteça algo durante o processo você pode retificar esta data. No caso de retificação esperamos que nos notifique para que possamos trabalhar na agenda de conteúdo sem surpresas.
+## Passo 7: Publicação
+Parabéns, seu artigo está publicado no balta!!!
+Não há ação sua neste passo.
 
-## 🟣 O que é esperado de um artigo técnico para nosso blog?
-Os artigos devem estar organizados por tópicos e parágrafos corretamente. Os trechos de código devem estar inseridos dentro das marcações de código referênciando a linguagem corretamente para exibir o highlight. Exemplo:
+# Produção do artigo
+IMPORTANTE: Só execute estes passos se o seu issue estiver com a tag `produção`.
 
-Código C# (CSharp):
-
-```csharp
-Console.WriteLine("Hello World!");
+## Passo 1: Clonar o repositório
+```
+git clone https://github.com/balta-io/blog
 ```
 
-### Conteúdo
-Após o tema ter sido aceito, você pode começar a escrever seu artigo, ele tem que ser no formato **Markdown** e conter pelo menos **1000 palavras**. Lembre-se de adicionar sumário e tópicos corretamente em seu artigo.
+## Passo 2: Estrutura do artigo
+Na issue criada, uma URL foi atribuída ao seu artigo e uma pasta foi criada no repositório.
+Por exemplo, supondo que a URL `fundamentos-do-csharp` foi atribuída ao seu artigo, você verá uma pasta chamada `fundamentos-do-csharp` na raiz do repositório clonado.
 
-`NOTA 1`: Caso tenha usado outros artigos, documentação e pesquisas durante o processo de desenvolvimento do seu artigo. Adicione as referências no final do seu artigo.
-
-`NOTA 2`: Caso ainda tenha dúvidas e/ou um exemplo aplicado te auxilie melhor a entender, utilize [este artigo](https://github.com/balta-io/blog/blob/main/linguagens-de-programacao/index.md) como exemplo. Ele contém sumário, tópicos organizados, parágrafos, imagens e referências.
+## Passo 3: Criação do arquivo
+Crie um arquivo `index.md` na pasta destinada ao seu artigo. Todo conteúdo deve ser escrito neste arquivo.
+Utilize sempre o markdown como base, evitando ao máximo uso de HTML.
+Separe sempre os cabeçalhos de forma concisa, usando #, ## e ### para separação do conteúdo.
+Em caso de código, use sempre as sintaxes de código especificando a linguagem.
+```
+```csharp
+```html
+``javascript
+```
+Aqui tem um artigo de exemplo:
+https://raw.githubusercontent.com/balta-io/blog/refs/heads/main/autenticacao-e-autorizacao-com-jwt-e-bearer-no-aspnet-7/index.md
 
 ### Imagens
-Utilize imagens grandes e visíveis, e não se esqueça de salvá-las dentro de uma pasta `imagens` no mesmo diretório do seu artigo, vamos precisar dos arquivos destas imagens para colocar seu artigo no ar.
+- NÃO UTILIZE IMAGENS COM DIREITOS AUTORAIS
+- Não é por que a imagem está na internet que pode ser utilizada. Só use imagens de fontes oficiais e publicas, como o site da Microsoft. Se for o caso, recrie a imagem!
+- Coloque todas as imagens em uma pasta `images` dentro da pasta destinada ao seu artigo
+- Não utilize espaços em branco ou caracteres especiais nos nomes da imagem. Prefencialmente renomeie-as como `01.jpg`, `02.jpg` e assim por diante.
+- Não use imagens grandes, com mais de 500kb, prefira sempre imagens menores e no formato JPG.
 
-### 🟣 Publicação
-Para publicar seu artigo será necessário fazer um fork do nosso blog clicando no botão  fork  localizado no canto superior direito da tela abaixo do ícone de usuário do seu GitHub:
-
-![image](https://user-images.githubusercontent.com/55927647/169020355-09803d8d-7d2e-4a25-bd39-f68c9b071507.png)
-
-Depois basta imcorporar seu artigo ao fork criado no seu perfil e fazer um **Pull request** para este repositório, lembrece de seguir os passos: Criar uma pasta (Não usar espaços ou caracteres especiais no nome da pasta) com os seguintes arquivos:
-* nome-do-artigo/index.md -> Seu artigo
-* nome-do-artigo/images/ -> Imagens do seu artigo
-
-Nós vamos priorizar artigos escritos **exclusivamente** para nossa plataforma.
