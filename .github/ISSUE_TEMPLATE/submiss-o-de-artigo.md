@@ -4,7 +4,6 @@ about: Preencha todas as informações corretamente para que possamos dar andame
   ao seu artigo da forma mais rápida possível
 title: 'Proposta de artigo:  TITULO DO ARTIGO AQUI'
 labels: proposta
-assignees: BrewertonSantos
 
 ---
 
