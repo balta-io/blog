@@ -32,7 +32,7 @@ Não há ação sua neste passo.
 IMPORTANTE: Só execute estes passos se o seu issue estiver com a tag `produção`.
 
 ## Passo 1: Estrutura do artigo
-Na issue criada, uma URL foi atribuída ao seu artigo e uma pasta foi criada no repositório.
+Na issue criada, uma URL foi atribuída ao seu artigo e uma pasta foi criada no repositório, dentro da pasta `draft` (Rascunho).
 Por exemplo, supondo que a URL `fundamentos-do-csharp` foi atribuída ao seu artigo, você verá uma pasta chamada `fundamentos-do-csharp` na raiz do repositório clonado.
 
 ## Passo 2: Clonar o repositório
@@ -47,7 +47,17 @@ git checkout -b {{URL ATRIBUIDA AO SEU ARTIGO}}
 ```
 
 ## Passo 4: Criação do arquivo
-Crie um arquivo `index.md` na pasta destinada ao seu artigo. Todo conteúdo deve ser escrito neste arquivo.
+Ao abrir a pasta, você encontrará um arquivo `raw.md` na raiz. Todo conteúdo deve ser escrito neste arquivo.
+> **IMPORTANTE** NUNCA ALTERE A SESSÃO INICIAL DESTE ARQUIVO
+```
+---
+title: 
+summary: 
+url: 
+tags:
+---
+```
+### Regras de escrita
 Utilize sempre o markdown como base, evitando ao máximo uso de HTML.
 Separe sempre os cabeçalhos de forma concisa, usando #, ## e ### para separação do conteúdo.
 Em caso de código, use sempre as sintaxes de código especificando a linguagem.
